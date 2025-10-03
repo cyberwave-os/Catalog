@@ -4,7 +4,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://your_package_name/meshes/Zainetto_2.96_MOD10_DEF.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://B100x/meshes/Zainetto_2_96_MOD10_DEF.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="gray">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -14,7 +14,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://your_package_name/meshes/Zainetto_2.96_MOD10_DEF.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://B100x/meshes/Zainetto_2_96_MOD10_DEF.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
 

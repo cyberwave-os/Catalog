@@ -4,7 +4,7 @@
   <link name="realsense_d455_link">
   
     <visual>
-      <origin xyz="0 0 50" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://realsenseD455/meshes/Realsense_D455.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -14,7 +14,7 @@
     </visual>
 
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="0 0 50" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://realsenseD455/meshes/Realsense_D455.stl" scale="0.001 0.001 0.001"/>
       </geometry>

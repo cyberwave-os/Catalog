@@ -12,7 +12,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://logitech_c920/meshes/logitech-c920.stl"/>
+        <mesh filename="package://c920/meshes/logitech-c920.stl"/>
       </geometry>
       <material name="dark_gray">
         <color rgba="0.2 0.2 0.2 1.0"/>
@@ -22,7 +22,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://logitech_c920/meshes/logitech-c920.stl"/>
+        <mesh filename="package://c920/meshes/logitech-c920.stl"/>
       </geometry>
     </collision>
   </link>

@@ -2,7 +2,7 @@
 <robot name="logitech_c920">
   <link name="camera_link">
     <visual>
-      <origin xyz="0 0 0" rpy="-1.5708 0 0"/> 
+      <origin xyz="0 0 0" rpy="0 0 0"/> 
       <geometry>
         <mesh filename="package://c920/meshes/logitech-c920.stl" scale="0.001 0.001 0.001"/>
       </geometry>

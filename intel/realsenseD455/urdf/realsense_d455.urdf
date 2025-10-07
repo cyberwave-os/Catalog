@@ -6,7 +6,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://realsense_description/meshes/Realsense_D455.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://realsenseD455/meshes/Realsense_D455.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey">
         <color rgba="0.6 0.6 0.6 1.0"/>
@@ -16,7 +16,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://realsense_description/meshes/Realsense_D455.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://realsenseD455/meshes/Realsense_D455.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
 

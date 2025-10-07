@@ -1,10 +1,8 @@
 <?xml version="1.0"?>
 <robot name="basler_camera">
 
-  <!-- Single link representing the camera -->
   <link name="camera">
     
-    <!-- Visual representation -->
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -15,15 +13,13 @@
       </material>
     </visual>
 
-    <!-- Collision geometry (same as visual) -->
-    <collision>
+  <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://ace2_GigE/meshes/Basler_ace2_GigE.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
 
-    <!-- Basic inertial properties (approximate placeholder) -->
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="0.2"/>

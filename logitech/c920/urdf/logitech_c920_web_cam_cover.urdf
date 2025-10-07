@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<robot name="logitech_c920_web_cam_cover">
+
+  <!-- Base link -->
+  <link name="cover_link">
+    <!-- Inertial parameters -->
+    <inertial>
+      <!-- Example mass in kilograms -->
+      <mass value="0.02"/>  <!-- adjust as needed -->
+      <!-- Approximate inertia tensor for a small plastic part -->
+      <inertia
+        ixx="1.0e-6" iyy="1.0e-6" izz="1.0e-6"
+        ixy="0.0" ixz="0.0" iyz="0.0"/>
+    </inertial>
+
+    <!-- Visual geometry -->
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://your_package_name/meshes/Logitech_C920_Web_Cam_Cover.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="gray">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    </visual>
+
+    <!-- Collision geometry -->
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://your_package_name/meshes/Logitech_C920_Web_Cam_Cover.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+</robot>

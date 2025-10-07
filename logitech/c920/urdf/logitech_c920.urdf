@@ -2,9 +2,9 @@
 <robot name="logitech_c920">
   <link name="camera_link">
     <visual>
-      <origin xyz="0 0 0" rpy="-1.5708 0 0"/> <!-- Rotate STL so lens faces +Z -->
+      <origin xyz="0 0 0" rpy="-1.5708 0 0"/> 
       <geometry>
-        <mesh filename="package://c920/meshes/logitech-c920.stl" scale="1 1 1"/>
+        <mesh filename="package://c920/meshes/logitech-c920.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark_grey">
         <color rgba="0.2 0.2 0.2 1.0"/>
@@ -14,7 +14,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="-1.5708 0 0"/>
       <geometry>
-        <mesh filename="package://c920/meshes/logitech-c920.stl" scale="1 1 1"/>
+        <mesh filename="package://c920/meshes/logitech-c920.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
 

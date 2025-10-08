@@ -2,7 +2,7 @@
 <robot name="logitech_c920">
   <link name="logitech_c920_link">
     <visual>
-      <origin xyz="-1000 -1000 -1000" rpy="0 0 0"/>
+      <origin xyz="-1000 -1000 -1000" rpy="-1000 -1000 -1000"/>
       <geometry>
         <mesh filename="package://c920/meshes/logitech_920.stl" scale="1 1 1"/>
       </geometry>

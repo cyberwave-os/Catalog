@@ -3,12 +3,12 @@
   <link name="camera">
     <visual>
       <geometry>
-        <mesh filename="logitech_c920.stl" scale="1 1 1"/>
+        <mesh filename="package://c920/meshes/logitech_c920.stl" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="logitech_c920.stl" scale="1 1 1"/>
+        <mesh filename="package://c920/meshes/logitech_c920.stl" scale="1 1 1"/>
       </geometry>
     </collision>
     <inertial>

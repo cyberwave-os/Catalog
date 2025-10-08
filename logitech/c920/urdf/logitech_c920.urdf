@@ -3,13 +3,13 @@
   <link name="camera_link">
     <visual>
       <geometry>
-        <mesh filename="package://path_to_mesh/logitech_c920.stl" scale="1 1 1"/>
+        <mesh filename="package://c920/meshes/logitech_c920.stl" scale="1 1 1"/>
       </geometry>
       <origin xyz="0 0 0" rpy="0 0 0"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://path_to_mesh/logitech_c920.stl" scale="1 1 1"/>
+        <mesh filename="package://c920/meshes/logitech_c920.stl" scale="1 1 1"/>
       </geometry>
       <origin xyz="0 0 0" rpy="0 0 0"/>
     </collision>

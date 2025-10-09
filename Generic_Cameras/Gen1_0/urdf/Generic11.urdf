@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
-<robot name="gen1_0">
+<robot name="generic_camera">
 
-  <link name="gen1_0_link">
+  <link name="generic_camera_link">
   
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://Gen1_0/meshes/Gen_11cyb.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://Gen1_0/meshes/Generic11.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="gray">
         <color rgba="0.5 0.5 0.5 1.0"/>
@@ -16,7 +16,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://Gen1_0/meshes/Gen_11cyb.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://Gen1_0/meshes/Generic11.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
 

@@ -1,22 +1,22 @@
 <?xml version="1.0"?>
-<robot name="generic_ip_cam">
+<robot name="generic_ip_camera">
 
-  <link name="generic_ip_cam_link">
+  <link name="generic_ip_camera_link">
   
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://Generic_IP_camera/meshes/Generic_IP_Cam.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://Generic_IP_camera/meshes/IPCamera2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="grey">
-        <color rgba="0.5 0.5 0.5 1.0"/>
+      <material name="white">
+        <color rgba="0.9 0.9 0.9 1.0"/>
       </material>
     </visual>
 
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://Generic_IP_camera/meshes/Generic_IP_Cam.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://Generic_IP_camera/meshes/IPCamera2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
 

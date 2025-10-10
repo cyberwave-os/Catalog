@@ -2,11 +2,11 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- Import all Gazebo-customization elements, including Gazebo colors -->
-  <xacro:include filename="$(find iiwa14 r820)/urdf/iiwa.gazebo.xacro" />
+  <xacro:include filename="$(find iiwa14_r820)/urdf/iiwa.gazebo.xacro" />
   <!-- Import Transmissions -->
-  <xacro:include filename="$(find iiwa14 r820)/urdf/iiwa.transmission.xacro" />
+  <xacro:include filename="$(find iiwa14_r820)/urdf/iiwa.transmission.xacro" />
   <!-- Include Utilities -->
-  <xacro:include filename="$(find iiwa14 r820)/urdf/utilities.xacro" />
+  <xacro:include filename="$(find iiwa14_r820)/urdf/utilities.xacro" />
 
   <!-- some constants -->
   <xacro:property name="safety_controller_k_pos" value="100" />
@@ -54,7 +54,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa14 r820/meshes/iiwa14/visual/link_0.stl"/>
+          <mesh filename="package://iiwa14_r820/meshes/iiwa14/visual/link_0.stl"/>
         </geometry>
         <material name="Grey"/>
       </visual>
@@ -62,7 +62,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa14 r820/meshes/iiwa14/collision/link_0_s.stl"/>
+          <mesh filename="package://iiwa14_r820/meshes/iiwa14/collision/link_0_s.stl"/>
         </geometry>
         <material name="Grey"/>
       </collision>
@@ -101,7 +101,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa14 r820/meshes/iiwa14/visual/link_1.stl"/>
+          <mesh filename="package://iiwa14_r820/meshes/iiwa14/visual/link_1.stl"/>
         </geometry>
         <material name="Orange"/>
       </visual>
@@ -109,7 +109,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa14 r820/meshes/iiwa14/collision/link_1_s.stl"/>
+          <mesh filename="package://iiwa14_r820/meshes/iiwa14/collision/link_1_s.stl"/>
         </geometry>
         <material name="Orange"/>
       </collision>
@@ -140,7 +140,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa14 r820/meshes/iiwa14/visual/link_2.stl"/>
+          <mesh filename="package://iiwa14_r820/meshes/iiwa14/visual/link_2.stl"/>
         </geometry>
         <material name="Orange"/>
       </visual>
@@ -148,7 +148,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa14 r820/meshes/iiwa14/collision/link_2_s.stl"/>
+          <mesh filename="package://iiwa14_r820/meshes/iiwa14/collision/link_2_s.stl"/>
         </geometry>
         <material name="Orange"/>
       </collision>
@@ -179,7 +179,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa14 r820/meshes/iiwa14/visual/link_3.stl"/>
+          <mesh filename="package://iiwa14_r820/meshes/iiwa14/visual/link_3.stl"/>
         </geometry>
         <material name="Orange"/>
       </visual>
@@ -187,7 +187,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa14 r820/meshes/iiwa14/collision/link_3_s.stl"/>
+          <mesh filename="package://iiwa14_r820/meshes/iiwa14/collision/link_3_s.stl"/>
         </geometry>
         <material name="Orange"/>
       </collision>
@@ -218,7 +218,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa14 r820/meshes/iiwa14/visual/link_4.stl"/>
+          <mesh filename="package://iiwa14_r820/meshes/iiwa14/visual/link_4.stl"/>
         </geometry>
         <material name="Orange"/>
       </visual>
@@ -226,7 +226,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa14 r820/meshes/iiwa14/collision/link_4_s.stl"/>
+          <mesh filename="package://iiwa14_r820/meshes/iiwa14/collision/link_4_s.stl"/>
         </geometry>
         <material name="Orange"/>
       </collision>
@@ -257,7 +257,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa14 r820/meshes/iiwa14/visual/link_5.stl"/>
+          <mesh filename="package://iiwa14_r820/meshes/iiwa14/visual/link_5.stl"/>
         </geometry>
         <material name="Orange"/>
       </visual>
@@ -265,7 +265,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa14 r820/meshes/iiwa14/collision/link_5_s.stl"/>
+          <mesh filename="package://iiwa14_r820/meshes/iiwa14/collision/link_5_s.stl"/>
         </geometry>
         <material name="Orange"/>
       </collision>
@@ -296,7 +296,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa14 r820/meshes/iiwa14/visual/link_6.stl"/>
+          <mesh filename="package://iiwa14_r820/meshes/iiwa14/visual/link_6.stl"/>
         </geometry>
         <material name="Orange"/>
       </visual>
@@ -304,7 +304,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa14 r820/meshes/iiwa14/collision/link_6_s.stl"/>
+          <mesh filename="package://iiwa14_r820/meshes/iiwa14/collision/link_6_s.stl"/>
         </geometry>
         <material name="Orange"/>
       </collision>
@@ -335,8 +335,8 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-<!--           <mesh filename="package://iiwa14 r820/meshes/iiwa14/visual/link_7.stl"/> -->
-		  <mesh filename="package://iiwa14 r820/meshes/iiwa14/visual/link_7-MF-Touch-pneumatisch.stl"/>
+<!--           <mesh filename="package://iiwa14_r820/meshes/iiwa14/visual/link_7.stl"/> -->
+		  <mesh filename="package://iiwa14_r820/meshes/iiwa14/visual/link_7-MF-Touch-pneumatisch.stl"/>
         </geometry>
         <material name="Grey"/>
       </visual>
@@ -344,8 +344,8 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-<!--           <mesh filename="package://iiwa14 r820/meshes/iiwa14/collision/link_7_s.stl"/> -->
-		  <mesh filename="package://iiwa14 r820/meshes/iiwa14/collision/link_7-MF-Touch-pneumatisch_s.stl"/>
+<!--           <mesh filename="package://iiwa14_r820/meshes/iiwa14/collision/link_7_s.stl"/> -->
+		  <mesh filename="package://iiwa14_r820/meshes/iiwa14/collision/link_7-MF-Touch-pneumatisch_s.stl"/>
         </geometry>
         <material name="Grey"/>
       </collision>

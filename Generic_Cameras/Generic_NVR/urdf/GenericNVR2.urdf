@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <robot name="generic_nvr">
 
-  <link name="nvr_link">
+  <link name="generic_nvr_link">
   
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://Generic_NVR/meshes/GenericNVR.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://Generic_NVR/meshes/GenericNVR2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="gray">
         <color rgba="0.5 0.5 0.5 1.0"/>
@@ -16,12 +16,12 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://Generic_NVR/meshes/GenericNVR.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://Generic_NVR/meshes/GenericNVR2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
 
     <inertial>
-      <mass value="1.5"/>
+      <mass value="0.5"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia
         ixx="0.001" ixy="0.0" ixz="0.0"

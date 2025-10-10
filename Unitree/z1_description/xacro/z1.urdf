@@ -29,7 +29,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://Z1/meshes/z1_Link00.stl" scale="1 1 1"/>
+        <mesh filename="package://z1_description/meshes/visual/z1_Link00.stl" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
@@ -56,7 +56,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://Z1/meshes/z1_Link01.stl" scale="1 1 1"/>
+        <mesh filename="package://z1_description/meshes/visual/z1_Link01.stl" scale="1 1 1"/>
       </geometry>
     </visual>
     <inertial>
@@ -77,7 +77,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://Z1/meshes/z1_Link02.stl" scale="1 1 1"/>
+        <mesh filename="package://z1_description/meshes/visual/z1_Link02.stl" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
@@ -116,7 +116,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://Z1/meshes/z1_Link03.stl" scale="1 1 1"/>
+        <mesh filename="package://z1_description/meshes/visual/z1_Link03.stl" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
@@ -149,7 +149,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://Z1/meshes/z1_Link04.stl" scale="1 1 1"/>
+        <mesh filename="package://z1_description/meshes/visual/z1_Link04.stl" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
@@ -176,7 +176,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://Z1/meshes/z1_Link05.stl" scale="1 1 1"/>
+        <mesh filename="package://z1_description/meshes/visual/z1_Link05.stl" scale="1 1 1"/>
       </geometry>
     </visual>
     <inertial>
@@ -197,7 +197,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://Z1/meshes/z1_Link06.stl" scale="1 1 1"/>
+        <mesh filename="package://z1_description/meshes/visual/z1_Link06.stl" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>

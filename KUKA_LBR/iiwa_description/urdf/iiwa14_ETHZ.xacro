@@ -2,11 +2,11 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- Import all Gazebo-customization elements, including Gazebo colors -->
-  <xacro:include filename="$(find iiwa14_r820)/urdf/iiwa.gazebo.xacro" />
+  <xacro:include filename="$(find iiwa_description)/urdf/iiwa.gazebo.xacro" />
   <!-- Import Transmissions -->
-  <xacro:include filename="$(find iiwa14_r820)/urdf/iiwa.transmission.xacro" />
+  <xacro:include filename="$(find iiwa_description)/urdf/iiwa.transmission.xacro" />
   <!-- Include Utilities -->
-  <xacro:include filename="$(find iiwa14_r820)/urdf/utilities.xacro" />
+  <xacro:include filename="$(find iiwa_description)/urdf/utilities.xacro" />
 
   <!-- some constants -->
   <xacro:property name="safety_controller_k_pos" value="100" />
@@ -15,25 +15,25 @@
   <xacro:property name="max_velocity" value="10"/>
   
   
-   <xacro:property name="damping_factor" value="0.0"/>
+  <xacro:property name="damping_factor" value="0.0"/>
 
-   <xacro:property name="d0" value="${damping_factor*0.1}"/>
-   <xacro:property name="d1" value="${damping_factor*0.1}"/>
-   <xacro:property name="d2" value="${damping_factor*0.1}"/>
-   <xacro:property name="d3" value="${damping_factor*0.1}"/>
-   <xacro:property name="d4" value="${damping_factor*0.1}"/>
-   <xacro:property name="d5" value="${damping_factor*0.1}"/>
-   <xacro:property name="d6" value="${damping_factor*0.1}"/>
+   <xacro:property name="d0" value="${damping_factor*0.241499}"/>
+   <xacro:property name="d1" value="${damping_factor*0.373279}"/>
+   <xacro:property name="d2" value="${damping_factor*0.110253}"/>
+   <xacro:property name="d3" value="${damping_factor*0.100000}"/>
+   <xacro:property name="d4" value="${damping_factor*0.100000}"/>
+   <xacro:property name="d5" value="${damping_factor*0.124842}"/>
+   <xacro:property name="d6" value="${damping_factor*0.100000}"/>
 
    <xacro:property name="friction_factor" value="0.0"/>
 
-   <xacro:property name="f0" value="${friction_factor*0.1}"/>
-   <xacro:property name="f1" value="${friction_factor*0.1}"/>
-   <xacro:property name="f2" value="${friction_factor*0.1}"/>
-   <xacro:property name="f3" value="${friction_factor*0.1}"/>
-   <xacro:property name="f4" value="${friction_factor*0.1}"/>
-   <xacro:property name="f5" value="${friction_factor*0.1}"/>
-   <xacro:property name="f6" value="${friction_factor*0.1}"/>
+   <xacro:property name="f0" value="${friction_factor*0.319088	*	1.0 }"/>
+   <xacro:property name="f1" value="${friction_factor*0.181301}"/>
+   <xacro:property name="f2" value="${friction_factor*0.073019}"/>
+   <xacro:property name="f3" value="${friction_factor*0.176713}"/>
+   <xacro:property name="f4" value="${friction_factor*0.034631	*	1.0 }"/>
+   <xacro:property name="f5" value="${friction_factor*0.133913}"/>
+   <xacro:property name="f6" value="${friction_factor*0.087096 	*	1.0 }"/>
 
   <xacro:macro name="iiwa14" params="parent hardware_interface robot_name *origin">
 
@@ -54,7 +54,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa14_r820/meshes/iiwa14/visual/link_0.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa14/visual/link_0.stl"/>
         </geometry>
         <material name="Grey"/>
       </visual>
@@ -62,7 +62,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa14_r820/meshes/iiwa14/collision/link_0_s.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa14/collision/link_0.stl"/>
         </geometry>
         <material name="Grey"/>
       </collision>
@@ -80,7 +80,7 @@
     <joint name="joint_0" type="revolute">
       <parent link="link_0"/>
       <child link="link_1"/>
-      <origin xyz="0 0 0.1575" rpy="0 0 0"/>
+      <origin xyz="0 0 0.1575" rpy="0 0 ${PI}"/>
       <axis xyz="0 0 1"/>
       <limit lower="${-170 * PI / 180}" upper="${170 * PI / 180}"
              effort="${max_effort}" velocity="${max_velocity}" />
@@ -93,23 +93,23 @@
 
     <link name="link_1">
       <inertial>
-        <origin xyz="0 -0.03 0.12" rpy="0 0 0"/>
-        <mass value="4"/>
-        <inertia ixx="0.1"  ixy="0"  ixz="0" iyy="0.09" iyz="0" izz="0.02" />
+        <origin xyz="-0.0035 0.001602 ${-0.031387+0.2025}" rpy="0 0 0"/>
+        <mass value="3.947808"/>
+        <inertia ixx="0.004554"  ixy="0"  ixz="0" iyy="0.004542" iyz="0" izz="0.000289" />
       </inertial>
 
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <origin xyz="0 0 0" rpy="0 0 ${PI}"/>
         <geometry>
-          <mesh filename="package://iiwa14_r820/meshes/iiwa14/visual/link_1.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa14/visual/link_1.stl"/>
         </geometry>
         <material name="Orange"/>
       </visual>
 
       <collision>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <origin xyz="0 0 0" rpy="0 0 ${PI}"/>
         <geometry>
-          <mesh filename="package://iiwa14_r820/meshes/iiwa14/collision/link_1_s.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa14/collision/link_1.stl"/>
         </geometry>
         <material name="Orange"/>
       </collision>
@@ -119,7 +119,7 @@
     <joint name="joint_1" type="revolute">
       <parent link="link_1"/>
       <child link="link_2"/>
-      <origin xyz="0 0 0.2025" rpy="${PI / 2}   0 ${PI}"/>
+      <origin xyz="0 0 0.2025" rpy="${PI / 2}   0 0"/>
       <axis xyz="0 0 1"/>
       <limit lower="${-120 * PI / 180}" upper="${120 * PI / 180}"
              effort="${max_effort}" velocity="${max_velocity}" />
@@ -132,15 +132,15 @@
 
     <link name="link_2">
       <inertial>
-        <origin xyz="0.0003 0.059 0.042" rpy="0 0 0"/>
-        <mass value="4"/>
-        <inertia ixx="0.05"  ixy="0"  ixz="0" iyy="0.018" iyz="0" izz="0.044" />
+        <origin xyz="0.007671 0.166693 0.003551" rpy="0 0 0"/>
+        <mass value="4.502752"/>
+        <inertia ixx="0.000318"  ixy="0"  ixz="0" iyy="0.018" iyz="0" izz="0.000419" />
       </inertial>
 
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa14_r820/meshes/iiwa14/visual/link_2.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa14/visual/link_2.stl"/>
         </geometry>
         <material name="Orange"/>
       </visual>
@@ -148,7 +148,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa14_r820/meshes/iiwa14/collision/link_2_s.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa14/collision/link_2.stl"/>
         </geometry>
         <material name="Orange"/>
       </collision>
@@ -158,7 +158,7 @@
     <joint name="joint_2" type="revolute">
       <parent link="link_2"/>
       <child link="link_3"/>
-      <origin xyz="0 0.2045 0" rpy="${PI / 2} 0 ${PI}"/>
+      <origin xyz="0 0.2045 0" rpy="${PI / 2} ${PI} ${PI}"/>
       <axis xyz="0 0 1"/>
       <limit lower="${-170 * PI / 180}" upper="${170 * PI / 180}"
              effort="${max_effort}" velocity="${max_velocity}" />
@@ -171,23 +171,23 @@
 
     <link name="link_3">
       <inertial>
-        <origin xyz="0 0.03 0.13" rpy="0 0 0"/>
-        <mass value="3"/>
-        <inertia ixx="0.08"  ixy="0"  ixz="0" iyy="0.075" iyz="0" izz="0.01" />
+        <origin xyz="-0.002246 -0.034918 ${-0.026522+0.2155}" rpy="0 0 0"/>
+        <mass value="2.455197"/>
+        <inertia ixx="0.002233"  ixy="-0.000046"  ixz="0" iyy="0.002191" iyz="0" izz="0.000725" />
       </inertial>
 
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <origin xyz="0 0 0" rpy="0 0 ${PI}"/>
         <geometry>
-          <mesh filename="package://iiwa14_r820/meshes/iiwa14/visual/link_3.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa14/visual/link_3.stl"/>
         </geometry>
         <material name="Orange"/>
       </visual>
 
       <collision>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <origin xyz="0 0 0" rpy="0 0 ${PI}"/>
         <geometry>
-          <mesh filename="package://iiwa14_r820/meshes/iiwa14/collision/link_3_s.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa14/collision/link_3.stl"/>
         </geometry>
         <material name="Orange"/>
       </collision>
@@ -197,7 +197,7 @@
     <joint name="joint_3" type="revolute">
       <parent link="link_3"/>
       <child link="link_4"/>
-      <origin xyz="0 0 0.2155" rpy="${PI / 2} 0 0"/>
+      <origin xyz="0 0 0.2155" rpy="${-PI / 2} 0 0"/>
       <axis xyz="0 0 1"/>
       <limit lower="${-120 * PI / 180}" upper="${120 * PI / 180}"
              effort="${max_effort}" velocity="${max_velocity}" />
@@ -210,23 +210,23 @@
 
     <link name="link_4">
       <inertial>
-        <origin xyz="0 0.067 0.034" rpy="0 0 0"/>
-        <mass value="2.7"/>
-        <inertia ixx="0.03"  ixy="0"  ixz="0" iyy="0.01" iyz="0" izz="0.029" />
+        <origin xyz="0.000196 -0.052679 0.038182" rpy="0 0 0"/>
+        <mass value="2.611550"/>
+        <inertia ixx="0.038444"  ixy="0.000880"  ixz="-0.001120" iyy="0.011437" iyz="-0.001113" izz="0.049880" />
       </inertial>
 
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <origin xyz="0 0 0" rpy="0 0 ${PI}"/>
         <geometry>
-          <mesh filename="package://iiwa14_r820/meshes/iiwa14/visual/link_4.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa14/visual/link_4.stl"/>
         </geometry>
         <material name="Orange"/>
       </visual>
 
       <collision>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <origin xyz="0 0 0" rpy="0 0 ${PI}"/>
         <geometry>
-          <mesh filename="package://iiwa14_r820/meshes/iiwa14/collision/link_4_s.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa14/collision/link_4.stl"/>
         </geometry>
         <material name="Orange"/>
       </collision>
@@ -236,7 +236,7 @@
     <joint name="joint_4" type="revolute">
       <parent link="link_4"/>
       <child link="link_5"/>
-      <origin xyz="0 0.1845 0" rpy="${-PI / 2} ${PI} 0"/>
+      <origin xyz="0 -0.1845 0" rpy="${PI / 2} 0 0"/>
       <axis xyz="0 0 1"/>
       <limit lower="${-170 * PI / 180}" upper="${170 * PI / 180}"
              effort="${max_effort}" velocity="${max_velocity}" />
@@ -249,15 +249,15 @@
 
     <link name="link_5">
       <inertial>
-        <origin xyz="0.0001 0.021 0.076" rpy="0 0 0"/>
-        <mass value="1.7"/>
-        <inertia ixx="0.02"  ixy="0"  ixz="0" iyy="0.018" iyz="0" izz="0.005" />
+        <origin xyz="0.000054 -0.002367 ${-0.211336+0.2155}" rpy="0 0 0"/>
+        <mass value="3.410009"/>
+        <inertia ixx="0.002769"  ixy="0"  ixz="0" iyy="0.002842" iyz="0" izz="0.000117" />
       </inertial>
 
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa14_r820/meshes/iiwa14/visual/link_5.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa14/visual/link_5.stl"/>
         </geometry>
         <material name="Orange"/>
       </visual>
@@ -265,7 +265,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa14_r820/meshes/iiwa14/collision/link_5_s.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa14/collision/link_5.stl"/>
         </geometry>
         <material name="Orange"/>
       </collision>
@@ -288,15 +288,15 @@
 
     <link name="link_6">
       <inertial>
-        <origin xyz="0 0.0006 0.0004" rpy="0 0 0"/>
-        <mass value="1.8"/>
-        <inertia ixx="0.025"  ixy="0"  ixz="0" iyy="0.0136" iyz="0" izz="0.0247" />
+        <origin xyz="0.000492 0.020190 -0.027496" rpy="0 0 0"/>
+        <mass value="3.387949"/>
+        <inertia ixx="0.000500"  ixy="0"  ixz="0" iyy="0.002809" iyz="0" izz="0.002315" />
       </inertial>
 
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa14_r820/meshes/iiwa14/visual/link_6.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa14/visual/link_6.stl"/>
         </geometry>
         <material name="Orange"/>
       </visual>
@@ -304,7 +304,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa14_r820/meshes/iiwa14/collision/link_6_s.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa14/collision/link_6.stl"/>
         </geometry>
         <material name="Orange"/>
       </collision>
@@ -314,7 +314,7 @@
     <joint name="joint_6" type="revolute">
       <parent link="link_6"/>
       <child link="link_7"/>
-      <origin xyz="0 0.081 0" rpy="${- PI / 2} ${PI} 0"/>
+      <origin xyz="0 0.081 0" rpy="${- PI / 2} 0 0"/>
       <axis xyz="0 0 1"/>
       <limit lower="${-175 * PI / 180}" upper="${175 * PI / 180}"
              effort="${max_effort}" velocity="${max_velocity}" />
@@ -327,16 +327,15 @@
 
     <link name="link_7">
       <inertial>
-        <origin xyz="0 0 0.02" rpy="0 0 0"/>
-        <mass value="${0.3 / 0.308 * 0.44}"/> <!--this is for the MFT Pneumatisch flange-->
-        <inertia ixx="0.01"  ixy="0"  ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+        <origin xyz="-0.03465 -0.023242 ${0.071377-0.081}" rpy="0 0 0"/>
+        <mass value="${0.354321 / 0.308 * 0.44}"/> <!--this is for the MFT Pneumatisch flange-->
+        <inertia ixx="0.007946"  ixy="0.000221"  ixz="0.000294" iyy="0.010889" iyz="-0.000294" izz="0.002944" />
       </inertial>
 
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-<!--           <mesh filename="package://iiwa14_r820/meshes/iiwa14/visual/link_7.stl"/> -->
-		  <mesh filename="package://iiwa14_r820/meshes/iiwa14/visual/link_7-MF-Touch-pneumatisch.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa14/visual/link_7.stl"/>
         </geometry>
         <material name="Grey"/>
       </visual>
@@ -344,8 +343,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-<!--           <mesh filename="package://iiwa14_r820/meshes/iiwa14/collision/link_7_s.stl"/> -->
-		  <mesh filename="package://iiwa14_r820/meshes/iiwa14/collision/link_7-MF-Touch-pneumatisch_s.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa14/collision/link_7.stl"/>
         </geometry>
         <material name="Grey"/>
       </collision>
@@ -366,17 +364,8 @@
       <origin xyz="0 0 0.045" rpy="${PI} ${PI} ${PI}"/>
       <axis xyz="0 0 1"/>
     </joint>
-	
-	<joint name="joint_ee_kuka_mft_pneum" type="fixed">
-      <parent link="link_7"/>
-      <child link="link_ee_kuka_mft_pneum"/>
-      <origin xyz="0 0 0.071" rpy="0 -${PI/2} 0"/>
-    </joint>
 
     <link name="link_ee_kuka">
-    </link>
-	
-	<link name="link_ee_kuka_mft_pneum">
     </link>
 
     <!--Extensions -->

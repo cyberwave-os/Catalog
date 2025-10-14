@@ -4,14 +4,14 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://Generic_Objects/Generic_Cube/urdf/default_cube.stl" scale="1 1 1"/>
+        <mesh filename="package://Generic_Objects/Generic_Cube/meshes/default_cube.stl" scale="0.01 0.01 0.01"/>
       </geometry>
     </visual>
 
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://Generic_Objects/Generic_Cube/urdf/default_cube.stl" scale="1 1 1"/>
+        <mesh filename="package://Generic_Objects/Generic_Cube/meshes/default_cube.stl" scale="0.01 0.01 0.01"/>
       </geometry>
     </collision>
 

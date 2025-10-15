@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<robot name="open_box_flaps_out">
+
+  <link name="box_link">
+  
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://Generic_Box_flaps_out/meshes/open_box_flaps_out2.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="cardboard">
+        <color rgba="0.8 0.6 0.4 1.0"/>
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://Generic_Box_flaps_out/meshes/open_box_flaps_out2.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia
+        ixx="0.01" ixy="0.0" ixz="0.0"
+        iyy="0.01" iyz="0.0"
+        izz="0.01"/>
+    </inertial>
+    
+  </link>
+
+</robot>
+
+
+

@@ -26,13 +26,13 @@
   <link name="base_link">
     <visual>
       <geometry>
-        <mesh filename="package://meshes/ur5/visual/Base.dae"/>
+        <mesh filename="package://UR5/meshes/ur5/visual/Base.dae"/>
       </geometry>
       <origin rpy="0.0 0.0 2.3561944875" xyz="0.0 0.0 0.0"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://meshes/ur5/collision/Base.dae"/>
+        <mesh filename="package://UR5/meshes/ur5/collision/Base.dae"/>
       </geometry>
       <!-- <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.009159"/> -->
     </collision>
@@ -55,12 +55,12 @@
   <link name="shoulder_link">
     <visual>
       <geometry>
-        <mesh filename="package://meshes/ur5/visual/Shoulder.dae"/>
+        <mesh filename="package://UR5/meshes/ur5/visual/Shoulder.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://meshes/ur5/collision/Shoulder.dae"/>
+        <mesh filename="package://UR5/meshes/ur5/collision/Shoulder.dae"/>
       </geometry>
       <!-- <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.009159"/> -->
     </collision>
@@ -84,13 +84,13 @@
   <link name="upper_arm_link">
     <visual>
       <geometry>
-        <mesh filename="package://meshes/ur5/visual/UpperArm.dae"/>
+        <mesh filename="package://UR5/meshes/ur5/visual/UpperArm.dae"/>
       </geometry>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://meshes/ur5/collision/UpperArm.dae"/>
+        <mesh filename="package://UR5/meshes/ur5/collision/UpperArm.dae"/>
       </geometry>
       <!--       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.2125"/> -->
     </collision>
@@ -114,12 +114,12 @@
   <link name="forearm_link">
     <visual>
       <geometry>
-        <mesh filename="package://meshes/ur5/visual/Forearm.dae"/>
+        <mesh filename="package://UR5/meshes/ur5/visual/Forearm.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://meshes/ur5/collision/Forearm.dae"/>
+        <mesh filename="package://UR5/meshes/ur5/collision/Forearm.dae"/>
       </geometry>
       <!--       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.196125"/> -->
     </collision>
@@ -143,13 +143,13 @@
   <link name="wrist_1_link">
     <visual>
       <geometry>
-        <mesh filename="package://meshes/ur5/visual/Wrist1.dae"/>
+        <mesh filename="package://UR5/meshes/ur5/visual/Wrist1.dae"/>
       </geometry>
       <origin rpy="0.0 1.570796325 0.0" xyz="0.0 0.093 0.0"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://meshes/ur5/collision/Wrist1.dae"/>
+        <mesh filename="package://UR5/meshes/ur5/collision/Wrist1.dae"/>
       </geometry>
       <origin rpy="0.0 1.570796325 0.0" xyz="0.0 0.093 0.0"/>
     </collision>
@@ -173,13 +173,13 @@
   <link name="wrist_2_link">
     <visual>
       <geometry>
-        <mesh filename="package://meshes/ur5/visual/Wrist2.dae"/>
+        <mesh filename="package://UR5/meshes/ur5/visual/Wrist2.dae"/>
       </geometry>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.09465"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://meshes/ur5/collision/Wrist2.dae"/>
+        <mesh filename="package://UR5/meshes/ur5/collision/Wrist2.dae"/>
       </geometry>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.09465"/>
     </collision>
@@ -203,12 +203,12 @@
   <link name="wrist_3_link">
     <visual>
       <geometry>
-        <mesh filename="package://meshes/ur5/visual/Wrist3.dae"/>
+        <mesh filename="package://UR5/meshes/ur5/visual/Wrist3.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://meshes/ur5/collision/Wrist3.dae"/>
+        <mesh filename="package://UR5/meshes/ur5/collision/Wrist3.dae"/>
       </geometry>
     </collision>
     <inertial>

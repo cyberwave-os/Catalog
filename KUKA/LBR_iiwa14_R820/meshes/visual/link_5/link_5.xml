@@ -1,0 +1,28 @@
+<mujoco model="link_5">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="black.002" specular="0.5" shininess="0.25" rgba="0.000000 0.000000 0.000000 1.000000"/>
+    <material name="gray.004" specular="0.5" shininess="0.25" rgba="0.640000 0.640000 0.640000 1.000000"/>
+    <material name="gray2.001" specular="0.5" shininess="0.25" rgba="0.397600 0.397600 0.397600 1.000000"/>
+    <mesh file="link_5_0.obj"/>
+    <mesh file="link_5_1.obj"/>
+    <mesh file="link_5_2.obj"/>
+  </asset>
+  <worldbody>
+    <body name="link_5">
+      <geom mesh="link_5_0" material="black.002" class="visual"/>
+      <geom mesh="link_5_1" material="gray2.001" class="visual"/>
+      <geom mesh="link_5_2" material="gray.004" class="visual"/>
+      <geom mesh="link_5_0" class="collision"/>
+      <geom mesh="link_5_1" class="collision"/>
+      <geom mesh="link_5_2" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

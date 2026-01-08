@@ -1,0 +1,36 @@
+<mujoco model="upperarm">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="UR15_DIFF_8bit_2K" file="UR15_DIFF_8bit_2K.png"/>
+    <material name="Metal_Alu_Brushed.003" texture="UR15_DIFF_8bit_2K" specular="0.0" shininess="0.25"/>
+    <texture type="2d" name="UR15_DIFF_8bit_2K" file="UR15_DIFF_8bit_2K.png"/>
+    <material name="Metal_DarkGray.003" texture="UR15_DIFF_8bit_2K" specular="0.0" shininess="0.25"/>
+    <texture type="2d" name="UR15_DIFF_8bit_2K" file="UR15_DIFF_8bit_2K.png"/>
+    <material name="Plastic_Blue.001" texture="UR15_DIFF_8bit_2K" specular="0.0" shininess="0.25"/>
+    <texture type="2d" name="UR15_DIFF_8bit_2K" file="UR15_DIFF_8bit_2K.png"/>
+    <material name="Rubber_Black.003" texture="UR15_DIFF_8bit_2K" specular="0.0" shininess="0.25"/>
+    <mesh file="upperarm_0.obj"/>
+    <mesh file="upperarm_1.obj"/>
+    <mesh file="upperarm_2.obj"/>
+    <mesh file="upperarm_3.obj"/>
+  </asset>
+  <worldbody>
+    <body name="upperarm">
+      <geom mesh="upperarm_0" material="Rubber_Black.003" class="visual"/>
+      <geom mesh="upperarm_1" material="Metal_Alu_Brushed.003" class="visual"/>
+      <geom mesh="upperarm_2" material="Metal_DarkGray.003" class="visual"/>
+      <geom mesh="upperarm_3" material="Plastic_Blue.001" class="visual"/>
+      <geom mesh="upperarm_0" class="collision"/>
+      <geom mesh="upperarm_1" class="collision"/>
+      <geom mesh="upperarm_2" class="collision"/>
+      <geom mesh="upperarm_3" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

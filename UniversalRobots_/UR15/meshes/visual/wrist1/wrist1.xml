@@ -1,0 +1,31 @@
+<mujoco model="wrist1">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="UR15_DIFF_8bit_2K" file="UR15_DIFF_8bit_2K.png"/>
+    <material name="Metal_DarkGray_003" texture="UR15_DIFF_8bit_2K" specular="0.0" shininess="0.25"/>
+    <texture type="2d" name="UR15_DIFF_8bit_2K" file="UR15_DIFF_8bit_2K.png"/>
+    <material name="Plastic_Blue_001" texture="UR15_DIFF_8bit_2K" specular="0.0" shininess="0.25"/>
+    <texture type="2d" name="UR15_DIFF_8bit_2K" file="UR15_DIFF_8bit_2K.png"/>
+    <material name="Rubber_Black_003" texture="UR15_DIFF_8bit_2K" specular="0.0" shininess="0.25"/>
+    <mesh file="wrist1_0.obj"/>
+    <mesh file="wrist1_1.obj"/>
+    <mesh file="wrist1_2.obj"/>
+  </asset>
+  <worldbody>
+    <body name="wrist1">
+      <geom mesh="wrist1_0" material="Plastic_Blue_001" class="visual"/>
+      <geom mesh="wrist1_1" material="Rubber_Black_003" class="visual"/>
+      <geom mesh="wrist1_2" material="Metal_DarkGray_003" class="visual"/>
+      <geom mesh="wrist1_0" class="collision"/>
+      <geom mesh="wrist1_1" class="collision"/>
+      <geom mesh="wrist1_2" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

@@ -1,0 +1,220 @@
+<?xml version="1.0" ?>
+<mujoco model="baracuda12">
+  <compiler angle="radian" meshdir="meshes/Duatic_Baracuda12/"/>
+  <option gravity="0 0 -9.81" integrator="implicitfast"/>
+  <default>
+    <default class="robot">
+      <default class="motor">
+        <joint/>
+        <motor/>
+      </default>
+      <default class="visual">
+        <geom contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="collision">
+        <geom condim="3" contype="0" conaffinity="1" priority="1" group="1" solref="0.005 1" solimp="0.99 0.999 1e-05" friction="1 0.01 0.01"/>
+      </default>
+    </default>
+  </default>
+  <asset>
+    <material name="Material-Metal.004" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.005" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.006" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.007" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.008" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.009" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Plastic.001" specular="0.000000" shininess="0.250000" rgba="0.411765 0.411765 0.411765 1.000000"/>
+    <material name="Material-Metal.016" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Plastic.004" specular="0.000000" shininess="0.250000" rgba="0.411765 0.411765 0.411765 1.000000"/>
+    <material name="Material-Plastic.005" specular="0.000000" shininess="0.250000" rgba="0.411765 0.411765 0.411765 1.000000"/>
+    <material name="Material-Plastic.006" specular="0.000000" shininess="0.250000" rgba="0.411765 0.411765 0.411765 1.000000"/>
+    <material name="Material-Metal.031" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.001" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.002" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.003" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Plastic" specular="0.000000" shininess="0.250000" rgba="0.411765 0.411765 0.411765 1.000000"/>
+    <material name="Material-Metal.017" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.018" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.019" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.020" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.021" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.022" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.023" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.024" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Plastic.007" specular="0.000000" shininess="0.250000" rgba="0.411765 0.411765 0.411765 1.000000"/>
+    <material name="Material-Plastic.008" specular="0.000000" shininess="0.250000" rgba="0.411765 0.411765 0.411765 1.000000"/>
+    <material name="Material-Plastic.009" specular="0.000000" shininess="0.250000" rgba="0.411765 0.411765 0.411765 1.000000"/>
+    <material name="Material-Plastic.010" specular="0.000000" shininess="0.250000" rgba="0.411765 0.411765 0.411765 1.000000"/>
+    <material name="Material-Plastic.011" specular="0.000000" shininess="0.250000" rgba="0.411765 0.411765 0.411765 1.000000"/>
+    <material name="Material-Metal.010" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.011" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.012" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.013" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.014" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.015" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Plastic.002" specular="0.000000" shininess="0.250000" rgba="0.411765 0.411765 0.411765 1.000000"/>
+    <material name="Material-Plastic.003" specular="0.000000" shininess="0.250000" rgba="0.411765 0.411765 0.411765 1.000000"/>
+    <material name="Material-Metal.025" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.026" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.027" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.028" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.029" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Metal.030" specular="0.000000" shininess="0.250000" rgba="0.745098 0.745098 0.745098 1.000000"/>
+    <material name="Material-Plastic.012" specular="0.000000" shininess="0.250000" rgba="0.411765 0.411765 0.411765 1.000000"/>
+    <mesh name="base_mesh_0" file="visual/base_mesh/base_mesh_0.obj" material="Material-Metal.003"/>
+    <mesh name="base_mesh_1" file="visual/base_mesh/base_mesh_1.obj" material="Material-Plastic"/>
+    <mesh name="base_mesh_2" file="visual/base_mesh/base_mesh_2.obj" material="Material-Metal"/>
+    <mesh name="base_mesh_3" file="visual/base_mesh/base_mesh_3.obj" material="Material-Metal.002"/>
+    <mesh name="base_mesh_4" file="visual/base_mesh/base_mesh_4.obj" material="Material-Metal.001"/>
+    <mesh name="elbow_mesh_0" file="visual/elbow_mesh/elbow_mesh_0.obj" material="Material-Metal.008"/>
+    <mesh name="elbow_mesh_1" file="visual/elbow_mesh/elbow_mesh_1.obj" material="Material-Metal.007"/>
+    <mesh name="elbow_mesh_2" file="visual/elbow_mesh/elbow_mesh_2.obj" material="Material-Plastic.001"/>
+    <mesh name="elbow_mesh_3" file="visual/elbow_mesh/elbow_mesh_3.obj" material="Material-Metal.006"/>
+    <mesh name="elbow_mesh_4" file="visual/elbow_mesh/elbow_mesh_4.obj" material="Material-Metal.005"/>
+    <mesh name="elbow_mesh_5" file="visual/elbow_mesh/elbow_mesh_5.obj" material="Material-Metal.004"/>
+    <mesh name="elbow_mesh_6" file="visual/elbow_mesh/elbow_mesh_6.obj" material="Material-Metal.009"/>
+    <mesh name="forearm_mesh_0" file="visual/forearm_mesh/forearm_mesh_0.obj" material="Material-Metal.015"/>
+    <mesh name="forearm_mesh_1" file="visual/forearm_mesh/forearm_mesh_1.obj" material="Material-Metal.014"/>
+    <mesh name="forearm_mesh_2" file="visual/forearm_mesh/forearm_mesh_2.obj" material="Material-Metal.013"/>
+    <mesh name="forearm_mesh_3" file="visual/forearm_mesh/forearm_mesh_3.obj" material="Material-Metal.012"/>
+    <mesh name="forearm_mesh_4" file="visual/forearm_mesh/forearm_mesh_4.obj" material="Material-Metal.011"/>
+    <mesh name="forearm_mesh_5" file="visual/forearm_mesh/forearm_mesh_5.obj" material="Material-Metal.010"/>
+    <mesh name="forearm_mesh_6" file="visual/forearm_mesh/forearm_mesh_6.obj" material="Material-Plastic.002"/>
+    <mesh name="forearm_mesh_7" file="visual/forearm_mesh/forearm_mesh_7.obj" material="Material-Plastic.003"/>
+    <mesh name="shoulder_mesh_0" file="visual/shoulder_mesh/shoulder_mesh_0.obj" material="Material-Metal.016"/>
+    <mesh name="shoulder_mesh_1" file="visual/shoulder_mesh/shoulder_mesh_1.obj" material="Material-Plastic.006"/>
+    <mesh name="shoulder_mesh_2" file="visual/shoulder_mesh/shoulder_mesh_2.obj" material="Material-Plastic.004"/>
+    <mesh name="shoulder_mesh_3" file="visual/shoulder_mesh/shoulder_mesh_3.obj" material="Material-Plastic.005"/>
+    <mesh name="upperarm_mesh_0" file="visual/upperarm_mesh/upperarm_mesh_0.obj" material="Material-Metal.024"/>
+    <mesh name="upperarm_mesh_1" file="visual/upperarm_mesh/upperarm_mesh_1.obj" material="Material-Plastic.011"/>
+    <mesh name="upperarm_mesh_10" file="visual/upperarm_mesh/upperarm_mesh_10.obj" material="Material-Plastic.009"/>
+    <mesh name="upperarm_mesh_11" file="visual/upperarm_mesh/upperarm_mesh_11.obj" material="Material-Plastic.008"/>
+    <mesh name="upperarm_mesh_12" file="visual/upperarm_mesh/upperarm_mesh_12.obj" material="Material-Plastic.007"/>
+    <mesh name="upperarm_mesh_2" file="visual/upperarm_mesh/upperarm_mesh_2.obj" material="Material-Metal.023"/>
+    <mesh name="upperarm_mesh_3" file="visual/upperarm_mesh/upperarm_mesh_3.obj" material="Material-Metal.022"/>
+    <mesh name="upperarm_mesh_4" file="visual/upperarm_mesh/upperarm_mesh_4.obj" material="Material-Metal.021"/>
+    <mesh name="upperarm_mesh_5" file="visual/upperarm_mesh/upperarm_mesh_5.obj" material="Material-Metal.020"/>
+    <mesh name="upperarm_mesh_6" file="visual/upperarm_mesh/upperarm_mesh_6.obj" material="Material-Metal.019"/>
+    <mesh name="upperarm_mesh_7" file="visual/upperarm_mesh/upperarm_mesh_7.obj" material="Material-Plastic.010"/>
+    <mesh name="upperarm_mesh_8" file="visual/upperarm_mesh/upperarm_mesh_8.obj" material="Material-Metal.018"/>
+    <mesh name="upperarm_mesh_9" file="visual/upperarm_mesh/upperarm_mesh_9.obj" material="Material-Metal.017"/>
+    <mesh name="wrist1_mesh_0" file="visual/wrist1_mesh/wrist1_mesh_0.obj" material="Material-Metal.030"/>
+    <mesh name="wrist1_mesh_1" file="visual/wrist1_mesh/wrist1_mesh_1.obj" material="Material-Metal.029"/>
+    <mesh name="wrist1_mesh_2" file="visual/wrist1_mesh/wrist1_mesh_2.obj" material="Material-Metal.028"/>
+    <mesh name="wrist1_mesh_3" file="visual/wrist1_mesh/wrist1_mesh_3.obj" material="Material-Metal.027"/>
+    <mesh name="wrist1_mesh_4" file="visual/wrist1_mesh/wrist1_mesh_4.obj" material="Material-Metal.026"/>
+    <mesh name="wrist1_mesh_5" file="visual/wrist1_mesh/wrist1_mesh_5.obj" material="Material-Metal.025"/>
+    <mesh name="wrist1_mesh_6" file="visual/wrist1_mesh/wrist1_mesh_6.obj" material="Material-Plastic.012"/>
+    <mesh name="wrist2_mesh" file="visual/wrist2_mesh/wrist2_mesh.obj" material="Material-Metal.031"/>
+    <mesh name="col_base_mesh" file="collision/base_mesh.stl"/>
+    <mesh name="col_elbow_mesh" file="collision/elbow_mesh.stl"/>a
+    <mesh name="col_forearm_mesh" file="collision/forearm_mesh.stl"/>
+    <mesh name="col_shoulder_mesh" file="collision/shoulder_mesh.stl"/>
+    <mesh name="col_upperarm_mesh" file="collision/upperarm_mesh.stl"/>
+    <mesh name="col_wrist1_mesh" file="collision/wrist1_mesh.stl"/>
+    <mesh name="col_wrist2_mesh" file="collision/wrist2_mesh.stl"/>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8" width="300" height="300"/>
+  </asset>
+  <visual>
+    <headlight ambient="0.5 0.5 0.5" diffuse="0.6 0.6 0.6" specular="0.2 0.2 0.2"/>
+  </visual>
+  <worldbody>
+    <light diffuse=".6 .6 .6" pos="0 0 4" dir="0 0 -1" />
+    <geom name="floor" type="plane" size="1 1 0.1" pos="0 0 0" material="groundplane" contype="3" conaffinity="3" />
+    <body pos="0 0 0" quat="1 0 0 0" childclass="robot">
+      <geom type="mesh" mesh="col_base_mesh" class="collision" />
+      <geom type="mesh" mesh="base_mesh_0" class="visual" />
+      <geom type="mesh" mesh="base_mesh_1" class="visual" />
+      <geom type="mesh" mesh="base_mesh_2" class="visual" />
+      <geom type="mesh" mesh="base_mesh_3" class="visual" />
+      <geom type="mesh" mesh="base_mesh_4" class="visual" />
+      <body name="shoulder" pos="0 0 0.1105">
+        <inertial pos="1.348e-05 0.00013521 0.0430259" quat="0.706912 0.707299 0.00168678 -0.00094073" mass="2.73097" diaginertia="0.0129167 0.0124344 0.0087423"/>
+        <joint name="shoulder_rotation" pos="0 0 0" axis="0 0 1"/>
+        <geom type="mesh" mesh="col_shoulder_mesh" class="collision"/>
+        <geom type="mesh" mesh="shoulder_mesh_0" class="visual" />
+        <geom type="mesh" mesh="shoulder_mesh_1" class="visual" />
+        <geom type="mesh" mesh="shoulder_mesh_2" class="visual" />
+        <geom type="mesh" mesh="shoulder_mesh_3" class="visual" />          
+        <body name="upperarm" pos="0 0 0.047" quat="0.5 0.5 -0.5 0.5">
+          <inertial pos="0.203913 -5.28e-06 -0.00015224" quat="-0.0149021 0.707245 -0.0149286 0.706654" mass="2.1204" diaginertia="0.0507132 0.0506793 0.00155496"/>
+          <joint name="shoulder_flexion" pos="0 0 0" axis="0 0 1"/>
+          <geom type="mesh" mesh="col_upperarm_mesh" class="collision"/>
+          <geom type="mesh" mesh="upperarm_mesh_0" class="visual" />
+          <geom type="mesh" mesh="upperarm_mesh_1" class="visual" />
+          <geom type="mesh" mesh="upperarm_mesh_2" class="visual" />
+          <geom type="mesh" mesh="upperarm_mesh_3" class="visual" />
+          <geom type="mesh" mesh="upperarm_mesh_4" class="visual" />
+          <geom type="mesh" mesh="upperarm_mesh_5" class="visual" />
+          <geom type="mesh" mesh="upperarm_mesh_6" class="visual" />
+          <geom type="mesh" mesh="upperarm_mesh_7" class="visual" />
+          <geom type="mesh" mesh="upperarm_mesh_8" class="visual" />
+          <geom type="mesh" mesh="upperarm_mesh_9" class="visual" />
+          <geom type="mesh" mesh="upperarm_mesh_10" class="visual" />
+          <geom type="mesh" mesh="upperarm_mesh_11" class="visual" />
+          <geom type="mesh" mesh="upperarm_mesh_12" class="visual" />
+          <body name="elbow" pos="0.4127 0 0">
+            <inertial pos="0.00387586 -0.0780816 -0.000268953" quat="0.409575 0.532175 -0.486089 0.559245" mass="0.824202" diaginertia="0.00114277 0.00108439 0.000863116"/>
+            <joint name="elbow_flexion" pos="0 0 0" axis="0 0 1"/>
+            <geom type="mesh" mesh="col_elbow_mesh" class="collision"/>
+            <geom type="mesh" mesh="elbow_mesh_0" class="visual" />
+            <geom type="mesh" mesh="elbow_mesh_1" class="visual" />
+            <geom type="mesh" mesh="elbow_mesh_2" class="visual" />
+            <geom type="mesh" mesh="elbow_mesh_3" class="visual" />
+            <geom type="mesh" mesh="elbow_mesh_4" class="visual" />
+            <geom type="mesh" mesh="elbow_mesh_5" class="visual" />
+            <geom type="mesh" mesh="elbow_mesh_6" class="visual" />
+            <geom size="0.005 0.005 0.005" pos="0.0345 -0.1235 0" type="box" contype="0" conaffinity="0" group="1" density="0"/>
+            <geom size="0.005 0.005 0.005" pos="0.0345 -0.1235 0" type="box"/>
+            <body name="forearm" pos="0.0262 -0.0855 0" quat="0.707107 0 0.707107 0">
+              <inertial pos="-0.00115165 1.056e-05 0.300673" quat="0.999787 8.40832e-05 0.00282374 0.0204468" mass="1.15675" diaginertia="0.0312962 0.0312595 0.00090295"/>
+              <joint name="forearm_rotation" pos="0 0 0" axis="0 0 1"/>
+              <geom type="mesh" mesh="col_forearm_mesh" class="collision"/>
+              <geom type="mesh" mesh="forearm_mesh_0" class="visual" />
+              <geom type="mesh" mesh="forearm_mesh_1" class="visual" />
+              <geom type="mesh" mesh="forearm_mesh_2" class="visual" />
+              <geom type="mesh" mesh="forearm_mesh_3" class="visual" />
+              <geom type="mesh" mesh="forearm_mesh_4" class="visual" />
+              <geom type="mesh" mesh="forearm_mesh_5" class="visual" />
+              <geom type="mesh" mesh="forearm_mesh_6" class="visual" />
+              <geom type="mesh" mesh="forearm_mesh_7" class="visual" />
+              <body name="wrist_1" pos="0.0295 0 0.4207" quat="0.707107 0 -0.707107 0">
+                <inertial pos="0.0796841 -5.03362e-05 0.0233124" quat="0.350128 0.613817 0.617751 0.344996" mass="1.15107" diaginertia="0.000886828 0.00085347 0.000591216"/>
+                <joint name="wrist_flexion" pos="0 0 0" axis="0 0 1"/>
+                <geom type="mesh" mesh="col_wrist1_mesh" class="collision"/>
+                <geom type="mesh" mesh="wrist1_mesh_0" class="visual" />
+                <geom type="mesh" mesh="wrist1_mesh_1" class="visual" />
+                <geom type="mesh" mesh="wrist1_mesh_2" class="visual" />
+                <geom type="mesh" mesh="wrist1_mesh_3" class="visual" />
+                <geom type="mesh" mesh="wrist1_mesh_4" class="visual" />
+                <geom type="mesh" mesh="wrist1_mesh_5" class="visual" />
+                <geom type="mesh" mesh="wrist1_mesh_6" class="visual" />
+                <geom size="0.005 0.005 0.005" pos="0.032 0 -0.017" type="box" contype="0" conaffinity="0" group="1" density="0"/>
+                <geom size="0.005 0.005 0.005" pos="0.032 0 -0.017" type="box"/>
+                <body name="wrist_2" pos="0.117 0 0.0295" quat="0.707107 0 0.707107 0">
+                  <inertial pos="0.000447751 5.45596e-06 0.0035631" quat="-9.58344e-07 0.709291 2.61927e-06 0.704916" mass="0.0488406" diaginertia="2.71207e-05 1.43204e-05 1.37897e-05"/>
+                  <joint name="wrist_rotation" pos="0 0 0" axis="0 0 1"/>
+                  <geom type="mesh" mesh="col_wrist2_mesh" class="collision"/>
+                  <geom type="mesh" mesh="wrist2_mesh" class="visual" />
+                  <geom size="0.005 0.005 0.005" pos="0 0 0.009" quat="0.707107 0 0 0.707107" type="box" contype="0" conaffinity="0" group="1" density="0"/>
+                  <geom size="0.005 0.005 0.005" pos="0 0 0.009" quat="0.707107 0 0 0.707107" type="box"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <position name="shoulder_rotation_ctrl" joint="shoulder_rotation" kp="200" kv="20" ctrlrange="-4.31239 4.31239"/>
+    <position name="shoulder_flexion_ctrl" joint="shoulder_flexion" kp="200" kv="20" ctrlrange="-1.7208 1.7208"/>
+    <position name="elbow_flexion_ctrl" joint="elbow_flexion" kp="200" kv="20" ctrlrange="0 3.09159"/>
+    <position name="forearm_rotation_ctrl" joint="forearm_rotation" kp="200" kv="20" ctrlrange="-4.71239 4.71239"/>
+    <position name="wrist_flexion_ctrl" joint="wrist_flexion" kp="200" kv="20" ctrlrange="-1.8208 1.8208"/>
+    <position name="wrist_rotation_ctrl" joint="wrist_rotation" kp="200" kv="20" ctrlrange="-4.71239 4.71239"/>
+  </actuator>
+</mujoco>

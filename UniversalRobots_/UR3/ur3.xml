@@ -1,0 +1,123 @@
+<?xml version="1.0" ?>
+<mujoco model="ur3">
+  <compiler angle="radian" meshdir="meshes/"/>
+  <option gravity="0 0 -9.81" integrator="implicitfast"/>
+  <default>
+    <default class="robot">
+      <default class="motor">
+        <joint/>
+        <motor/>
+      </default>
+      <default class="visual">
+        <geom contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="collision">
+        <geom condim="3" contype="0" conaffinity="1" priority="1" group="1" solref="0.005 1" solimp="0.99 0.999 1e-05" friction="1 0.01 0.01"/>
+      </default>
+    </default>
+  </default>
+  <asset>
+    <material name="Rohr.002" specular="0.500000" shininess="0.250000" rgba="0.335872 0.335872 0.335872 1.000000"/>
+    <material name="blau.003" specular="0.500000" shininess="0.250000" rgba="0.250880 0.347520 0.409600 1.000000"/>
+    <material name="verbindung.004" specular="0.500000" shininess="0.250000" rgba="0.142720 0.142720 0.142720 1.000000"/>
+    <material name="Rohr.001" specular="0.500000" shininess="0.250000" rgba="0.335872 0.335872 0.335872 1.000000"/>
+    <material name="verbindung.002" specular="0.500000" shininess="0.250000" rgba="0.142720 0.142720 0.142720 1.000000"/>
+    <material name="Material_001" specular="0.500000" shininess="0.250000" rgba="0.268800 0.268800 0.268800 1.000000"/>
+    <material name="Material_002" specular="0.500000" shininess="0.250000" rgba="0.000000 0.000000 0.000000 1.000000"/>
+    <material name="blau.002" specular="0.500000" shininess="0.250000" rgba="0.250880 0.347520 0.409600 1.000000"/>
+    <material name="verbindung.003" specular="0.500000" shininess="0.250000" rgba="0.142720 0.142720 0.142720 1.000000"/>
+    <material name="blau_001" specular="0.500000" shininess="0.250000" rgba="0.200704 0.278016 0.327680 1.000000"/>
+    <material name="grey_001" specular="0.500000" shininess="0.250000" rgba="0.040960 0.040960 0.040960 1.000000"/>
+    <material name="verbindung_001" specular="0.500000" shininess="0.250000" rgba="0.114176 0.114176 0.114176 1.000000"/>
+    <material name="Rohr" specular="0.500000" shininess="0.250000" rgba="0.335872 0.335872 0.335872 1.000000"/>
+    <material name="blau.001" specular="0.500000" shininess="0.250000" rgba="0.250880 0.347520 0.409600 1.000000"/>
+    <material name="verbindung.001" specular="0.500000" shininess="0.250000" rgba="0.142720 0.142720 0.142720 1.000000"/>
+    <material name="blau" specular="0.500000" shininess="0.250000" rgba="0.250880 0.347520 0.409600 1.000000"/>
+    <material name="verbindung" specular="0.500000" shininess="0.250000" rgba="0.142720 0.142720 0.142720 1.000000"/>
+    <mesh name="base_0" file="visual/base/base_0.obj" material="Material_002"/>
+    <mesh name="base_1" file="visual/base/base_1.obj" material="Material_001"/>
+    <mesh name="forearm_0" file="visual/forearm/forearm_0.obj" material="blau.003"/>
+    <mesh name="forearm_1" file="visual/forearm/forearm_1.obj" material="Rohr.002"/>
+    <mesh name="forearm_2" file="visual/forearm/forearm_2.obj" material="verbindung.004"/>
+    <mesh name="shoulder_0" file="visual/shoulder/shoulder_0.obj" material="grey_001"/>
+    <mesh name="shoulder_1" file="visual/shoulder/shoulder_1.obj" material="blau_001"/>
+    <mesh name="shoulder_2" file="visual/shoulder/shoulder_2.obj" material="verbindung_001"/>
+    <mesh name="upperarm_0" file="visual/upperarm/upperarm_0.obj" material="Rohr"/>
+    <mesh name="upperarm_1" file="visual/upperarm/upperarm_1.obj" material="verbindung.001"/>
+    <mesh name="upperarm_2" file="visual/upperarm/upperarm_2.obj" material="blau.001"/>
+    <mesh name="wrist1_0" file="visual/wrist1/wrist1_0.obj" material="blau"/>
+    <mesh name="wrist1_1" file="visual/wrist1/wrist1_1.obj" material="verbindung"/>
+    <mesh name="wrist2_0" file="visual/wrist2/wrist2_0.obj" material="verbindung.003"/>
+    <mesh name="wrist2_1" file="visual/wrist2/wrist2_1.obj" material="blau.002"/>
+    <mesh name="wrist3_0" file="visual/wrist3/wrist3_0.obj" material="verbindung.002"/>
+    <mesh name="wrist3_1" file="visual/wrist3/wrist3_1.obj" material="Rohr.001"/>
+    <mesh name="col_base" file="collision/base.stl"/>
+    <mesh name="col_forearm" file="collision/forearm.stl"/>
+    <mesh name="col_shoulder" file="collision/shoulder.stl"/>
+    <mesh name="col_upperarm" file="collision/upperarm.stl"/>
+    <mesh name="col_wrist1" file="collision/wrist1.stl"/>
+    <mesh name="col_wrist2" file="collision/wrist2.stl"/>
+    <mesh name="col_wrist3" file="collision/wrist3.stl"/>
+  </asset>
+  <worldbody>
+    <body pos="0 0 0" quat="1 0 0 0" childclass="robot">
+      <freejoint name="floating_base"/>
+      <geom type="mesh" mesh="col_base" class="collision" pos="0 0 0" quat="-1 0 0 0"/>
+      <geom type="mesh" mesh="base_1" class="visual" pos="0 0 0" quat="-1 0 0 0"/>
+      <geom type="mesh" mesh="base_0" class="visual" pos="0 0 0" quat="-1 0 0 0"/>
+      <body name="shoulder_link" pos="0 0 0.1519" quat="0 0 0 1">
+        <inertial pos="0 0 -0.02" mass="2" diaginertia="0.00809317 0.00809317 0.005625"/>
+        <joint name="shoulder_pan_joint" pos="0 0 0" axis="0 0 1"/>
+        <geom type="mesh" mesh="col_shoulder" class="collision" quat="0 0 0 1"/>
+        <geom type="mesh" mesh="shoulder_2" class="visual" quat="0 0 0 1"/>
+        <geom type="mesh" mesh="shoulder_1" class="visual" quat="0 0 0 1"/>
+        <geom type="mesh" mesh="shoulder_0" class="visual" quat="0 0 0 1"/>
+        <body name="upper_arm_link" quat="0.707107 0.707107 0 0">
+          <inertial pos="-0.11365 0 0.1157" mass="3.42" diaginertia="0.0217285 0.0217285 0.00961875"/>
+          <joint name="shoulder_lift_joint" pos="0 0 0" axis="0 0 1"/>
+          <geom type="mesh" mesh="col_upperarm" class="collision" pos="0 0 0.1198" quat="0.5 0.5 -0.5 -0.5"/>
+          <geom type="mesh" mesh="upperarm_2" class="visual" pos="0 0 0.1198" quat="0.5 0.5 -0.5 -0.5"/>
+          <geom type="mesh" mesh="upperarm_1" class="visual" pos="0 0 0.1198" quat="0.5 0.5 -0.5 -0.5"/>
+          <geom type="mesh" mesh="upperarm_0" class="visual" pos="0 0 0.1198" quat="0.5 0.5 -0.5 -0.5"/>
+          <body name="forearm_link" pos="-0.24365 0 0">
+            <inertial pos="-0.16325 0 0.0238" mass="1.26" diaginertia="0.00654681 0.00654681 0.00354375"/>
+            <joint name="elbow_joint" pos="0 0 0" axis="0 0 1"/>
+            <geom type="mesh" mesh="col_forearm" class="collision" pos="0 0 0.0275" quat="0.5 0.5 -0.5 -0.5"/>
+            <geom type="mesh" mesh="forearm_2" class="visual" pos="0 0 0.0275" quat="0.5 0.5 -0.5 -0.5"/>
+            <geom type="mesh" mesh="forearm_1" class="visual" pos="0 0 0.0275" quat="0.5 0.5 -0.5 -0.5"/>
+            <geom type="mesh" mesh="forearm_0" class="visual" pos="0 0 0.0275" quat="0.5 0.5 -0.5 -0.5"/>
+            <body name="wrist_1_link" pos="-0.21325 0 0.11235">
+              <inertial pos="0 -0.01 0" quat="0.5 0.5 -0.5 0.5" mass="0.8" diaginertia="0.00225 0.00161064 0.00161064"/>
+              <joint name="wrist_1_joint" pos="0 0 0" axis="0 0 1"/>
+              <geom type="mesh" mesh="col_wrist1" class="collision" pos="0 0 -0.085" quat="0.707107 0.707107 0 0"/>
+              <geom type="mesh" mesh="wrist1_1" class="visual" pos="0 0 -0.085" quat="0.707107 0.707107 0 0"/>
+              <geom type="mesh" mesh="wrist1_0" class="visual" pos="0 0 -0.085" quat="0.707107 0.707107 0 0"/>
+              <body name="wrist_2_link" pos="0 -0.08535 -1.75056e-11" quat="0.707107 0.707107 0 0">
+                <inertial pos="0 0.01 0" quat="0.5 0.5 -0.5 0.5" mass="0.8" diaginertia="0.00225 0.00157217 0.00157217"/>
+                <joint name="wrist_2_joint" pos="0 0 0" axis="0 0 1"/>
+                <geom type="mesh" mesh="col_wrist2" class="collision" pos="0 0 -0.083" quat="1 0 0 0"/>
+                <geom type="mesh" mesh="wrist2_1" class="visual" pos="0 0 -0.083" quat="1 0 0 0"/>
+                <geom type="mesh" mesh="wrist2_0" class="visual" pos="0 0 -0.083" quat="1 0 0 0"/>
+                <body name="wrist_3_link" pos="0 0.0819 -1.6798e-11" quat="0.707107 -0.707107 0 0">
+                  <inertial pos="0 0 -0.02" quat="0.5 0.5 -0.5 0.5" mass="0.35" diaginertia="0.0001792 0.000136267 0.000136267"/>
+                  <joint name="wrist_3_joint" pos="0 0 0" axis="0 0 1"/>
+                  <geom type="mesh" mesh="col_wrist3" class="collision" pos="0 -0.00255 -0.082" quat="0.707107 0.707107 0 0"/>
+                  <geom type="mesh" mesh="wrist3_1" class="visual" pos="0 -0.00255 -0.082" quat="0.707107 0.707107 0 0"/>
+                  <geom type="mesh" mesh="wrist3_0" class="visual" pos="0 -0.00255 -0.082" quat="0.707107 0.707107 0 0"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="shoulder_pan_joint_ctrl" joint="shoulder_pan_joint" gear="100.0" ctrlrange="-6.28319 6.28319" forcerange="-56 56" class="motor"/>
+    <motor name="shoulder_lift_joint_ctrl" joint="shoulder_lift_joint" gear="100.0" ctrlrange="-6.28319 6.28319" forcerange="-56 56" class="motor"/>
+    <motor name="elbow_joint_ctrl" joint="elbow_joint" gear="100.0" ctrlrange="-3.14159 3.14159" forcerange="-28 28" class="motor"/>
+    <motor name="wrist_1_joint_ctrl" joint="wrist_1_joint" gear="100.0" ctrlrange="-6.28319 6.28319" forcerange="-12 12" class="motor"/>
+    <motor name="wrist_2_joint_ctrl" joint="wrist_2_joint" gear="100.0" ctrlrange="-6.28319 6.28319" forcerange="-12 12" class="motor"/>
+    <motor name="wrist_3_joint_ctrl" joint="wrist_3_joint" gear="100.0" forcerange="-12 12" class="motor"/>
+  </actuator>
+</mujoco>

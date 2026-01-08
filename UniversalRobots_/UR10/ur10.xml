@@ -1,0 +1,128 @@
+<mujoco model="ur">
+  <compiler angle="radian" meshdir="meshes/" />
+
+  <default>
+    <default class="robot">
+      <default class="motor">
+        <joint />
+        <motor />
+      </default>
+      <default class="visual">
+        <geom contype="0" conaffinity="0" group="2" />
+      </default>
+      <default class="collision">
+        <geom condim="3" contype="0" conaffinity="1" priority="1" group="1" solref="0.005 1" solimp="0.99 0.999 1e-05" friction="1 0.01 0.01" />
+      </default>
+    </default>
+  </default>
+  <asset>
+    <material name="SWMaterial-0.001" specular="0.500000" shininess="0.250000" rgba="0.222745 0.222745 0.222745 1.000000" />
+    <material name="SWMaterial-1.001" specular="0.500000" shininess="0.250000" rgba="0.392157 0.542745 0.640000 1.000000" />
+    <material name="SWMaterial-2.001" specular="0.500000" shininess="0.250000" rgba="0.464314 0.464314 0.464314 1.000000" />
+    <material name="SWMaterial-3" specular="0.500000" shininess="0.250000" rgba="0.656314 0.656314 0.656314 1.000000" />
+    <material name="SWMaterial-4" specular="0.500000" shininess="0.250000" rgba="0.080314 0.080314 0.080314 1.000000" />
+    <material name="SWMaterial-0_003" specular="0.500000" shininess="0.250000" rgba="0.222745 0.222745 0.222745 1.000000" />
+    <material name="SWMaterial-1_003" specular="0.500000" shininess="0.250000" rgba="0.392157 0.542745 0.640000 1.000000" />
+    <material name="SWMaterial-2_003" specular="0.500000" shininess="0.250000" rgba="0.464314 0.464314 0.464314 1.000000" />
+    <material name="SWMaterial-3_001.001" specular="0.500000" shininess="0.250000" rgba="0.656314 0.656314 0.656314 1.000000" />
+    <material name="SWMaterial-4_001.001" specular="0.500000" shininess="0.250000" rgba="0.080314 0.080314 0.080314 1.000000" />
+    <material name="SWMaterial-0_001" specular="0.500000" shininess="0.250000" rgba="0.178196 0.178196 0.178196 1.000000" />
+    <material name="SWMaterial-1_001" specular="0.500000" shininess="0.250000" rgba="0.313726 0.434196 0.512000 1.000000" />
+    <material name="SWMaterial-2_001" specular="0.500000" shininess="0.250000" rgba="0.371451 0.371451 0.371451 1.000000" />
+    <material name="SWMaterial-0_002" specular="0.500000" shininess="0.250000" rgba="0.222745 0.222745 0.222745 1.000000" />
+    <material name="SWMaterial-1_002" specular="0.500000" shininess="0.250000" rgba="0.392157 0.542745 0.640000 1.000000" />
+    <material name="SWMaterial-2_002" specular="0.500000" shininess="0.250000" rgba="0.464314 0.464314 0.464314 1.000000" />
+    <material name="SWMaterial-0" specular="0.500000" shininess="0.250000" rgba="0.222745 0.222745 0.222745 1.000000" />
+    <material name="SWMaterial-1" specular="0.500000" shininess="0.250000" rgba="0.392157 0.542745 0.640000 1.000000" />
+    <material name="SWMaterial-2" specular="0.500000" shininess="0.250000" rgba="0.464314 0.464314 0.464314 1.000000" />
+    <material name="SWMaterial-0_001.002" specular="0.500000" shininess="0.250000" rgba="0.222745 0.222745 0.222745 1.000000" />
+    <material name="SWMaterial-1_001.002" specular="0.500000" shininess="0.250000" rgba="0.392157 0.542745 0.640000 1.000000" />
+    <material name="SWMaterial-2_001.002" specular="0.500000" shininess="0.250000" rgba="0.464314 0.464314 0.464314 1.000000" />
+    <material name="SWMaterial-3_001" specular="0.500000" shininess="0.250000" rgba="0.656314 0.656314 0.656314 1.000000" />
+    <material name="SWMaterial-4_001" specular="0.500000" shininess="0.250000" rgba="0.080314 0.080314 0.080314 1.000000" />
+    <material name="SWMaterial-0_001.001" specular="0.500000" shininess="0.250000" rgba="0.222745 0.222745 0.222745 1.000000" />
+    <material name="SWMaterial-1_001.001" specular="0.500000" shininess="0.250000" rgba="0.392157 0.542745 0.640000 1.000000" />
+    <material name="SWMaterial-2_001.001" specular="0.500000" shininess="0.250000" rgba="0.464314 0.464314 0.464314 1.000000" />
+    <mesh name="base" content_type="model/obj" file="visual/base/base.obj" material="SWMaterial-2_001" />
+    <mesh name="forearm_0" content_type="model/obj" file="visual/forearm/forearm_0.obj" material="SWMaterial-4" />
+    <mesh name="forearm_1" content_type="model/obj" file="visual/forearm/forearm_1.obj" material="SWMaterial-3" />
+    <mesh name="forearm_2" content_type="model/obj" file="visual/forearm/forearm_2.obj" material="SWMaterial-2.001" />
+    <mesh name="forearm_3" content_type="model/obj" file="visual/forearm/forearm_3.obj" material="SWMaterial-1.001" />
+    <mesh name="forearm_4" content_type="model/obj" file="visual/forearm/forearm_4.obj" material="SWMaterial-0.001" />
+    <mesh name="shoulder_0" content_type="model/obj" file="visual/shoulder/shoulder_0.obj" material="SWMaterial-2" />
+    <mesh name="shoulder_1" content_type="model/obj" file="visual/shoulder/shoulder_1.obj" material="SWMaterial-1" />
+    <mesh name="shoulder_2" content_type="model/obj" file="visual/shoulder/shoulder_2.obj" material="SWMaterial-0" />
+    <mesh name="upperarm_0" content_type="model/obj" file="visual/upperarm/upperarm_0.obj" material="SWMaterial-3_001" />
+    <mesh name="upperarm_1" content_type="model/obj" file="visual/upperarm/upperarm_1.obj" material="SWMaterial-2_001.002" />
+    <mesh name="upperarm_2" content_type="model/obj" file="visual/upperarm/upperarm_2.obj" material="SWMaterial-1_001.002" />
+    <mesh name="upperarm_3" content_type="model/obj" file="visual/upperarm/upperarm_3.obj" material="SWMaterial-0_001.002" />
+    <mesh name="wrist1_0" content_type="model/obj" file="visual/wrist1/wrist1_0.obj" material="SWMaterial-2_001.001" />
+    <mesh name="wrist1_1" content_type="model/obj" file="visual/wrist1/wrist1_1.obj" material="SWMaterial-1_001.001" />
+    <mesh name="wrist1_2" content_type="model/obj" file="visual/wrist1/wrist1_2.obj" material="SWMaterial-0_001.001" />
+    <mesh name="wrist2_0" content_type="model/obj" file="visual/wrist2/wrist2_0.obj" material="SWMaterial-2_002" />
+    <mesh name="wrist2_1" content_type="model/obj" file="visual/wrist2/wrist2_1.obj" material="SWMaterial-1_002" />
+    <mesh name="wrist2_2" content_type="model/obj" file="visual/wrist2/wrist2_2.obj" material="SWMaterial-0_002" />
+    <mesh name="wrist3" content_type="model/obj" file="visual/wrist3/wrist3.obj" material="SWMaterial-2_003" />
+    <mesh name="col_base" content_type="model/stl" file="collision/base.stl" />
+    <mesh name="col_forearm" content_type="model/stl" file="collision/forearm.stl" />
+    <mesh name="col_shoulder" content_type="model/stl" file="collision/shoulder.stl" />
+    <mesh name="col_upperarm" content_type="model/stl" file="collision/upperarm.stl" />
+    <mesh name="col_wrist1" content_type="model/stl" file="collision/wrist1.stl" />
+    <mesh name="col_wrist2" content_type="model/stl" file="collision/wrist2.stl" />
+    <mesh name="col_wrist3" content_type="model/stl" file="collision/wrist3.stl" />
+  </asset>
+
+  <worldbody>
+    <geom type="mesh" mesh="col_base" class="collision" quat="-1 0 0 0" />
+    <geom type="mesh" mesh="base" class="visual" quat="-1 0 0 0" />
+    <body name="shoulder_link" pos="0 0 0.1273" quat="0 0 0 1">
+      <inertial pos="0.021 -0.027 0" quat="0.988634 -0.000680926 0.148578 -0.0229591" mass="7.1" diaginertia="0.0353866 0.0352903 0.0202532" />
+      <joint name="shoulder_pan_joint" pos="0 0 0" axis="0 0 1" range="-6.28319 6.28319" actuatorfrcrange="-330 330" />
+      <geom type="mesh" mesh="col_shoulder" class="collision" quat="0 0 0 1" />
+      <geom type="mesh" mesh="shoulder_2" class="visual" quat="0 0 0 1" />
+      <geom type="mesh" mesh="shoulder_1" class="visual" quat="0 0 0 1" />
+      <geom type="mesh" mesh="shoulder_0" class="visual" quat="0 0 0 1" />
+      <body name="upper_arm_link" quat="0.707107 0.707107 0 0">
+        <inertial pos="-0.232 0 0.158" quat="0.500033 0.499784 0.489585 0.510381" mass="12.7" diaginertia="0.77068 0.769758 0.0278114" />
+        <joint name="shoulder_lift_joint" pos="0 0 0" axis="0 0 1" range="-6.28319 6.28319" actuatorfrcrange="-330 330" />
+        <geom type="mesh" mesh="col_upperarm" class="collision" pos="0 0 0.220941" quat="0.5 0.5 -0.5 -0.5" />
+        <geom type="mesh" mesh="upperarm_3" class="visual" pos="0 0 0.220941" quat="0.5 0.5 -0.5 -0.5" />
+        <geom type="mesh" mesh="upperarm_2" class="visual" pos="0 0 0.220941" quat="0.5 0.5 -0.5 -0.5" />
+        <geom type="mesh" mesh="upperarm_1" class="visual" pos="0 0 0.220941" quat="0.5 0.5 -0.5 -0.5" />
+        <geom type="mesh" mesh="upperarm_0" class="visual" pos="0 0 0.220941" quat="0.5 0.5 -0.5 -0.5" />
+        <body name="forearm_link" pos="-0.612 0 0">
+          <inertial pos="-0.3323 0 0.068" quat="0.492051 0.507971 0.507346 0.492394" mass="4.27" diaginertia="0.30928 0.306743 0.00985709" />
+          <joint name="elbow_joint" pos="0 0 0" axis="0 0 1" range="-3.14159 3.14159" actuatorfrcrange="-150 150" />
+          <geom type="mesh" mesh="col_forearm" class="collision" pos="0 0 0.049042" quat="0.5 0.5 -0.5 -0.5" />
+          <geom type="mesh" mesh="forearm_4" class="visual" pos="0 0 0.049042" quat="0.5 0.5 -0.5 -0.5" />
+          <geom type="mesh" mesh="forearm_3" class="visual" pos="0 0 0.049042" quat="0.5 0.5 -0.5 -0.5" />
+          <geom type="mesh" mesh="forearm_2" class="visual" pos="0 0 0.049042" quat="0.5 0.5 -0.5 -0.5" />
+          <geom type="mesh" mesh="forearm_1" class="visual" pos="0 0 0.049042" quat="0.5 0.5 -0.5 -0.5" />
+          <geom type="mesh" mesh="forearm_0" class="visual" pos="0 0 0.049042" quat="0.5 0.5 -0.5 -0.5" />
+          <body name="wrist_1_link" pos="-0.5723 0 0.163941">
+            <inertial pos="0 -0.018 0.007" quat="0.525776 0.850564 -0.0100431 9.45801e-05" mass="2" diaginertia="0.00296017 0.00269992 0.00209991" />
+            <joint name="wrist_1_joint" pos="0 0 0" axis="0 0 1" range="-6.28319 6.28319" actuatorfrcrange="-56 56" />
+            <geom type="mesh" mesh="col_wrist1" class="collision" pos="0 0 -0.1149" quat="0.707107 0.707107 0 0" />
+            <geom type="mesh" mesh="wrist1_2" class="visual" pos="0 0 -0.1149" quat="0.707107 0.707107 0 0" />
+            <geom type="mesh" mesh="wrist1_1" class="visual" pos="0 0 -0.1149" quat="0.707107 0.707107 0 0" />
+            <geom type="mesh" mesh="wrist1_0" class="visual" pos="0 0 -0.1149" quat="0.707107 0.707107 0 0" />
+            <body name="wrist_2_link" pos="0 -0.1157 -2.37305e-11" quat="0.707107 0.707107 0 0">
+              <inertial pos="0 0.018 -0.007" quat="0.525776 0.850564 -0.0100431 9.45801e-05" mass="2" diaginertia="0.00296017 0.00269992 0.00209991" />
+              <joint name="wrist_2_joint" pos="0 0 0" axis="0 0 1" range="-6.28319 6.28319" actuatorfrcrange="-56 56" />
+              <geom type="mesh" mesh="col_wrist2" class="collision" pos="0 0 -0.1158" quat="1 0 0 0" />
+              <geom type="mesh" mesh="wrist2_2" class="visual" pos="0 0 -0.1158" quat="1 0 0 0" />
+              <geom type="mesh" mesh="wrist2_1" class="visual" pos="0 0 -0.1158" quat="1 0 0 0" />
+              <geom type="mesh" mesh="wrist2_0" class="visual" pos="0 0 -0.1158" quat="1 0 0 0" />
+              <body name="wrist_3_link" pos="0 0.0922 -1.89105e-11" quat="0.707107 -0.707107 0 0">
+                <inertial pos="0 0 -0.026" quat="0.707107 0 0 0.707107" mass="0.365" diaginertia="0.00041 0.0004 0.00034" />
+                <joint name="wrist_3_joint" pos="0 0 0" axis="0 0 1" range="-6.28319 6.28319" actuatorfrcrange="-56 56" />
+                <geom type="mesh" mesh="col_wrist3" class="collision" pos="0 0 -0.0922" quat="0.707107 0.707107 0 0" />
+                <geom type="mesh" mesh="wrist3" class="visual" pos="0 0 -0.0922" quat="0.707107 0.707107 0 0" />
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

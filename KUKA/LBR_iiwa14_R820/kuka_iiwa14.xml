@@ -1,0 +1,123 @@
+<?xml version="1.0" ?>
+<mujoco model="kuka_iiwa14">
+  <compiler angle="radian" meshdir="meshes/"/>
+  <option gravity="0 0 -9.81" integrator="implicitfast"/>
+  <default>
+    <default class="robot">
+      <default class="motor">
+        <joint/>
+        <motor/>
+      </default>
+      <default class="visual">
+        <geom contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="collision">
+        <geom condim="3" contype="0" conaffinity="1" priority="1" group="1" solref="0.005 1" solimp="0.99 0.999 1e-05" friction="1 0.01 0.01"/>
+      </default>
+    </default>
+  </default>
+  <asset>
+    <material name="gray.005" specular="0.500000" shininess="0.250000" rgba="0.640000 0.640000 0.640000 1.000000"/>
+    <material name="Shape" specular="0.500000" shininess="0.250000" rgba="0.640000 0.640000 0.640000 1.000000"/>
+    <material name="orange" specular="0.500000" shininess="0.250000" rgba="0.800000 0.398431 0.000000 1.000000"/>
+    <material name="gray" specular="0.500000" shininess="0.250000" rgba="0.640000 0.640000 0.640000 1.000000"/>
+    <material name="orange.001" specular="0.500000" shininess="0.250000" rgba="0.800000 0.398431 0.000000 1.000000"/>
+    <material name="black.002" specular="0.500000" shininess="0.250000" rgba="0.000000 0.000000 0.000000 1.000000"/>
+    <material name="gray.004" specular="0.500000" shininess="0.250000" rgba="0.640000 0.640000 0.640000 1.000000"/>
+    <material name="gray2.001" specular="0.500000" shininess="0.250000" rgba="0.397600 0.397600 0.397600 1.000000"/>
+    <material name="black" specular="0.500000" shininess="0.250000" rgba="0.000000 0.000000 0.000000 1.000000"/>
+    <material name="gray.001" specular="0.500000" shininess="0.250000" rgba="0.640000 0.640000 0.640000 1.000000"/>
+    <material name="gray2" specular="0.500000" shininess="0.250000" rgba="0.397538 0.397538 0.397538 1.000000"/>
+    <material name="gray.006" specular="0.500000" shininess="0.250000" rgba="0.640000 0.640000 0.640000 1.000000"/>
+    <material name="gray.002" specular="0.500000" shininess="0.250000" rgba="0.640000 0.640000 0.640000 1.000000"/>
+    <material name="orange.002" specular="0.500000" shininess="0.250000" rgba="0.800000 0.398431 0.000000 1.000000"/>
+    <material name="black.001" specular="0.500000" shininess="0.250000" rgba="0.000000 0.000000 0.000000 1.000000"/>
+    <material name="gray.003" specular="0.500000" shininess="0.250000" rgba="0.640000 0.640000 0.640000 1.000000"/>
+    <material name="gray_dark" specular="0.500000" shininess="0.250000" rgba="0.397600 0.397600 0.397600 1.000000"/>
+    <mesh name="base_link" file="visual/base_link/base_link.obj" material="gray.005"/>
+    <mesh name="link_1" file="visual/link_1/link_1.obj" material="gray.006"/>
+    <mesh name="link_2_0" file="visual/link_2/link_2_0.obj" material="orange"/>
+    <mesh name="link_2_1" file="visual/link_2/link_2_1.obj" material="Shape"/>
+    <mesh name="link_3_0" file="visual/link_3/link_3_0.obj" material="black"/>
+    <mesh name="link_3_1" file="visual/link_3/link_3_1.obj" material="gray2"/>
+    <mesh name="link_3_2" file="visual/link_3/link_3_2.obj" material="gray.001"/>
+    <mesh name="link_4_0" file="visual/link_4/link_4_0.obj" material="orange.001"/>
+    <mesh name="link_4_1" file="visual/link_4/link_4_1.obj" material="gray"/>
+    <mesh name="link_5_0" file="visual/link_5/link_5_0.obj" material="black.002"/>
+    <mesh name="link_5_1" file="visual/link_5/link_5_1.obj" material="gray2.001"/>
+    <mesh name="link_5_2" file="visual/link_5/link_5_2.obj" material="gray.004"/>
+    <mesh name="link_6_0" file="visual/link_6/link_6_0.obj" material="orange.002"/>
+    <mesh name="link_6_1" file="visual/link_6/link_6_1.obj" material="gray.002"/>
+    <mesh name="link_7_0" file="visual/link_7/link_7_0.obj" material="gray_dark"/>
+    <mesh name="link_7_1" file="visual/link_7/link_7_1.obj" material="black.001"/>
+    <mesh name="link_7_2" file="visual/link_7/link_7_2.obj" material="gray.003"/>
+    <mesh name="col_base_link" file="collision/base_link.stl"/>
+    <mesh name="col_link_1" file="collision/link_1.stl"/>
+    <mesh name="col_link_2" file="collision/link_2.stl"/>
+    <mesh name="col_link_3" file="collision/link_3.stl"/>
+    <mesh name="col_link_4" file="collision/link_4.stl"/>
+    <mesh name="col_link_5" file="collision/link_5.stl"/>
+    <mesh name="col_link_6" file="collision/link_6.stl"/>
+    <mesh name="col_link_7" file="collision/link_7.stl"/>
+  </asset>
+  <worldbody>
+    <body pos="0 0 0" quat="1 0 0 0" childclass="robot">
+      <freejoint name="floating_base"/>
+      <geom type="mesh" mesh="col_base_link" class="collision"/>
+      <geom type="mesh" mesh="base_link" class="visual"/>
+      <body name="link_1">
+        <joint name="joint_a1" pos="0 0 0" axis="0 0 1"/>
+        <geom type="mesh" mesh="col_link_1" class="collision"/>
+        <geom type="mesh" mesh="link_1" class="visual"/>
+        <body name="link_2" pos="-0.00043624 0 0.36">
+          <joint name="joint_a2" pos="0 0 0" axis="0 1 0"/>
+          <geom type="mesh" mesh="col_link_2" class="collision"/>
+          <geom type="mesh" mesh="link_2_1" class="visual"/>
+          <geom type="mesh" mesh="link_2_0" class="visual"/>
+          <body name="link_3">
+            <joint name="joint_a3" pos="0 0 0" axis="0 0 1"/>
+            <geom type="mesh" mesh="col_link_3" class="collision"/>
+            <geom type="mesh" mesh="link_3_2" class="visual"/>
+            <geom type="mesh" mesh="link_3_1" class="visual"/>
+            <geom type="mesh" mesh="link_3_0" class="visual"/>
+            <body name="link_4" pos="0.00043624 0 0.42">
+              <joint name="joint_a4" pos="0 0 0" axis="0 -1 0"/>
+              <geom type="mesh" mesh="col_link_4" class="collision"/>
+              <geom type="mesh" mesh="link_4_1" class="visual"/>
+              <geom type="mesh" mesh="link_4_0" class="visual"/>
+              <body name="link_5">
+                <joint name="joint_a5" pos="0 0 0" axis="0 0 1"/>
+                <geom type="mesh" mesh="col_link_5" class="collision"/>
+                <geom type="mesh" mesh="link_5_2" class="visual"/>
+                <geom type="mesh" mesh="link_5_1" class="visual"/>
+                <geom type="mesh" mesh="link_5_0" class="visual"/>
+                <body name="link_6" pos="0 0 0.4">
+                  <joint name="joint_a6" pos="0 0 0" axis="0 1 0"/>
+                  <geom type="mesh" mesh="col_link_6" class="collision"/>
+                  <geom type="mesh" mesh="link_6_1" class="visual"/>
+                  <geom type="mesh" mesh="link_6_0" class="visual"/>
+                  <body name="link_7">
+                    <joint name="joint_a7" pos="0 0 0" axis="0 0 1"/>
+                    <geom type="mesh" mesh="col_link_7" class="collision"/>
+                    <geom type="mesh" mesh="link_7_2" class="visual"/>
+                    <geom type="mesh" mesh="link_7_1" class="visual"/>
+                    <geom type="mesh" mesh="link_7_0" class="visual"/>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <position name="joint_a1_ctrl" joint="joint_a1" kp="200" kv="20" ctrlrange="-2.9668 2.9668"/>
+    <position name="joint_a2_ctrl" joint="joint_a2" kp="200" kv="20" ctrlrange="-2.0942 2.0942"/>
+    <position name="joint_a3_ctrl" joint="joint_a3" kp="200" kv="20" ctrlrange="-2.9668 2.9668"/>
+    <position name="joint_a4_ctrl" joint="joint_a4" kp="200" kv="20" ctrlrange="-2.0942 2.0942"/>
+    <position name="joint_a5_ctrl" joint="joint_a5" kp="200" kv="20" ctrlrange="-2.9668 2.9668"/>
+    <position name="joint_a6_ctrl" joint="joint_a6" kp="200" kv="20" ctrlrange="-2.0942 2.0942"/>
+    <position name="joint_a7_ctrl" joint="joint_a7" kp="200" kv="20" ctrlrange="-3.0541 3.0541"/>
+  </actuator>
+</mujoco>

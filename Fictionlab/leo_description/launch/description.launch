@@ -1,0 +1,10 @@
+<launch>
+
+  <arg name="model" default="$(find leo_description)/urdf/leo.urdf.xacro"/>
+
+  <arg name="mecanum_wheels" default="false"/>
+  
+  <param name="robot_description" 
+         command="xacro $(arg model) mecanum_wheels:=$(arg mecanum_wheels)"/>
+
+</launch>

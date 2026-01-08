@@ -1,0 +1,36 @@
+<mujoco model="forearm">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="UR15_DIFF_8bit_2K" file="UR15_DIFF_8bit_2K.png"/>
+    <material name="Metal_Alu_Brushed.001" texture="UR15_DIFF_8bit_2K" specular="0.0" shininess="0.25"/>
+    <texture type="2d" name="UR15_DIFF_8bit_2K" file="UR15_DIFF_8bit_2K.png"/>
+    <material name="Metal_DarkGray.001" texture="UR15_DIFF_8bit_2K" specular="0.0" shininess="0.25"/>
+    <texture type="2d" name="UR15_DIFF_8bit_2K" file="UR15_DIFF_8bit_2K.png"/>
+    <material name="Plastic_Blue.002" texture="UR15_DIFF_8bit_2K" specular="0.0" shininess="0.25"/>
+    <texture type="2d" name="UR15_DIFF_8bit_2K" file="UR15_DIFF_8bit_2K.png"/>
+    <material name="Rubber_Black.001" texture="UR15_DIFF_8bit_2K" specular="0.0" shininess="0.25"/>
+    <mesh file="forearm_0.obj"/>
+    <mesh file="forearm_1.obj"/>
+    <mesh file="forearm_2.obj"/>
+    <mesh file="forearm_3.obj"/>
+  </asset>
+  <worldbody>
+    <body name="forearm">
+      <geom mesh="forearm_0" material="Rubber_Black.001" class="visual"/>
+      <geom mesh="forearm_1" material="Metal_Alu_Brushed.001" class="visual"/>
+      <geom mesh="forearm_2" material="Metal_DarkGray.001" class="visual"/>
+      <geom mesh="forearm_3" material="Plastic_Blue.002" class="visual"/>
+      <geom mesh="forearm_0" class="collision"/>
+      <geom mesh="forearm_1" class="collision"/>
+      <geom mesh="forearm_2" class="collision"/>
+      <geom mesh="forearm_3" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

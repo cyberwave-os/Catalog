@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+<robot name="x500_base">
+
+  <!-- === MATERIALS (for visual appearance) === -->
+  <material name="dark_grey">
+    <color rgba="0.15 0.15 0.15 1.0"/>
+  </material>
+  <material name="motor_black">
+    <color rgba="0.05 0.05 0.05 1.0"/>
+  </material>
+  <material name="prop_black">
+    <color rgba="0 0 0 1.0"/>
+  </material>
+
+  <!-- === BASE LINK === -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="2.0"/>
+      <inertia ixx="0.021666666666666671" ixy="0" ixz="0"
+               iyy="0.021666666666666671" iyz="0"
+               izz="0.040000000000000008"/>
+    </inertial>
+
+    <!-- Visuals -->
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://Hoverspect_Drone/meshes/FrameV7small.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="dark_grey"/>
+    </visual>
+    <visual>
+      <origin xyz="0.1114 0.1114 0.06377" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://Hoverspect_Drone/meshes/Stator.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="motor_black"/>
+    </visual>
+    <visual>
+      <origin xyz="-0.1114 0.1114 0.06377" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://Hoverspect_Drone/meshes/Stator.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="motor_black"/>
+    </visual>
+    <visual>
+      <origin xyz="0.1114 -0.1114 0.06377" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://Hoverspect_Drone/meshes/Stator.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="motor_black"/>
+    </visual>
+    <visual>
+      <origin xyz="-0.1114 -0.1114 0.06377" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://Hoverspect_Drone/meshes/Stator.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="motor_black"/>
+    </visual>
+
+    <!-- === REVISED COLLISION MODEL === -->
+    <!-- Central Body Plate + Battery (approximated as one box) -->
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.15 0.15 0.06"/>
+      </geometry>
+    </collision>
+    <!-- Arm 1 (Front-Right) -->
+    <collision>
+      <origin xyz="0.078 0.078 0.04" rpy="0 0 0.7854"/>
+      <geometry>
+        <box size="0.12 0.02 0.02"/>
+      </geometry>
+    </collision>
+    <!-- Arm 2 (Front-Left) -->
+    <collision>
+      <origin xyz="-0.078 0.078 0.04" rpy="0 0 -0.7854"/>
+      <geometry>
+        <box size="0.12 0.02 0.02"/>
+      </geometry>
+    </collision>
+    <!-- Arm 3 (Back-Right) -->
+    <collision>
+      <origin xyz="0.078 -0.078 0.04" rpy="0 0 -0.7854"/>
+      <geometry>
+        <box size="0.12 0.02 0.02"/>
+      </geometry>
+    </collision>
+    <!-- Arm 4 (Back-Left) -->
+    <collision>
+      <origin xyz="-0.078 -0.078 0.04" rpy="0 0 0.7854"/>
+      <geometry>
+        <box size="0.12 0.02 0.02"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- === ROTOR 0 (pos: 0.1114, -0.1114, 0.06) CCW === -->
+  <link name="rotor_0">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.016076923076923075"/>
+      <inertia ixx="3.8464910483993325e-07" ixy="0" ixz="0"
+               iyy="2.6115851691700804e-05" iyz="0"
+               izz="2.6498582347140039e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.0177" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://Hoverspect_Drone/meshes/ccw_prop.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="prop_black"/>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0.0063" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://Hoverspect_Drone/meshes/Rotor_Bell.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="dark_grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.01" rpy="0 0 0"/>
+      <geometry>
+        <!-- Thinner cylinder for more realistic propeller collision volume -->
+        <cylinder radius="0.139" length="0.005"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rotor_0_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="rotor_0"/>
+    <origin xyz="0.1114 -0.1114 0.063" rpy="0 0 1.206"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <!-- === ROTOR 1 (pos: -0.1114, 0.1114, 0.06) CCW === -->
+  <link name="rotor_1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.016076923076923075"/>
+      <inertia ixx="3.8464910483993325e-07" ixy="0" ixz="0"
+               iyy="2.6115851691700804e-05" iyz="0"
+               izz="2.6498582347140039e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.0177" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://Hoverspect_Drone/meshes/ccw_prop.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="prop_black"/>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0.0063" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://Hoverspect_Drone/meshes/Rotor_Bell.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="dark_grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.01" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.139" length="0.005"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rotor_1_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="rotor_1"/>
+    <origin xyz="-0.1114 0.1114 0.063" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <!-- === ROTOR 2 (pos: 0.1114, 0.1114, 0.06) CW === -->
+  <link name="rotor_2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.016076923076923075"/>
+      <inertia ixx="3.8464910483993325e-07" ixy="0" ixz="0"
+               iyy="2.6115851691700804e-05" iyz="0"
+               izz="2.6498582347140039e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.0177" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://Hoverspect_Drone/meshes/cw_prop.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="prop_black"/>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0.0063" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://Hoverspect_Drone/meshes/Rotor_Bell.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="dark_grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.01" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.139" length="0.005"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rotor_2_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="rotor_2"/>
+    <origin xyz="0.1114 0.1114 0.063" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <!-- === ROTOR 3 (pos: -0.1114, -0.1114, 0.06) CW === -->
+  <link name="rotor_3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.016076923076923075"/>
+      <inertia ixx="3.8464910483993325e-07" ixy="0" ixz="0"
+               iyy="2.6115851691700804e-05" iyz="0"
+               izz="2.6498582347140039e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.0177" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://Hoverspect_Drone/meshes/cw_prop.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="prop_black"/>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0.0063" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://Hoverspect_Drone/meshes/Rotor_Bell.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="dark_grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.01" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.139" length="0.005"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rotor_3_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="rotor_3"/>
+    <origin xyz="-0.1114 -0.1114 0.063" rpy="0 0 1.07"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+</robot>

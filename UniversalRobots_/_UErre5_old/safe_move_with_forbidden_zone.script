@@ -1,0 +1,133 @@
+def program():
+  # =============================
+  # SAFE MOVE WITH FORBIDDEN ZONE
+  # URScript for UR5 Robot
+  # =============================
+  
+  # Define forbidden zone (in meters)
+  # Format: [xmin, xmax, ymin, ymax, zmin, zmax]
+  global forbidden_box = [-0.2, 0.2, 0.3, 0.6, 0.0, 0.5]
+  
+  # Function to check if a pose is inside the forbidden box
+  def inside_box(pose, box):
+    x = pose[0]
+    y = pose[1]
+    z = pose[2]
+    return (x >= box[0]) and (x <= box[1]) and (y >= box[2]) and (y <= box[3]) and (z >= box[4]) and (z <= box[5])
+  end
+  
+  # Function to check if any part of the robot arm is in the forbidden zone
+  def arm_in_forbidden_zone(box):
+    # Get current joint angles
+    joint_angles = get_actual_joint_positions()
+    
+    # Check TCP position
+    tcp_pose = get_actual_tcp_pose()
+    if inside_box(tcp_pose, box):
+      return True
+    end
+    
+    # Check tool flange position (wrist center)
+    flange_pose = get_actual_tool_flange_pose()
+    if inside_box(flange_pose, box):
+      return True
+    end
+    
+    # For UR5, approximate joint positions using simplified forward kinematics
+    # This checks key points along the arm structure
+    
+    # Check shoulder/elbow region by calculating intermediate poses
+    # using partial joint configurations
+    local check_angles = [0, 0, 0, 0, 0, 0]
+    
+    # Check shoulder to elbow (joints 0,1,2)
+    check_angles[0] = joint_angles[0]
+    check_angles[1] = joint_angles[1]
+    check_angles[2] = joint_angles[2] * 0.5
+    local mid_pose = get_forward_kin(check_angles)
+    if inside_box(mid_pose, box):
+      return True
+    end
+    
+    # Check elbow to wrist (joints 0,1,2,3)
+    check_angles[2] = joint_angles[2]
+    check_angles[3] = joint_angles[3] * 0.5
+    mid_pose = get_forward_kin(check_angles)
+    if inside_box(mid_pose, box):
+      return True
+    end
+    
+    return False
+  end
+  
+  # Global variable to pass target to thread
+  global move_target = p[0, 0, 0, 0, 0, 0]
+  
+  # Thread function for movement
+  thread move_thread():
+    movel(move_target, a=0.3, v=0.2, r=0)
+  end
+  
+  # Function to perform a safe move that monitors for forbidden zone entry
+  def safe_move(target):
+    local move_finished = False
+    
+    # Set global target for thread to access
+    move_target = target
+    
+    # Start movement in background thread
+    move_thread_handle = run move_thread()
+    
+    while not move_finished:
+      # Check if ANY part of the arm is in the forbidden zone
+      if arm_in_forbidden_zone(forbidden_box):
+        popup("WARNING: ARM IN FORBIDDEN ZONE! Stopping", blocking=True)
+        stopl(0.5)
+        kill move_thread_handle
+        move_finished = True
+      end
+      
+      # Check if robot has stopped moving
+      tcp_speed = get_actual_tcp_speed()
+      speed_norm = norm(tcp_speed)
+      if speed_norm < 0.001:
+        move_finished = True
+      end
+      
+      sync()
+    end
+  end
+  
+  # =============================
+  # MAIN PROGRAM
+  # =============================
+  
+  # DEBUG MODE: Test if forbidden zone detection works
+  textmsg("=== FORBIDDEN ZONE TEST ===")
+  tcp_pos = get_actual_tcp_pose()
+  textmsg("Current TCP: X=", tcp_pos[0], " Y=", tcp_pos[1], " Z=", tcp_pos[2])
+  textmsg("Forbidden Zone: X[-0.2,0.2] Y[0.3,0.6] Z[0.0,0.5]")
+  
+  if arm_in_forbidden_zone(forbidden_box):
+    popup("Robot is CURRENTLY in forbidden zone!", blocking=True)
+  else:
+    popup("Robot is NOT in forbidden zone. Test OK!", blocking=True)
+  end
+  
+  # Example usage:
+  # Define target poses (x, y, z, rx, ry, rz in meters and radians)
+  target_pose_1 = p[0.3, 0.4, 0.2, 2.22, -2.22, 0.0]
+  target_pose_2 = p[0.4, -0.3, 0.3, 2.22, -2.22, 0.0]
+  
+  # Execute safe moves
+  textmsg("Moving to target pose 1")
+  safe_move(target_pose_1)
+  
+  sleep(1.0)
+  
+  textmsg("Moving to target pose 2")
+  safe_move(target_pose_2)
+  
+  textmsg("Program completed successfully")
+end
+

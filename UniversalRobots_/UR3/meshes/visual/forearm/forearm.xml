@@ -1,0 +1,28 @@
+<mujoco model="forearm">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="Rohr.002" specular="0.5" shininess="0.25" rgba="0.335872 0.335872 0.335872 1.000000"/>
+    <material name="blau.003" specular="0.5" shininess="0.25" rgba="0.250880 0.347520 0.409600 1.000000"/>
+    <material name="verbindung.004" specular="0.5" shininess="0.25" rgba="0.142720 0.142720 0.142720 1.000000"/>
+    <mesh file="forearm_0.obj"/>
+    <mesh file="forearm_1.obj"/>
+    <mesh file="forearm_2.obj"/>
+  </asset>
+  <worldbody>
+    <body name="forearm">
+      <geom mesh="forearm_0" material="blau.003" class="visual"/>
+      <geom mesh="forearm_1" material="Rohr.002" class="visual"/>
+      <geom mesh="forearm_2" material="verbindung.004" class="visual"/>
+      <geom mesh="forearm_0" class="collision"/>
+      <geom mesh="forearm_1" class="collision"/>
+      <geom mesh="forearm_2" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

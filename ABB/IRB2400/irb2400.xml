@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<mujoco model="irb2400">
+  <compiler angle="radian" meshdir="meshes/"/>
+  <option gravity="0 0 -9.81" integrator="implicitfast"/>
+  <default>
+    <default class="robot">
+      <default class="motor">
+        <joint/>
+        <motor/>
+      </default>
+      <default class="visual">
+        <geom contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="collision">
+        <geom condim="3" contype="0" conaffinity="1" priority="1" group="1" solref="0.005 1" solimp="0.99 0.999 1e-05" friction="1 0.01 0.01"/>
+      </default>
+    </default>
+  </default>
+  <asset>
+    <material name="colour_abb_orange.003" specular="0.500000" shininess="0.250000" rgba="0.737255 0.349020 0.160784 1.000000"/>
+    <material name="colour_abb_orange" specular="0.500000" shininess="0.250000" rgba="0.737255 0.349020 0.160784 1.000000"/>
+    <material name="colour_abb_orange_001" specular="0.500000" shininess="0.250000" rgba="0.737255 0.349020 0.160784 1.000000"/>
+    <material name="colour_abb_orange.002" specular="0.500000" shininess="0.250000" rgba="0.737255 0.349020 0.160784 1.000000"/>
+    <material name="colour_abb_orange.001" specular="0.500000" shininess="0.250000" rgba="0.737255 0.349020 0.160784 1.000000"/>
+    <material name="colour_abb_orange.004" specular="0.500000" shininess="0.250000" rgba="0.737255 0.349020 0.160784 1.000000"/>
+    <material name="colour_abb_black" specular="0.500000" shininess="0.250000" rgba="0.094118 0.098039 0.101961 1.000000"/>
+    <mesh name="base_link" file="visual/base_link/base_link.obj" material="colour_abb_orange.003"/>
+    <mesh name="link_1" file="visual/link_1/link_1.obj" material="colour_abb_orange.004"/>
+    <mesh name="link_2" file="visual/link_2/link_2.obj" material="colour_abb_orange"/>
+    <mesh name="link_3" file="visual/link_3/link_3.obj" material="colour_abb_orange.001"/>
+    <mesh name="link_4" file="visual/link_4/link_4.obj" material="colour_abb_orange_001"/>
+    <mesh name="link_5" file="visual/link_5/link_5.obj" material="colour_abb_orange.002"/>
+    <mesh name="link_6" file="visual/link_6/link_6.obj" material="colour_abb_black"/>
+    <mesh name="col_base_link" file="collision/base_link.stl"/>
+    <mesh name="col_link_1" file="collision/link_1.stl"/>
+    <mesh name="col_link_2" file="collision/link_2.stl"/>
+    <mesh name="col_link_2_whole" file="collision/link_2_whole.stl"/>
+    <mesh name="col_link_3" file="collision/link_3.stl"/>
+    <mesh name="col_link_4" file="collision/link_4.stl"/>
+    <mesh name="col_link_5" file="collision/link_5.stl"/>
+    <mesh name="col_link_6" file="collision/link_6.stl"/>
+  </asset>
+  <worldbody>
+    <body pos="0 0 0" quat="1 0 0 0" childclass="robot">
+      <freejoint name="floating_base"/>
+      <geom type="mesh" mesh="col_base_link" class="collision" rgba="0.737255 0.34902 0.160784 1"/>
+      <geom type="mesh" mesh="base_link" class="visual" rgba="0.737255 0.34902 0.160784 1"/>
+      <body name="link_1">
+        <inertial pos="0 0 0" mass="20" diaginertia="0.01 0.01 0.01"/>
+        <joint name="joint_1" pos="0 0 0" axis="0 0 1"/>
+        <geom type="mesh" mesh="col_link_1" class="collision" rgba="0.737255 0.34902 0.160784 1"/>
+        <geom type="mesh" mesh="link_1" class="visual" rgba="0.737255 0.34902 0.160784 1"/>
+        <body name="link_2" pos="0.1 0 0.615">
+          <inertial pos="0 0 0" mass="18" diaginertia="0.01 0.01 0.01"/>
+          <joint name="joint_2" pos="0 0 0" axis="0 1 0"/>
+          <geom type="mesh" mesh="col_link_2" class="collision" rgba="0.737255 0.34902 0.160784 1"/>
+          <geom type="mesh" mesh="link_2" class="visual" rgba="0.737255 0.34902 0.160784 1"/>
+          <body name="link_3" pos="0 0 0.705">
+            <inertial pos="0 0 0" mass="16.2" diaginertia="0.01 0.01 0.01"/>
+            <joint name="joint_3" pos="0 0 0" axis="0 1 0"/>
+            <geom type="mesh" mesh="col_link_3" class="collision" rgba="0.737255 0.34902 0.160784 1"/>
+            <geom type="mesh" mesh="link_3" class="visual" rgba="0.737255 0.34902 0.160784 1"/>
+            <body name="link_4" pos="0.258 0 0.135">
+              <inertial pos="0 0 0" mass="14.58" diaginertia="0.01 0.01 0.01"/>
+              <joint name="joint_4" pos="0 0 0" axis="1 0 0"/>
+              <geom type="mesh" mesh="col_link_4" class="collision" rgba="0.737255 0.34902 0.160784 1"/>
+              <geom type="mesh" mesh="link_4" class="visual" rgba="0.737255 0.34902 0.160784 1"/>
+              <body name="link_5" pos="0.497 0 0">
+                <inertial pos="0 0 0" mass="13.122" diaginertia="0.01 0.01 0.01"/>
+                <joint name="joint_5" pos="0 0 0" axis="0 1 0"/>
+                <geom type="mesh" mesh="col_link_5" class="collision" rgba="0.737255 0.34902 0.160784 1"/>
+                <geom type="mesh" mesh="link_5" class="visual" rgba="0.737255 0.34902 0.160784 1"/>
+                <body name="link_6" pos="0.085 0 0">
+                  <inertial pos="0 0 0" mass="11.8098" diaginertia="0.01 0.01 0.01"/>
+                  <joint name="joint_6" pos="0 0 0" axis="1 0 0"/>
+                  <geom type="mesh" mesh="col_link_6" class="collision" rgba="0.188235 0.196078 0.203922 1"/>
+                  <geom type="mesh" mesh="link_6" class="visual" rgba="0.188235 0.196078 0.203922 1"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <geom type="mesh" mesh="col_link_2_whole" class="collision"/>
+  </worldbody>
+  <actuator>
+    <position name="joint_1_ctrl" joint="joint_1" kp="200" kv="20" ctrlrange="-3.1416 3.1416"/>
+    <position name="joint_2_ctrl" joint="joint_2" kp="200" kv="20" ctrlrange="-1.7453 1.9199"/>
+    <position name="joint_3_ctrl" joint="joint_3" kp="200" kv="20" ctrlrange="-1.0472 1.1345"/>
+    <position name="joint_4_ctrl" joint="joint_4" kp="200" kv="20" ctrlrange="-3.49 3.49"/>
+    <position name="joint_5_ctrl" joint="joint_5" kp="200" kv="20" ctrlrange="-2.0944 2.0944"/>
+    <position name="joint_6_ctrl" joint="joint_6" kp="200" kv="20" ctrlrange="-6.9813 6.9813"/>
+  </actuator>
+</mujoco>

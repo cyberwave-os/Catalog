@@ -1,0 +1,30 @@
+<robot name="black_hornet_nano">
+
+  <link name="black_hornet_nano_link">
+  
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="/../../stl/BHNanoResize.stl" scale="1.0 1.0 1.0" />
+      </geometry>
+       <material name="grey">
+         <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="/../../stl/BHNanoResize.stl" scale="1.0 1.0 1.0" />
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.018" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001" />
+    </inertial>
+    
+  </link>
+
+</robot>

@@ -1,0 +1,20 @@
+<mujoco model="link_4">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="RAL2003.001" specular="0.5" shininess="0.25" rgba="0.640000 0.261018 0.087840 1.000000"/>
+    <mesh file="link_4.obj"/>
+  </asset>
+  <worldbody>
+    <body name="link_4">
+      <geom material="RAL2003.001" mesh="link_4" class="visual"/>
+      <geom mesh="link_4" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

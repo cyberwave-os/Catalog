@@ -1,0 +1,98 @@
+# ========================================
+# FORBIDDEN ZONE PROTECTION FUNCTIONS
+# Paste this into a Script Code node at the START of your PolyScope program
+# ========================================
+
+# Define forbidden zone (in meters) - ADJUST THESE VALUES
+global forbidden_box = [-0.2, 0.2, 0.3, 0.6, 0.0, 0.5]
+#                       [xmin, xmax, ymin, ymax, zmin, zmax]
+
+# Function to check if a position is inside the box
+def inside_box(pose, box):
+  x = pose[0]
+  y = pose[1]
+  z = pose[2]
+  return (x >= box[0]) and (x <= box[1]) and (y >= box[2]) and (y <= box[3]) and (z >= box[4]) and (z <= box[5])
+end
+
+# Function to check if any part of the robot arm is in the forbidden zone
+def arm_in_forbidden_zone(box):
+  # Get current joint angles
+  joint_angles = get_actual_joint_positions()
+  
+  # Check TCP position
+  tcp_pose = get_actual_tcp_pose()
+  if inside_box(tcp_pose, box):
+    return True
+  end
+  
+  # Check tool flange position (wrist center)
+  flange_pose = get_actual_tool_flange_pose()
+  if inside_box(flange_pose, box):
+    return True
+  end
+  
+  # Check shoulder/elbow region by calculating intermediate poses
+  local check_angles = [0, 0, 0, 0, 0, 0]
+  
+  # Check shoulder to elbow
+  check_angles[0] = joint_angles[0]
+  check_angles[1] = joint_angles[1]
+  check_angles[2] = joint_angles[2] * 0.5
+  local mid_pose = get_forward_kin(check_angles)
+  if inside_box(mid_pose, box):
+    return True
+  end
+  
+  # Check elbow to wrist
+  check_angles[2] = joint_angles[2]
+  check_angles[3] = joint_angles[3] * 0.5
+  mid_pose = get_forward_kin(check_angles)
+  if inside_box(mid_pose, box):
+    return True
+  end
+  
+  return False
+end
+
+# Global variable to pass target to thread
+global move_target = p[0, 0, 0, 0, 0, 0]
+
+# Thread function for movement
+thread move_thread():
+  movel(move_target, a=0.3, v=0.2, r=0)
+end
+
+# Safe move function with forbidden zone monitoring
+def safe_move(target):
+  local move_finished = False
+  
+  # Set global target for thread to access
+  move_target = target
+  
+  # Start movement in background thread
+  move_thread_handle = run move_thread()
+  
+  while not move_finished:
+    # Check if ANY part of the arm is in the forbidden zone
+    if arm_in_forbidden_zone(forbidden_box):
+      popup("WARNING: ARM IN FORBIDDEN ZONE! Stopping", blocking=True)
+      stopl(0.5)
+      kill move_thread_handle
+      move_finished = True
+    end
+    
+    # Check if robot has stopped moving
+    tcp_speed = get_actual_tcp_speed()
+    speed_norm = norm(tcp_speed)
+    if speed_norm < 0.001:
+      move_finished = True
+    end
+    
+    sync()
+  end
+end
+
+textmsg("Forbidden zone protection loaded!")
+
+

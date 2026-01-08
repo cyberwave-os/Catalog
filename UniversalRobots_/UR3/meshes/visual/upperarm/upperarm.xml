@@ -1,0 +1,28 @@
+<mujoco model="upperarm">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="Rohr" specular="0.5" shininess="0.25" rgba="0.335872 0.335872 0.335872 1.000000"/>
+    <material name="blau.001" specular="0.5" shininess="0.25" rgba="0.250880 0.347520 0.409600 1.000000"/>
+    <material name="verbindung.001" specular="0.5" shininess="0.25" rgba="0.142720 0.142720 0.142720 1.000000"/>
+    <mesh file="upperarm_0.obj"/>
+    <mesh file="upperarm_1.obj"/>
+    <mesh file="upperarm_2.obj"/>
+  </asset>
+  <worldbody>
+    <body name="upperarm">
+      <geom mesh="upperarm_0" material="Rohr" class="visual"/>
+      <geom mesh="upperarm_1" material="verbindung.001" class="visual"/>
+      <geom mesh="upperarm_2" material="blau.001" class="visual"/>
+      <geom mesh="upperarm_0" class="collision"/>
+      <geom mesh="upperarm_1" class="collision"/>
+      <geom mesh="upperarm_2" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

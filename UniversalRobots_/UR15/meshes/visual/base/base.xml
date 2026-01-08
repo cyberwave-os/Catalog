@@ -1,0 +1,31 @@
+<mujoco model="base">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="UR15_DIFF_8bit_2K" file="UR15_DIFF_8bit_2K.png"/>
+    <material name="LED_001_COLOR_0" texture="UR15_DIFF_8bit_2K" specular="0.0" shininess="0.25"/>
+    <texture type="2d" name="UR15_DIFF_8bit_2K" file="UR15_DIFF_8bit_2K.png"/>
+    <material name="Metal_Alu_Brushed_002_COLOR_0" texture="UR15_DIFF_8bit_2K" specular="0.0" shininess="0.25"/>
+    <texture type="2d" name="UR15_DIFF_8bit_2K" file="UR15_DIFF_8bit_2K.png"/>
+    <material name="Rubber_Black_002_COLOR_0.001" texture="UR15_DIFF_8bit_2K" specular="0.0" shininess="0.25"/>
+    <mesh file="base_0.obj"/>
+    <mesh file="base_1.obj"/>
+    <mesh file="base_2.obj"/>
+  </asset>
+  <worldbody>
+    <body name="base">
+      <geom mesh="base_0" material="LED_001_COLOR_0" class="visual"/>
+      <geom mesh="base_1" material="Rubber_Black_002_COLOR_0.001" class="visual"/>
+      <geom mesh="base_2" material="Metal_Alu_Brushed_002_COLOR_0" class="visual"/>
+      <geom mesh="base_0" class="collision"/>
+      <geom mesh="base_1" class="collision"/>
+      <geom mesh="base_2" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

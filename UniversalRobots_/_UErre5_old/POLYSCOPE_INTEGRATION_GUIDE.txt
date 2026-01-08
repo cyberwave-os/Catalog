@@ -1,0 +1,124 @@
+================================================================================
+  FORBIDDEN ZONE PROTECTION - PolyScope Integration Guide
+================================================================================
+
+STEP 1: Open Your Existing PolyScope Program
+---------------------------------------------
+  - Load your circle program in PolyScope
+  - You should see your MoveJ, MoveL, or MoveP commands
+
+
+STEP 2: Add Functions at the START of Your Program
+---------------------------------------------------
+  1. Click the very FIRST line in your program tree
+  2. Click "Add" (bottom left)
+  3. Select "Script" → "Script Code"
+  4. A text box will appear
+  5. COPY & PASTE the entire contents of "forbidden_zone_functions.script"
+     (the file I just created - 97 lines)
+  6. Click OK
+  7. You should see "Script: textmsg("Forbidden zone...")" in your program tree
+
+
+STEP 3: Replace Each Movement with safe_move()
+-----------------------------------------------
+
+BEFORE (Example):
+  Your program tree shows:
+    ├─ MoveL
+    │   └─ Waypoint_1 [0.3, 0.4, 0.2, ...]
+    ├─ MoveL
+    │   └─ Waypoint_2 [0.4, -0.3, 0.3, ...]
+
+AFTER:
+  ├─ Script Code (functions) ← Added in Step 2
+  ├─ Script Code: safe_move(p[0.3, 0.4, 0.2, 2.22, -2.22, 0.0])
+  ├─ Script Code: safe_move(p[0.4, -0.3, 0.3, 2.22, -2.22, 0.0])
+
+
+HOW TO ADD safe_move() CALLS:
+  For EACH movement in your program:
+
+  1. Write down the waypoint coordinates from your MoveL/MoveJ/MoveP
+     Example: Position X=0.300, Y=0.400, Z=0.200
+              Rotation RX=2.220, RY=-2.220, RZ=0.000
+
+  2. Click "Add" → "Script" → "Script Code"
+
+  3. Type (or copy-paste):
+     safe_move(p[0.300, 0.400, 0.200, 2.220, -2.220, 0.000])
+     
+     ⚠️ IMPORTANT: Replace the numbers with YOUR actual waypoint values!
+
+  4. Click OK
+
+  5. DELETE the old MoveL/MoveJ/MoveP node (or disable it)
+
+  6. Repeat for each movement in your circle
+
+
+STEP 4: Adjust Forbidden Zone Coordinates
+------------------------------------------
+  In the first Script Code node (Step 2), find this line:
+  
+  global forbidden_box = [-0.2, 0.2, 0.3, 0.6, 0.0, 0.5]
+  
+  Change these values to match YOUR forbidden zone:
+    [-0.2, 0.2]  = X range (min, max) in meters
+    [0.3, 0.6]   = Y range (min, max) in meters
+    [0.0, 0.5]   = Z range (min, max) in meters
+
+
+STEP 5: Test Your Program
+--------------------------
+  1. Put robot in REDUCED SPEED mode (safety first!)
+  2. Click "Play" to run the program
+  3. Watch for the popup if the arm enters the forbidden zone
+  4. Check the log for "Forbidden zone protection loaded!" message
+
+
+================================================================================
+EXAMPLE: Converting a Simple Circle Program
+================================================================================
+
+BEFORE (PolyScope GUI):
+  └─ Robot Program
+      ├─ MoveJ (Home position)
+      ├─ MoveL (Circle point 1: X=0.3, Y=0.4, Z=0.2, RX=2.22, RY=-2.22, RZ=0)
+      ├─ MoveL (Circle point 2: X=0.4, Y=0.3, Z=0.2, RX=2.22, RY=-2.22, RZ=0)
+      ├─ MoveL (Circle point 3: X=0.3, Y=0.2, Z=0.2, RX=2.22, RY=-2.22, RZ=0)
+      └─ MoveL (Circle point 4: X=0.2, Y=0.3, Z=0.2, RX=2.22, RY=-2.22, RZ=0)
+
+AFTER (With Forbidden Zone Protection):
+  └─ Robot Program
+      ├─ Script Code: (paste forbidden_zone_functions.script contents)
+      ├─ MoveJ (Home position) ← Keep this, it's safe for homing
+      ├─ Script Code: safe_move(p[0.3, 0.4, 0.2, 2.22, -2.22, 0])
+      ├─ Script Code: safe_move(p[0.4, 0.3, 0.2, 2.22, -2.22, 0])
+      ├─ Script Code: safe_move(p[0.3, 0.2, 0.2, 2.22, -2.22, 0])
+      └─ Script Code: safe_move(p[0.2, 0.3, 0.2, 2.22, -2.22, 0])
+
+
+================================================================================
+TIPS & TRICKS
+================================================================================
+
+✅ You can keep MoveJ for homing/safe positions (no monitoring needed)
+✅ Only use safe_move() for movements that might enter the forbidden zone
+✅ To get exact waypoint coordinates: click on MoveL node → see "Feature" tab
+✅ Test by manually moving the robot INTO the zone before running the program
+✅ If popup doesn't appear, check the Log tab for error messages
+
+⚠️ The forbidden zone is relative to the ROBOT BASE (not world coordinates)
+⚠️ safe_move() always uses movel() - for joint moves, still use MoveJ nodes
+
+================================================================================
+FILES CREATED
+================================================================================
+
+1. forbidden_zone_functions.script  ← Copy this into PolyScope Script Code node
+2. POLYSCOPE_INTEGRATION_GUIDE.txt  ← This guide (for reference)
+
+================================================================================
+
+

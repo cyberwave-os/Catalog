@@ -1,0 +1,20 @@
+<mujoco model="base">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="SWMaterial-2_001" specular="0.5" shininess="0.25" rgba="0.371451 0.371451 0.371451 1.000000"/>
+    <mesh file="base.obj"/>
+  </asset>
+  <worldbody>
+    <body name="base">
+      <geom material="SWMaterial-2_001" mesh="base" class="visual"/>
+      <geom mesh="base" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

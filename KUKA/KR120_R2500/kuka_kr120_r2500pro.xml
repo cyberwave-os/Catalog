@@ -1,0 +1,99 @@
+<?xml version="1.0" ?>
+<mujoco model="kr120_r2500pro">
+  <compiler angle="radian" meshdir="meshes/"/>
+  <option gravity="0 0 -9.81" integrator="implicitfast"/>
+  <default>
+    <default class="robot">
+      <default class="motor">
+        <joint/>
+        <motor/>
+      </default>
+      <default class="visual">
+        <geom contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="collision">
+        <geom condim="3" contype="0" conaffinity="1" priority="1" group="1" solref="0.005 1" solimp="0.99 0.999 1e-05" friction="1 0.01 0.01"/>
+      </default>
+    </default>
+  </default>
+  <asset>
+    <material name="RAL9005.002" specular="0.500000" shininess="0.250000" rgba="0.003513 0.003513 0.004145 1.000000"/>
+    <material name="RAL2003" specular="0.500000" shininess="0.250000" rgba="0.640000 0.261018 0.087840 1.000000"/>
+    <material name="RAL2003.001" specular="0.500000" shininess="0.250000" rgba="0.640000 0.261018 0.087840 1.000000"/>
+    <material name="RAL2003.003" specular="0.500000" shininess="0.250000" rgba="0.800000 0.326272 0.109800 1.000000"/>
+    <material name="RAL2003.002" specular="0.500000" shininess="0.250000" rgba="0.800000 0.326272 0.109800 1.000000"/>
+    <material name="RAL9005" specular="0.500000" shininess="0.250000" rgba="0.003136 0.003136 0.003136 1.000000"/>
+    <material name="RAL2003.004" specular="0.500000" shininess="0.250000" rgba="0.512000 0.208814 0.070272 1.000000"/>
+    <material name="RAL9005.003" specular="0.500000" shininess="0.250000" rgba="0.002007 0.002007 0.002007 1.000000"/>
+    <material name="RAL9005.001" specular="0.500000" shininess="0.250000" rgba="0.002509 0.002509 0.002509 1.000000"/>
+    <mesh name="base_link" file="visual/base_link/base_link.obj" material="RAL9005.002"/>
+    <mesh name="link_1_0" file="visual/link_1/link_1_0.obj" material="RAL9005.003"/>
+    <mesh name="link_1_1" file="visual/link_1/link_1_1.obj" material="RAL2003.004"/>
+    <mesh name="link_2" file="visual/link_2/link_2.obj" material="RAL2003"/>
+    <mesh name="link_3_0" file="visual/link_3/link_3_0.obj" material="RAL9005"/>
+    <mesh name="link_3_1" file="visual/link_3/link_3_1.obj" material="RAL2003.002"/>
+    <mesh name="link_4" file="visual/link_4/link_4.obj" material="RAL2003.001"/>
+    <mesh name="link_5" file="visual/link_5/link_5.obj" material="RAL2003.003"/>
+    <mesh name="link_6" file="visual/link_6/link_6.obj" material="RAL9005.001"/>
+    <mesh name="col_base_link" file="collision/base_link.stl"/>
+    <mesh name="col_link_1" file="collision/link_1.stl"/>
+    <mesh name="col_link_2" file="collision/link_2.stl"/>
+    <mesh name="col_link_3" file="collision/link_3.stl"/>
+    <mesh name="col_link_4" file="collision/link_4.stl"/>
+    <mesh name="col_link_5" file="collision/link_5.stl"/>
+    <mesh name="col_link_6" file="collision/link_6.stl"/>
+  </asset>
+  <worldbody>
+    <body pos="0 0 0" quat="1 0 0 0" childclass="robot">
+      <freejoint name="floating_base"/>
+      <geom type="mesh" mesh="col_base_link" class="collision"/>
+      <geom type="mesh" mesh="base_link" class="visual"/>
+      <body name="link_1" pos="0 0 0.675">
+        <inertial pos="0 0 0" mass="2" diaginertia="0.01 0.01 0.01"/>
+        <joint name="joint_a1" pos="0 0 0" axis="0 0 -1"/>
+        <geom type="mesh" mesh="col_link_1" class="collision"/>
+        <geom type="mesh" mesh="link_1_1" class="visual"/>
+        <geom type="mesh" mesh="link_1_0" class="visual"/>
+        <body name="link_2" pos="0.35 0 0">
+          <inertial pos="0 0 0" mass="2" diaginertia="0.01 0.01 0.01"/>
+          <joint name="joint_a2" pos="0 0 0" axis="0 1 0"/>
+          <geom type="mesh" mesh="col_link_2" class="collision"/>
+          <geom type="mesh" mesh="link_2" class="visual"/>
+          <body name="link_3" pos="1.15 0 0">
+            <inertial pos="0 0 0" mass="2" diaginertia="0.01 0.01 0.01"/>
+            <joint name="joint_a3" pos="0 0 0" axis="0 1 0"/>
+            <geom type="mesh" mesh="col_link_3" class="collision"/>
+            <geom type="mesh" mesh="link_3_1" class="visual"/>
+            <geom type="mesh" mesh="link_3_0" class="visual"/>
+            <body name="link_4" pos="1 0 -0.041">
+              <inertial pos="0 0 0" mass="2" diaginertia="0.01 0.01 0.01"/>
+              <joint name="joint_a4" pos="0 0 0" axis="-1 0 0"/>
+              <geom type="mesh" mesh="col_link_4" class="collision"/>
+              <geom type="mesh" mesh="link_4" class="visual"/>
+              <body name="link_5">
+                <inertial pos="0 0 0" mass="2" diaginertia="0.01 0.01 0.01"/>
+                <joint name="joint_a5" pos="0 0 0" axis="0 1 0"/>
+                <geom type="mesh" mesh="col_link_5" class="collision"/>
+                <geom type="mesh" mesh="link_5" class="visual"/>
+                <body name="link_6">
+                  <inertial pos="0 0 0" mass="2" diaginertia="0.01 0.01 0.01"/>
+                  <joint name="joint_a6" pos="0 0 0" axis="-1 0 0"/>
+                  <geom type="mesh" mesh="col_link_6" class="collision"/>
+                  <geom type="mesh" mesh="link_6" class="visual"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <position name="joint_a1_ctrl" joint="joint_a1" kp="200" kv="20" ctrlrange="-3.22886 3.22886"/>
+    <position name="joint_a2_ctrl" joint="joint_a2" kp="200" kv="20" ctrlrange="-2.70526 0.610865"/>
+    <position name="joint_a3_ctrl" joint="joint_a3" kp="200" kv="20" ctrlrange="-2.26893 2.68781"/>
+    <position name="joint_a4_ctrl" joint="joint_a4" kp="200" kv="20" ctrlrange="-6.10865 6.10865"/>
+    <position name="joint_a5_ctrl" joint="joint_a5" kp="200" kv="20" ctrlrange="-2.26893 2.26893"/>
+    <position name="joint_a6_ctrl" joint="joint_a6" kp="200" kv="20" ctrlrange="-6.10865 6.10865"/>
+  </actuator>
+</mujoco>

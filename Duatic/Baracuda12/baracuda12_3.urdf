@@ -31,7 +31,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” 
   <link name="base">
     <visual>
       <geometry>
-        <mesh filename="package://visual/base_mesh.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://Baracuda12/meshes/visual/base_mesh.dae" scale="1.0 1.0 1.0"/>
       </geometry>
       <material name="carbon_fiber">
         <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
@@ -39,7 +39,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” 
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://collision/base_mesh.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://Baracuda12/meshes/collision/base_mesh.stl" scale="1.0 1.0 1.0"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -52,7 +52,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” 
   <link name="shoulder">
     <visual>
       <geometry>
-        <mesh filename="package://visual/shoulder_mesh.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://Baracuda12/meshes/visual/shoulder_mesh.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
     <inertial>
@@ -62,7 +62,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” 
     </inertial>
     <collision>
       <geometry>
-        <mesh filename="package://collision/shoulder_mesh.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://Baracuda12/meshes/collision/shoulder_mesh.stl" scale="1.0 1.0 1.0"/>
       </geometry>
       <origin rpy="1.570796326795 0 0" xyz="0 0 0.05"/>
     </collision>
@@ -78,7 +78,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” 
   <link name="upperarm">
     <visual>
       <geometry>
-        <mesh filename="package://visual/upperarm_mesh.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://Baracuda12/meshes/visual/upperarm_mesh.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
     <inertial>
@@ -89,7 +89,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” 
     </inertial>
     <collision>
       <geometry>
-        <mesh filename="package://collision/upperarm_mesh.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://Baracuda12/meshes/collision/upperarm_mesh.stl" scale="1.0 1.0 1.0"/>
       </geometry>
       <origin rpy="0 1.570796326795 0" xyz="0.15 0 0"/>
     </collision>
@@ -105,7 +105,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” 
   <link name="elbow">
     <visual>
       <geometry>
-        <mesh filename="package://visual/elbow_mesh.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://Baracuda12/meshes/visual/elbow_mesh.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
     <inertial>
@@ -115,7 +115,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” 
     </inertial>
     <collision>
       <geometry>
-        <mesh filename="package://collision/elbow_mesh.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://Baracuda12/meshes/collision/elbow_mesh.stl" scale="1.0 1.0 1.0"/>
       </geometry>
       <origin rpy="1.570796326795 0 0" xyz="-0.01 -0.05 0"/>
     </collision>
@@ -162,7 +162,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” 
   <link name="forearm">
     <visual>
       <geometry>
-        <mesh filename="package://visual/forearm_mesh.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://Baracuda12/meshes/visual/forearm_mesh.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
     <inertial>
@@ -172,7 +172,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” 
     </inertial>
     <collision>
       <geometry>
-        <mesh filename="package://collision/forearm_mesh.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://Baracuda12/meshes/collision/forearm_mesh.stl" scale="1.0 1.0 1.0"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0.2"/>
     </collision>
@@ -188,7 +188,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” 
   <link name="wrist_1">
     <visual>
       <geometry>
-        <mesh filename="package://visual/wrist1_mesh.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://Baracuda12/meshes/visual/wrist1_mesh.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
     <inertial>
@@ -199,7 +199,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” 
     </inertial>
     <collision>
       <geometry>
-        <mesh filename="package://collision/wrist1_mesh.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://Baracuda12/meshes/collision/wrist1_mesh.stl" scale="1.0 1.0 1.0"/>
       </geometry>
       <origin rpy="0 0 1.570796326795" xyz="0 0 0.025"/>
     </collision>
@@ -246,7 +246,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” 
   <link name="wrist_2">
     <visual>
       <geometry>
-        <mesh filename="package://visual/wrist2_mesh.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://Baracuda12/meshes/visual/wrist2_mesh.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
     <inertial>
@@ -256,7 +256,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” 
     </inertial>
     <collision>
       <geometry>
-        <mesh filename="package://collision/wrist2_mesh.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://Baracuda12/meshes/collision/wrist2_mesh.stl" scale="1.0 1.0 1.0"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0.005 0 -0.035"/>
     </collision>

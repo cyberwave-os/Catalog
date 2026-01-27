@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<robot name="ofl_robot">
+
+  <!-- Base link: body -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://Agilox/OFL/meshes/body1.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="body_grey">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://Agilox/OFL/meshes/body1.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+  <mass value="575.0"/>
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <inertia
+    ixx="47.9" ixy="0.0" ixz="0.0"
+    iyy="86.3" iyz="0.0"
+    izz="99.7"/>
+</inertial>
+  </link>
+
+  <!-- Prismatic joint: allows skates to slide up/down along Z axis -->
+  <joint name="skates_slide_joint" type="prismatic">
+    <parent link="base_link"/>
+    <child link="skates_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0.0" upper="1.5" effort="100.0" velocity="1.0"/>
+  </joint>
+
+  <!-- Skates link -->
+  <link name="skates_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://Agilox/OFL/meshes/skates1.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="skates_grey">
+        <color rgba="0.4 0.4 0.4 1.0"/>
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://Agilox/OFL/meshes/skates1.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="2.0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia
+        ixx="0.02" ixy="0.0" ixz="0.0"
+        iyy="0.02" iyz="0.0"
+        izz="0.02"/>
+    </inertial>
+  </link>
+
+</robot>

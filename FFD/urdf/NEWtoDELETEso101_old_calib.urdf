@@ -22,56 +22,56 @@
     <visual>
       <origin xyz="0.0206915 0.0221255 0.0300817" rpy="1.5708 -1.23909e-16 2.33147e-15"/>
       <geometry>
-        <mesh filename="package://DDT//assets/base_motor_holder_so101_v1.stl"/>
+        <mesh filename="package://FFD/assets/base_motor_holder_so101_v1.stl"/>
       </geometry>
       <material name="3d_printed"/>
     </visual>
     <collision>
       <origin xyz="0.0206915 0.0221255 0.0300817" rpy="1.5708 -1.23909e-16 2.33147e-15"/>
       <geometry>
-        <mesh filename="package://DDT//assets/base_motor_holder_so101_v1.stl"/>
+        <mesh filename="package://FFD/assets/base_motor_holder_so101_v1.stl"/>
       </geometry>
     </collision>
     <!-- Part base_so101_v2 -->
     <visual>
       <origin xyz="0.0207909 0.0221255 0.0300817" rpy="1.5708 -0 0"/>
       <geometry>
-        <mesh filename="package://DDT//assets/base_so101_v2.stl"/>
+        <mesh filename="package://FFD/assets/base_so101_v2.stl"/>
       </geometry>
       <material name="3d_printed"/>
     </visual>
     <collision>
       <origin xyz="0.0207909 0.0221255 0.0300817" rpy="1.5708 -0 0"/>
       <geometry>
-        <mesh filename="package://DDT//assets/base_so101_v2.stl"/>
+        <mesh filename="package://FFD/assets/base_so101_v2.stl"/>
       </geometry>
     </collision>
     <!-- Part sts3215_03a_v1 -->
     <visual>
       <origin xyz="0.0207909 -0.0105745 0.0761817" rpy="-2.20282e-15 2.77556e-17 -1.5708"/>
       <geometry>
-        <mesh filename="package://DDT//assets/sts3215_03a_v1.stl"/>
+        <mesh filename="package://FFD/assets/sts3215_03a_v1.stl"/>
       </geometry>
       <material name="sts3215"/>
     </visual>
     <collision>
       <origin xyz="0.0207909 -0.0105745 0.0761817" rpy="-2.20282e-15 2.77556e-17 -1.5708"/>
       <geometry>
-        <mesh filename="package://DDT//assets/sts3215_03a_v1.stl"/>
+        <mesh filename="package://FFD/assets/sts3215_03a_v1.stl"/>
       </geometry>
     </collision>
     <!-- Part waveshare_mounting_plate_so101_v2 -->
     <visual>
       <origin xyz="0.0205915 0.0467435 0.0798817" rpy="1.5708 -1.21716e-14 2.33147e-15"/>
       <geometry>
-        <mesh filename="package://DDT//assets/waveshare_mounting_plate_so101_v2.stl"/>
+        <mesh filename="package://FFD/assets/waveshare_mounting_plate_so101_v2.stl"/>
       </geometry>
       <material name="3d_printed"/>
     </visual>
     <collision>
       <origin xyz="0.0205915 0.0467435 0.0798817" rpy="1.5708 -1.21716e-14 2.33147e-15"/>
       <geometry>
-        <mesh filename="package://DDT//assets/waveshare_mounting_plate_so101_v2.stl"/>
+        <mesh filename="package://FFD/assets/waveshare_mounting_plate_so101_v2.stl"/>
       </geometry>
     </collision>
   </link>
@@ -87,42 +87,42 @@
     <visual>
       <origin xyz="-0.0303992 0.000422241 -0.0417" rpy="1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://DDT//assets/sts3215_03a_v1.stl"/>
+        <mesh filename="package://FFD/assets/sts3215_03a_v1.stl"/>
       </geometry>
       <material name="sts3215"/>
     </visual>
     <collision>
       <origin xyz="-0.0303992 0.000422241 -0.0417" rpy="1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://DDT//assets/sts3215_03a_v1.stl"/>
+        <mesh filename="package://FFD/assets/sts3215_03a_v1.stl"/>
       </geometry>
     </collision>
     <!-- Part motor_holder_so101_base_v1 -->
     <visual>
       <origin xyz="-0.0675992 -0.000177759 0.0158499" rpy="1.5708 -1.5708 0"/>
       <geometry>
-        <mesh filename="package://DDT//assets/motor_holder_so101_base_v1.stl"/>
+        <mesh filename="package://FFD/assets/motor_holder_so101_base_v1.stl"/>
       </geometry>
       <material name="3d_printed"/>
     </visual>
     <collision>
       <origin xyz="-0.0675992 -0.000177759 0.0158499" rpy="1.5708 -1.5708 0"/>
       <geometry>
-        <mesh filename="package://DDT//assets/motor_holder_so101_base_v1.stl"/>
+        <mesh filename="package://FFD/assets/motor_holder_so101_base_v1.stl"/>
       </geometry>
     </collision>
     <!-- Part rotation_pitch_so101_v1 -->
     <visual>
       <origin xyz="0.0122008 2.22413e-05 0.0464" rpy="-1.5708 -0 0"/>
       <geometry>
-        <mesh filename="package://DDT//assets/rotation_pitch_so101_v1.stl"/>
+        <mesh filename="package://FFD/assets/rotation_pitch_so101_v1.stl"/>
       </geometry>
       <material name="3d_printed"/>
     </visual>
     <collision>
       <origin xyz="0.0122008 2.22413e-05 0.0464" rpy="-1.5708 -0 0"/>
       <geometry>
-        <mesh filename="package://DDT//assets/rotation_pitch_so101_v1.stl"/>
+        <mesh filename="package://FFD/assets/rotation_pitch_so101_v1.stl"/>
       </geometry>
     </collision>
   </link>
@@ -138,28 +138,28 @@
     <visual>
       <origin xyz="-0.0155 0.11257 0.0187" rpy="-3.14159 -3.22659e-15 -3.14159"/>
       <geometry>
-        <mesh filename="package://DDT//assets/sts3215_03a_v1.stl"/>
+        <mesh filename="package://FFD/assets/sts3215_03a_v1.stl"/>
       </geometry>
       <material name="sts3215"/>
     </visual>
     <collision>
       <origin xyz="-0.0155 0.11257 0.0187" rpy="-3.14159 -3.22659e-15 -3.14159"/>
       <geometry>
-        <mesh filename="package://DDT//assets/sts3215_03a_v1.stl"/>
+        <mesh filename="package://FFD/assets/sts3215_03a_v1.stl"/>
       </geometry>
     </collision>
     <!-- Part upper_arm_so101_v1 -->
     <visual>
       <origin xyz="0.012 0.065085 0.0182" rpy="3.14159 -1.22125e-15 -1.5708"/>
       <geometry>
-        <mesh filename="package://DDT//assets/upper_arm_so101_v1.stl"/>
+        <mesh filename="package://FFD/assets/upper_arm_so101_v1.stl"/>
       </geometry>
       <material name="3d_printed"/>
     </visual>
     <collision>
       <origin xyz="0.012 0.065085 0.0182" rpy="3.14159 -1.22125e-15 -1.5708"/>
       <geometry>
-        <mesh filename="package://DDT//assets/upper_arm_so101_v1.stl"/>
+        <mesh filename="package://FFD/assets/upper_arm_so101_v1.stl"/>
       </geometry>
     </collision>
   </link>
@@ -175,42 +175,42 @@
     <visual>
       <origin xyz="0.032 -0.0648499 0.0182" rpy="3.14159 -1.11022e-16 1.5708"/>
       <geometry>
-        <mesh filename="package://DDT//assets/under_arm_so101_v1.stl"/>
+        <mesh filename="package://FFD/assets/under_arm_so101_v1.stl"/>
       </geometry>
       <material name="3d_printed"/>
     </visual>
     <collision>
       <origin xyz="0.032 -0.0648499 0.0182" rpy="3.14159 -1.11022e-16 1.5708"/>
       <geometry>
-        <mesh filename="package://DDT//assets/under_arm_so101_v1.stl"/>
+        <mesh filename="package://FFD/assets/under_arm_so101_v1.stl"/>
       </geometry>
     </collision>
     <!-- Part motor_holder_so101_wrist_v1 -->
     <visual>
       <origin xyz="0.032 -0.0648499 0.018" rpy="-3.14159 -1.11022e-16 1.5708"/>
       <geometry>
-        <mesh filename="package://DDT//assets/motor_holder_so101_wrist_v1.stl"/>
+        <mesh filename="package://FFD/assets/motor_holder_so101_wrist_v1.stl"/>
       </geometry>
       <material name="3d_printed"/>
     </visual>
     <collision>
       <origin xyz="0.032 -0.0648499 0.018" rpy="-3.14159 -1.11022e-16 1.5708"/>
       <geometry>
-        <mesh filename="package://DDT//assets/motor_holder_so101_wrist_v1.stl"/>
+        <mesh filename="package://FFD/assets/motor_holder_so101_wrist_v1.stl"/>
       </geometry>
     </collision>
     <!-- Part sts3215_03a_v1_4 -->
     <visual>
       <origin xyz="-0.0052 -0.1224 0.0187" rpy="3.14159 -8.24341e-15 -1.5708"/>
       <geometry>
-        <mesh filename="package://DDT//assets/sts3215_03a_v1.stl"/>
+        <mesh filename="package://FFD/assets/sts3215_03a_v1.stl"/>
       </geometry>
       <material name="sts3215"/>
     </visual>
     <collision>
       <origin xyz="-0.0052 -0.1224 0.0187" rpy="3.14159 -8.24341e-15 -1.5708"/>
       <geometry>
-        <mesh filename="package://DDT//assets/sts3215_03a_v1.stl"/>
+        <mesh filename="package://FFD/assets/sts3215_03a_v1.stl"/>
       </geometry>
     </collision>
   </link>
@@ -226,28 +226,28 @@
     <visual>
       <origin xyz="0 -0.0424 0.0306" rpy="1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://DDT//assets/sts3215_03a_no_horn_v1.stl"/>
+        <mesh filename="package://FFD/assets/sts3215_03a_no_horn_v1.stl"/>
       </geometry>
       <material name="sts3215"/>
     </visual>
     <collision>
       <origin xyz="0 -0.0424 0.0306" rpy="1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://DDT//assets/sts3215_03a_no_horn_v1.stl"/>
+        <mesh filename="package://FFD/assets/sts3215_03a_no_horn_v1.stl"/>
       </geometry>
     </collision>
     <!-- Part wrist_roll_pitch_so101_v2 -->
     <visual>
       <origin xyz="-2.77556e-17 -0.028 0.0181" rpy="-1.5708 -1.5708 0"/>
       <geometry>
-        <mesh filename="package://DDT//assets/wrist_roll_pitch_so101_v2.stl"/>
+        <mesh filename="package://FFD/assets/wrist_roll_pitch_so101_v2.stl"/>
       </geometry>
       <material name="3d_printed"/>
     </visual>
     <collision>
       <origin xyz="-2.77556e-17 -0.028 0.0181" rpy="-1.5708 -1.5708 0"/>
       <geometry>
-        <mesh filename="package://DDT//assets/wrist_roll_pitch_so101_v2.stl"/>
+        <mesh filename="package://FFD/assets/wrist_roll_pitch_so101_v2.stl"/>
       </geometry>
     </collision>
   </link>
@@ -263,28 +263,28 @@
     <visual>
       <origin xyz="0.0077 0.0001 -0.0234" rpy="-1.5708 -5.55112e-17 -1.38213e-14"/>
       <geometry>
-        <mesh filename="package://DDT//assets/sts3215_03a_v1.stl"/>
+        <mesh filename="package://FFD/assets/sts3215_03a_v1.stl"/>
       </geometry>
       <material name="sts3215"/>
     </visual>
     <collision>
       <origin xyz="0.0077 0.0001 -0.0234" rpy="-1.5708 -5.55112e-17 -1.38213e-14"/>
       <geometry>
-        <mesh filename="package://DDT//assets/sts3215_03a_v1.stl"/>
+        <mesh filename="package://FFD/assets/sts3215_03a_v1.stl"/>
       </geometry>
     </collision>
     <!-- Part wrist_roll_follower_so101_v1 -->
     <visual>
       <origin xyz="1.11022e-16 -0.000218214 0.000949706" rpy="-3.14159 -5.55112e-17 -6.22813e-24"/>
       <geometry>
-        <mesh filename="package://DDT//assets/wrist_roll_follower_so101_v1.stl"/>
+        <mesh filename="package://FFD/assets/wrist_roll_follower_so101_v1.stl"/>
       </geometry>
       <material name="3d_printed"/>
     </visual>
     <collision>
       <origin xyz="1.11022e-16 -0.000218214 0.000949706" rpy="-3.14159 -5.55112e-17 -6.22813e-24"/>
       <geometry>
-        <mesh filename="package://DDT//assets/wrist_roll_follower_so101_v1.stl"/>
+        <mesh filename="package://FFD/assets/wrist_roll_follower_so101_v1.stl"/>
       </geometry>
     </collision>
   </link>
@@ -300,14 +300,14 @@
     <visual>
       <origin xyz="0 1.89351e-17 0.0189" rpy="9.53145e-17 -1.20743e-23 0"/>
       <geometry>
-        <mesh filename="package://DDT//assets/moving_jaw_so101_v1.stl"/>
+        <mesh filename="package://FFD/assets/moving_jaw_so101_v1.stl"/>
       </geometry>
       <material name="3d_printed"/>
     </visual>
     <collision>
       <origin xyz="0 1.89351e-17 0.0189" rpy="9.53145e-17 -1.20743e-23 0"/>
       <geometry>
-        <mesh filename="package://DDT//assets/moving_jaw_so101_v1.stl"/>
+        <mesh filename="package://FFD/assets/moving_jaw_so101_v1.stl"/>
       </geometry>
     </collision>
   </link>

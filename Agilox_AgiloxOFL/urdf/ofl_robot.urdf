@@ -6,7 +6,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://Agilox/OFL/meshes/body1.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://Agilox_AgiloxOFL/meshes/body1.stl" scale="1.0 1.0 1.0"/>
       </geometry>
       <material name="body_grey">
         <color rgba="0.6 0.6 0.6 1.0"/>
@@ -16,7 +16,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://Agilox/OFL/meshes/body1.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://Agilox_AgiloxOFL/meshes/body1.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
 
@@ -44,7 +44,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://Agilox/OFL/meshes/skates1.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://Agilox_AgiloxOFL/meshes/skates1.stl" scale="1.0 1.0 1.0"/>
       </geometry>
       <material name="skates_grey">
         <color rgba="0.4 0.4 0.4 1.0"/>
@@ -54,7 +54,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://Agilox/OFL/meshes/skates1.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://Agilox_AgiloxOFL/meshes/skates1.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
 

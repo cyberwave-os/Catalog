@@ -20,7 +20,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.037646 0 0"/>
       <geometry>
-        <mesh filename="package://MiR/mir_250/meshes/visual/mir_250_base.stl"/>
+        <mesh filename="package://mir_250/meshes/visual/mir_250_base.stl"/>
       </geometry>
       <material name="white">
         <color rgba="1 1 1 1"/>
@@ -29,7 +29,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0.037646 0 0"/>
       <geometry>
-        <mesh filename="package://MiR/mir_250/meshes/collision/mir_250_base.stl"/>
+        <mesh filename="package://mir_250/meshes/collision/mir_250_base.stl"/>
       </geometry>
     </collision>
   </link>
@@ -81,7 +81,7 @@
     <visual>
       <origin rpy="3.141592653589793 0 0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://MiR/mir_250/meshes/visual/sick_lms-100.stl"/>
+        <mesh filename="package://mir_250/meshes/visual/sick_lms-100.stl"/>
       </geometry>
       <!-- <xacro:insert_block name="material_yellow" /> -->
       <material name="black">
@@ -91,7 +91,7 @@
     <collision>
       <origin rpy="3.141592653589793 0 0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://MiR/mir_250/meshes/visual/sick_lms-100.stl"/>
+        <mesh filename="package://mir_250/meshes/visual/sick_lms-100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -146,7 +146,7 @@
     <visual>
       <origin rpy="3.141592653589793 0 0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://MiR/mir_250/meshes/visual/sick_lms-100.stl"/>
+        <mesh filename="package://mir_250/meshes/visual/sick_lms-100.stl"/>
       </geometry>
       <!-- <xacro:insert_block name="material_yellow" /> -->
       <material name="black">
@@ -156,7 +156,7 @@
     <collision>
       <origin rpy="3.141592653589793 0 0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <mesh filename="package://MiR/mir_250/meshes/visual/sick_lms-100.stl"/>
+        <mesh filename="package://mir_250/meshes/visual/sick_lms-100.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -301,7 +301,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://MiR/mir_250/meshes/visual/caster_wheel_base.stl"/>
+        <mesh filename="package://mir_250/meshes/visual/caster_wheel_base.stl"/>
       </geometry>
       <material name="silver">
         <color rgba="0.79 0.82 0.93 1"/>
@@ -310,7 +310,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://MiR/mir_250/meshes/collision/caster_wheel_base.stl"/>
+        <mesh filename="package://mir_250/meshes/collision/caster_wheel_base.stl"/>
       </geometry>
     </collision>
   </link>
@@ -367,7 +367,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://MiR/mir_250/meshes/visual/caster_wheel_base.stl"/>
+        <mesh filename="package://mir_250/meshes/visual/caster_wheel_base.stl"/>
       </geometry>
       <material name="silver">
         <color rgba="0.79 0.82 0.93 1"/>
@@ -376,7 +376,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://MiR/mir_250/meshes/collision/caster_wheel_base.stl"/>
+        <mesh filename="package://mir_250/meshes/collision/caster_wheel_base.stl"/>
       </geometry>
     </collision>
   </link>
@@ -433,7 +433,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://MiR/mir_250/meshes/visual/caster_wheel_base.stl"/>
+        <mesh filename="package://mir_250/meshes/visual/caster_wheel_base.stl"/>
       </geometry>
       <material name="silver">
         <color rgba="0.79 0.82 0.93 1"/>
@@ -442,7 +442,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://MiR/mir_250/meshes/collision/caster_wheel_base.stl"/>
+        <mesh filename="package://mir_250/meshes/collision/caster_wheel_base.stl"/>
       </geometry>
     </collision>
   </link>
@@ -499,7 +499,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://MiR/mir_250/meshes/visual/caster_wheel_base.stl"/>
+        <mesh filename="package://mir_250/meshes/visual/caster_wheel_base.stl"/>
       </geometry>
       <material name="silver">
         <color rgba="0.79 0.82 0.93 1"/>
@@ -508,7 +508,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://MiR/mir_250/meshes/collision/caster_wheel_base.stl"/>
+        <mesh filename="package://mir_250/meshes/collision/caster_wheel_base.stl"/>
       </geometry>
     </collision>
   </link>

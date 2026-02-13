@@ -7,13 +7,13 @@
     <visual>
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
       <geometry>
-        <mesh filename="package://Agile_X_Robotics/tracer_20/meshes/tracer_base_link.stl" />
+        <mesh filename="../meshes/tracer_base_link.stl" />
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
       <geometry>
-        <mesh filename="package://Agile_X_Robotics/tracer_20/meshes/tracer_base_link.stl" />
+        <mesh filename="../meshes/tracer_base_link.stl" />
       </geometry>
     </collision>
   </link>
@@ -42,13 +42,13 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://Agile_X_Robotics/tracer_20/meshes/tracer_wheel.stl" />
+        <mesh filename="../meshes/tracer_wheel.stl" />
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://Agile_X_Robotics/tracer_20/meshes/tracer_wheel.stl" />
+        <mesh filename="../meshes/tracer_wheel.stl" />
       </geometry>
     </collision>
   </link>
@@ -69,13 +69,13 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://Agile_X_Robotics/tracer_20/meshes/tracer_wheel.stl" />
+        <mesh filename="../meshes/tracer_wheel.stl" />
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://Agile_X_Robotics/tracer_20/meshes/tracer_wheel.stl" />
+        <mesh filename="../meshes/tracer_wheel.stl" />
       </geometry>
     </collision>
   </link>
@@ -95,7 +95,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://Agile_X_Robotics/tracer_20/meshes/castor_joint.stl" />
+        <mesh filename="../meshes/castor_joint.stl" />
       </geometry>
     </visual>
   </link>
@@ -115,7 +115,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://Agile_X_Robotics/tracer_20/meshes/castor_joint.stl" />
+        <mesh filename="../meshes/castor_joint.stl" />
       </geometry>
     </visual>
   </link>
@@ -135,7 +135,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://Agile_X_Robotics/tracer_20/meshes/castor_joint.stl" />
+        <mesh filename="../meshes/castor_joint.stl" />
       </geometry>
     </visual>
   </link>
@@ -155,7 +155,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://Agile_X_Robotics/tracer_20/meshes/castor_joint.stl" />
+        <mesh filename="../meshes/castor_joint.stl" />
       </geometry>
     </visual>
   </link>
@@ -175,13 +175,13 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://Agile_X_Robotics/tracer_20/meshes/castor.stl" />
+        <mesh filename="../meshes/castor.stl" />
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://Agile_X_Robotics/tracer_20/meshes/castor.stl" />
+        <mesh filename="../meshes/castor.stl" />
       </geometry>
     </collision>
   </link>
@@ -202,13 +202,13 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://Agile_X_Robotics/tracer_20/meshes/castor.stl" />
+        <mesh filename="../meshes/castor.stl" />
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://Agile_X_Robotics/tracer_20/meshes/castor.stl" />
+        <mesh filename="../meshes/castor.stl" />
       </geometry>
     </collision>
   </link>
@@ -229,13 +229,13 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://Agile_X_Robotics/tracer_20/meshes/castor.stl" />
+        <mesh filename="../meshes/castor.stl" />
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://Agile_X_Robotics/tracer_20/meshes/castor.stl" />
+        <mesh filename="../meshes/castor.stl" />
       </geometry>
     </collision>
   </link>
@@ -256,13 +256,13 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://Agile_X_Robotics/tracer_20/meshes/castor.stl" />
+        <mesh filename="../meshes/castor.stl" />
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://Agile_X_Robotics/tracer_20/meshes/castor.stl" />
+        <mesh filename="../meshes/castor.stl" />
       </geometry>
     </collision>
   </link>

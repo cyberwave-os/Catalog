@@ -7,13 +7,13 @@
     <visual>
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
       <geometry>
-        <mesh filename="package://Agile_X_Robotics/tracer_2.0/meshes/tracer_base_link_no_wheel.stl" />
+        <mesh filename="package://Agile_X_Robotics/tracer_2.0/meshes/tracer_base_link.stl" />
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
       <geometry>
-        <mesh filename="package://Agile_X_Robotics/tracer_2.0/meshes/tracer_base_link_no_wheel.stl" />
+        <mesh filename="package://Agile_X_Robotics/tracer_2.0/meshes/tracer_base_link.stl" />
       </geometry>
     </collision>
   </link>

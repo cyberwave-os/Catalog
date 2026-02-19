@@ -310,7 +310,7 @@
       <inertia ixx="0.00000237" ixy="0.0" ixz="0.0" iyy="0.00000237" iyz="0.0" izz="0.00000075"/>
     </inertial>
   </link>
-  <joint name="openarm_left_finger1_joint" type="prismatic">
+  <joint name="openarm_left_finger_joint1" type="prismatic">
     <origin rpy="0 0 0" xyz="0.0 0.0 0.075"/>
     <parent link="openarm_left_hand"/>
     <child link="openarm_left_finger1"/>
@@ -339,7 +339,7 @@
       <inertia ixx="0.00000237" ixy="0.0" ixz="0.0" iyy="0.00000237" iyz="0.0" izz="0.00000075"/>
     </inertial>
   </link>
-  <joint name="openarm_left_finger2_joint" type="prismatic">
+  <joint name="openarm_left_finger_joint2" type="prismatic">
     <origin rpy="0 0 0" xyz="0.0 0.0 0.075"/>
     <parent link="openarm_left_hand"/>
     <child link="openarm_left_finger2"/>
@@ -624,7 +624,7 @@
       <inertia ixx="0.00000237" ixy="0.0" ixz="0.0" iyy="0.00000237" iyz="0.0" izz="0.00000075"/>
     </inertial>
   </link>
-  <joint name="openarm_right_finger1_joint" type="prismatic">
+  <joint name="openarm_right_finger_joint1" type="prismatic">
     <origin rpy="0 0 0" xyz="0.0 0.0 0.075"/>
     <parent link="openarm_right_hand"/>
     <child link="openarm_right_finger1"/>
@@ -653,7 +653,7 @@
       <inertia ixx="0.00000237" ixy="0.0" ixz="0.0" iyy="0.00000237" iyz="0.0" izz="0.00000075"/>
     </inertial>
   </link>
-  <joint name="openarm_right_finger2_joint" type="prismatic">
+  <joint name="openarm_right_finger_joint2" type="prismatic">
     <origin rpy="0 0 0" xyz="0.0 0.0 0.075"/>
     <parent link="openarm_right_hand"/>
     <child link="openarm_right_finger2"/>
@@ -773,7 +773,7 @@
         <param name="initial_value">0.0</param>
       </state_interface>
     </joint>
-    <joint name="openarm_left_finger1_joint">
+    <joint name="openarm_left_finger_joint1">
       <command_interface name="position"/>
       <command_interface name="velocity"/>
       <command_interface name="effort"/>
@@ -787,7 +787,7 @@
         <param name="initial_value">0.0</param>
       </state_interface>
     </joint>
-    <joint name="openarm_left_finger2_joint">
+    <joint name="openarm_left_finger_joint2">
       <command_interface name="position"/>
       <command_interface name="velocity"/>
       <command_interface name="effort"/>
@@ -908,7 +908,7 @@
         <param name="initial_value">0.0</param>
       </state_interface>
     </joint>
-    <joint name="openarm_right_finger1_joint">
+    <joint name="openarm_right_finger_joint1">
       <command_interface name="position"/>
       <command_interface name="velocity"/>
       <command_interface name="effort"/>
@@ -922,7 +922,7 @@
         <param name="initial_value">0.0</param>
       </state_interface>
     </joint>
-    <joint name="openarm_right_finger2_joint">
+    <joint name="openarm_right_finger_joint2">
       <command_interface name="position"/>
       <command_interface name="velocity"/>
       <command_interface name="effort"/>

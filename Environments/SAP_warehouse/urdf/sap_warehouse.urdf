@@ -1,0 +1,26 @@
+<robot name="sap_warehouse">
+
+  <link name="world" />
+
+  <link name="sap_warehouse_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://Environments/SAP_warehouse/meshes/sap_warehouse.stl" />
+      </geometry>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://Environments/SAP_warehouse/meshes/sap_warehouse.stl" />
+      </geometry>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    </collision>
+  </link>
+
+  <joint name="world-sap_warehouse" type="fixed">
+    <parent link="world" />
+    <child link="sap_warehouse_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+  </joint>
+
+</robot>

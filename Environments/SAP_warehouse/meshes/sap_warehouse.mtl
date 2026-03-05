@@ -14,7 +14,7 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd Adidas.jpg
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/Adidas.jpg
 
 newmtl BlackPlastic.001
 Kd 0.031932 0.031932 0.031932
@@ -44,8 +44,8 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd BoxSize0_Bake1_PBR_Diffuse.jpg
-map_Bump -bm 1.000000 BoxSize0.001_Bake1_PBR StoA_Normal.jpg
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/BoxSize0_Bake1_PBR_Diffuse.jpg
+map_Bump -bm 1.000000 /Users/lapsus/Downloads/IsaacSim 2/textures/BoxSize0.001_Bake1_PBR StoA_Normal.jpg
 
 newmtl BoxSize0Raw.001
 Ks 0.500000 0.500000 0.500000
@@ -60,8 +60,8 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd BoxSize0Rohling__PBR StoA_Diffuse.jpg
-map_Bump -bm 1.000000 BoxSize0Rohling__PBR StoA_Normal.jpg
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/BoxSize0Rohling__PBR StoA_Diffuse.jpg
+map_Bump -bm 1.000000 /Users/lapsus/Downloads/IsaacSim 2/textures/BoxSize0Rohling__PBR StoA_Normal.jpg
 
 newmtl BoxSize0Raw_002.001
 Ks 0.500000 0.500000 0.500000
@@ -76,8 +76,8 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd BoxSize4_Rohling__PBR StoA_Diffuse.jpg
-map_Bump -bm 1.000000 BoxSize4_Rohling__PBR StoA_Normal.jpg
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/BoxSize4_Rohling__PBR StoA_Diffuse.jpg
+map_Bump -bm 1.000000 /Users/lapsus/Downloads/IsaacSim 2/textures/BoxSize4_Rohling__PBR StoA_Normal.jpg
 
 newmtl BoxSize0Raw_bottom.001
 Ks 0.500000 0.500000 0.500000
@@ -92,8 +92,8 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd BoxSize0Rohling__PBR StoA_Diffuse.jpg
-map_Bump -bm 1.000000 BoxSize0Rohling__PBR StoA_Normal.jpg
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/BoxSize0Rohling__PBR StoA_Diffuse.jpg
+map_Bump -bm 1.000000 /Users/lapsus/Downloads/IsaacSim 2/textures/BoxSize0Rohling__PBR StoA_Normal.jpg
 
 newmtl BoxSize0Raw_top.001
 Ks 0.500000 0.500000 0.500000
@@ -108,8 +108,8 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd BoxSize0Rohling__PBR StoA_Diffuse.jpg
-map_Bump -bm 1.000000 BoxSize0Rohling__PBR StoA_Normal.jpg
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/BoxSize0Rohling__PBR StoA_Diffuse.jpg
+map_Bump -bm 1.000000 /Users/lapsus/Downloads/IsaacSim 2/textures/BoxSize0Rohling__PBR StoA_Normal.jpg
 
 newmtl BoxSize1.001
 Ks 0.500000 0.500000 0.500000
@@ -124,8 +124,8 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd BoxSize1__PBR StoA_Diffuse.png
-map_Bump -bm 1.000000 BoxSize1__PBR StoA_Normal.png
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/BoxSize1__PBR StoA_Diffuse.png
+map_Bump -bm 1.000000 /Users/lapsus/Downloads/IsaacSim 2/textures/BoxSize1__PBR StoA_Normal.png
 
 newmtl BoxSize1_002.001
 Ks 0.500000 0.500000 0.500000
@@ -140,8 +140,8 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd BoxSize1_Rohling__PBR StoA_Diffuse.jpg
-map_Bump -bm 1.000000 BoxSize1_Rohling__PBR StoA_Normal.jpg
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/BoxSize1_Rohling__PBR StoA_Diffuse.jpg
+map_Bump -bm 1.000000 /Users/lapsus/Downloads/IsaacSim 2/textures/BoxSize1_Rohling__PBR StoA_Normal.jpg
 
 newmtl BoxSize2.001
 Ks 0.500000 0.500000 0.500000
@@ -156,8 +156,8 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd BoxSize2__PBR StoA_Diffuse.jpg
-map_Bump -bm 1.000000 BoxSize2__PBR StoA_Normal.jpg
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/BoxSize2__PBR StoA_Diffuse.jpg
+map_Bump -bm 1.000000 /Users/lapsus/Downloads/IsaacSim 2/textures/BoxSize2__PBR StoA_Normal.jpg
 
 newmtl BoxSize3.001
 Ks 0.500000 0.500000 0.500000
@@ -172,8 +172,8 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd BoxSize3_Bake1_PBR StoA_Diffuse.png
-map_Bump -bm 1.000000 BoxSize3_Bake1_PBR StoA_Normal.png
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/BoxSize3_Bake1_PBR StoA_Diffuse.png
+map_Bump -bm 1.000000 /Users/lapsus/Downloads/IsaacSim 2/textures/BoxSize3_Bake1_PBR StoA_Normal.png
 
 newmtl BoxSize4.001
 Ks 0.500000 0.500000 0.500000
@@ -188,8 +188,8 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd BoxSize4__PBR StoA_Diffuse.png
-map_Bump -bm 1.000000 BoxSize4__PBR StoA_Normal.png
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/BoxSize4__PBR StoA_Diffuse.png
+map_Bump -bm 1.000000 /Users/lapsus/Downloads/IsaacSim 2/textures/BoxSize4__PBR StoA_Normal.png
 
 newmtl BrickWall.001
 Ks 0.500000 0.500000 0.500000
@@ -204,8 +204,8 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd -s 25 20 1 tiles_0036_base_color_2k.jpg
-map_Bump -s 25 20 1 -bm 1.000000 tiles_0036_normal_directx_2k.png
+map_Kd -s 25 20 1 /Users/lapsus/Downloads/IsaacSim 2/textures/tiles_0036_base_color_2k.jpg
+map_Bump -s 25 20 1 -bm 1.000000 /Users/lapsus/Downloads/IsaacSim 2/textures/tiles_0036_normal_directx_2k.png
 
 newmtl BrickWallBlue.001
 Ks 0.500000 0.500000 0.500000
@@ -220,8 +220,8 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd -s 25 20 1 tiles_0036_baseblue_color_2k.jpg
-map_Bump -s 25 20 1 -bm 1.000000 tiles_0036_normal_directx_2k.png
+map_Kd -s 25 20 1 /Users/lapsus/Downloads/IsaacSim 2/textures/tiles_0036_baseblue_color_2k.jpg
+map_Bump -s 25 20 1 -bm 1.000000 /Users/lapsus/Downloads/IsaacSim 2/textures/tiles_0036_normal_directx_2k.png
 
 newmtl CheckoutStation.001
 Ks 0.500000 0.500000 0.500000
@@ -236,8 +236,8 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd 2_stations_checkout_station_color.jpg
-map_Bump -bm 1.000000 2_stations_checkout_station_nmap.jpg
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/2_stations_checkout_station_color.jpg
+map_Bump -bm 1.000000 /Users/lapsus/Downloads/IsaacSim 2/textures/2_stations_checkout_station_nmap.jpg
 
 newmtl Concrete.001
 Ks 0.500000 0.500000 0.500000
@@ -252,8 +252,8 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd -s 25 25 1 concrete_0019_color_2k.jpg
-map_Bump -s 25 25 1 -bm 1.000000 concrete_0019_normal_directx_2k.png
+map_Kd -s 25 25 1 /Users/lapsus/Downloads/IsaacSim 2/textures/concrete_0019_color_2k.jpg
+map_Bump -s 25 25 1 -bm 1.000000 /Users/lapsus/Downloads/IsaacSim 2/textures/concrete_0019_normal_directx_2k.png
 
 newmtl Container.001
 Kd 0.270602 0.270602 0.270602
@@ -298,8 +298,8 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd dhl_storage_default_color.jpg
-map_Bump -bm 1.000000 dhl_storage_default_nmap.jpg
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/dhl_storage_default_color.jpg
+map_Bump -bm 1.000000 /Users/lapsus/Downloads/IsaacSim 2/textures/dhl_storage_default_nmap.jpg
 
 newmtl DeliveryServiceStorage2.001
 Ks 0.500000 0.500000 0.500000
@@ -314,8 +314,8 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd storage4_uv-checker_color.jpg
-map_Bump -bm 1.000000 storage4_uv-checker_nmap.jpg
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/storage4_uv-checker_color.jpg
+map_Bump -bm 1.000000 /Users/lapsus/Downloads/IsaacSim 2/textures/storage4_uv-checker_nmap.jpg
 
 newmtl EmissionLight.001
 Kd 0.800000 0.800000 0.800000
@@ -340,9 +340,9 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd Fender.jpeg
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/Fender.jpeg
 
-newmtl Floor.001
+newmtl Floor.002
 Kd 0.212839 0.212839 0.212839
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
@@ -356,7 +356,7 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Bump -s 180 180 1 -bm 1.000000 Unbenanntes Material_Normal.png
+map_Bump -s 180 180 1 -bm 1.000000 /Users/lapsus/Downloads/IsaacSim 2/textures/Unbenanntes Material_Normal.png
 
 newmtl GenericMetal.001
 Kd 0.287788 0.287788 0.287788
@@ -431,7 +431,7 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd Hasbro.jpg
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/Hasbro.jpg
 
 newmtl Heater.001
 Kd 0.693537 0.693775 0.639027
@@ -461,8 +461,8 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd anodized_alu_03_BaseColor.png
-map_Bump -bm 1.000000 anodized_alu_03_Normal.png
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/anodized_alu_03_BaseColor.png
+map_Bump -bm 1.000000 /Users/lapsus/Downloads/IsaacSim 2/textures/anodized_alu_03_Normal.png
 
 newmtl InHouseStorage2.001
 Ks 0.500000 0.500000 0.500000
@@ -477,8 +477,8 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd DefaultMaterial_BaseColor.png
-map_Bump -bm 1.000000 DefaultMaterial_Normal.png
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/DefaultMaterial_BaseColor.png
+map_Bump -bm 1.000000 /Users/lapsus/Downloads/IsaacSim 2/textures/DefaultMaterial_Normal.png
 
 newmtl Lock.001
 Kd 0.200000 0.200000 0.200000
@@ -508,7 +508,7 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd Nikon.jpg
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/Nikon.jpg
 
 newmtl PackingStation.001
 Ks 0.500000 0.500000 0.500000
@@ -523,8 +523,8 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd 2_stations_preparation_table.001backing_station_color.jpg
-map_Bump -bm 1.000000 2_stations_preparation_table.001backing_station_nmap.jpg
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/2_stations_preparation_table.001backing_station_color.jpg
+map_Bump -bm 1.000000 /Users/lapsus/Downloads/IsaacSim 2/textures/2_stations_preparation_table.001backing_station_nmap.jpg
 
 newmtl Pallet.001
 Ks 0.500000 0.500000 0.500000
@@ -539,8 +539,8 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd texgen_1.png
-map_Bump -bm 1.000000 texgen_0.png
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/texgen_1.png
+map_Bump -bm 1.000000 /Users/lapsus/Downloads/IsaacSim 2/textures/texgen_0.png
 
 newmtl Porsche.001
 Ks 0.500000 0.500000 0.500000
@@ -555,7 +555,7 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd Porsche.jpeg
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/Porsche.jpeg
 
 newmtl PreparationTable.001
 Ks 0.500000 0.500000 0.500000
@@ -570,8 +570,8 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd preparation_table_color.jpg
-map_Bump -bm 1.000000 preparation_table_nmap.jpg
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/preparation_table_color.jpg
+map_Bump -bm 1.000000 /Users/lapsus/Downloads/IsaacSim 2/textures/preparation_table_nmap.jpg
 
 newmtl RedPaint.001
 Kd 0.580131 0.029051 0.019132
@@ -616,7 +616,7 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd MergedBake__PBR_Diffuse.jpg
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/MergedBake__PBR_Diffuse.jpg
 
 newmtl SAPLogo.001
 Ks 0.500000 0.500000 0.500000
@@ -631,7 +631,7 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd SAP_2011_logo.svg.png
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/SAP_2011_logo.svg.png
 
 newmtl Santa.001
 Ks 0.500000 0.500000 0.500000
@@ -646,7 +646,7 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd Santa runs SAP.jpeg
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/Santa runs SAP.jpeg
 
 newmtl Screen.001
 Kd 0.600000 0.600000 0.600000
@@ -676,7 +676,7 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd Schilder.jpg
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/Schilder.jpg
 
 newmtl TagHeuer.001
 Ks 0.500000 0.500000 0.500000
@@ -691,7 +691,7 @@ Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
-map_Kd Tag Heuer.jpg
+map_Kd /Users/lapsus/Downloads/IsaacSim 2/textures/Tag Heuer.jpg
 
 newmtl YellowBox.001
 Kd 0.898000 1.000000 0.000279

@@ -5,7 +5,7 @@
   <link name="sap_warehouse_link">
     <visual>
       <geometry>
-        <mesh filename="package://Environments/SAP_warehouse/meshes/sap_warehouse.stl" />
+        <mesh filename="package://Environments/SAP_warehouse/meshes/sap_warehouse.obj" />
       </geometry>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
     </visual>

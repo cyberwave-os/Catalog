@@ -6,14 +6,14 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://Cyber_Pad/meshes/visual/CyPad.obj"/>
+        <mesh filename="package://Cyber_Pad/meshes/visual/CyPad2.obj"/>
       </geometry>
     </visual>
 
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://Cyber_Pad/meshes/collision/CyPad.stl"/>
+        <mesh filename="package://Cyber_Pad/meshes/collision/CyPad2.stl"/>
       </geometry>
     </collision>
 

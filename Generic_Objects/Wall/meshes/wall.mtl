@@ -1,17 +1,18 @@
-# Blender 5.0.0 Beta MTL File: 'None'
+# Blender 5.0.0 Beta MTL File: 'wall.blend'
 # www.blender.org
 
-newmtl BrickWall
-Kd 0.800000 0.800000 0.800000
-Ks 0.300000 0.300000 0.300000
+newmtl BrickWallTextured
+Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 d 1.000000
 illum 2
-Pr 0.850000
 Pm 0.000000
 Ps 0.000000
 Pc 0.000000
 Pcr 0.030000
 aniso 0.000000
 anisor 0.000000
+map_Kd -s 12 12 12 brick_wall_001_Diffuse.png
+map_Pr -s 12 12 12 brick_wall_001_Rough.png
+map_Bump -s 12 12 12 -bm 1.000000 brick_wall_001_nor_gl.png

@@ -11,7 +11,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/floor.stl"/>
+        <mesh filename="../meshes/floor.obj"/>
       </geometry>
     </collision>
     <inertial>

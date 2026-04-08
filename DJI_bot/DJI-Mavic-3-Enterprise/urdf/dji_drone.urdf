@@ -10,7 +10,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="meshes/body.stl" scale="0.015 0.015 0.015" />
+        <mesh filename="../meshes/body.stl" scale="0.015 0.015 0.015" />
       </geometry>
     </visual>
     <inertial>
@@ -56,7 +56,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="meshes/prop_fl.stl" scale="0.015 0.015 0.015" />
+        <mesh filename="../meshes/prop_fl.stl" scale="0.015 0.015 0.015" />
       </geometry>
     </visual>
     <inertial>
@@ -75,7 +75,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="meshes/prop_fr.stl" scale="0.015 0.015 0.015" />
+        <mesh filename="../meshes/prop_fr.stl" scale="0.015 0.015 0.015" />
       </geometry>
     </visual>
     <inertial>
@@ -94,7 +94,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="meshes/prop_rl.stl" scale="0.015 0.015 0.015" />
+        <mesh filename="../meshes/prop_rl.stl" scale="0.015 0.015 0.015" />
       </geometry>
     </visual>
     <inertial>
@@ -113,7 +113,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="meshes/prop_rr.stl" scale="0.015 0.015 0.015" />
+        <mesh filename="../meshes/prop_rr.stl" scale="0.015 0.015 0.015" />
       </geometry>
     </visual>
     <inertial>

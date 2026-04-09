@@ -15,11 +15,11 @@
     </visual>
     <inertial>
       <mass value="0.92" />
-      <inertia ixx="0.002" ixy="0" ixz="0" iyy="0.004" iyz="0" izz="0.005" />
+      <inertia ixx="0.004" ixy="0" ixz="0" iyy="0.002" iyz="0" izz="0.005" />
     </inertial>
     <collision>
       <geometry>
-        <box size="0.35 0.28 0.11" />
+        <box size="0.28 0.35 0.11" />
       </geometry>
     </collision>
   </link>
@@ -33,7 +33,7 @@
     </inertial>
   </link>
   <joint name="camera_joint" type="fixed">
-    <origin xyz="0 0.1585 0.0091" rpy="0 0 0" />
+    <origin xyz="0.1585 0 0.0091" rpy="0 0 0" />
     <parent link="base_link" />
     <child link="camera_link" />
   </joint>
@@ -45,7 +45,7 @@
     </inertial>
   </link>
   <joint name="payload_joint" type="fixed">
-    <origin xyz="0 0.1585 -0.0209" rpy="0 0 0" />
+    <origin xyz="0.1585 0 -0.0209" rpy="0 0 0" />
     <parent link="base_link" />
     <child link="payload_link" />
   </joint>
@@ -65,7 +65,7 @@
     </inertial>
   </link>
   <joint name="prop_fl_joint" type="continuous">
-    <origin xyz="-0.2414 0.1474 0.016" />
+    <origin xyz="0.1474 0.2414 0.016" />
     <parent link="base_link" />
     <child link="prop_fl" />
     <axis xyz="0 0 1" />
@@ -84,7 +84,7 @@
     </inertial>
   </link>
   <joint name="prop_fr_joint" type="continuous">
-    <origin xyz="0.2414 0.1474 0.0162" />
+    <origin xyz="0.1474 -0.2414 0.0162" />
     <parent link="base_link" />
     <child link="prop_fr" />
     <axis xyz="0 0 1" />
@@ -103,7 +103,7 @@
     </inertial>
   </link>
   <joint name="prop_rl_joint" type="continuous">
-    <origin xyz="-0.1912 -0.2162 0.0057" />
+    <origin xyz="-0.2162 0.1912 0.0057" />
     <parent link="base_link" />
     <child link="prop_rl" />
     <axis xyz="0 0 1" />
@@ -122,7 +122,7 @@
     </inertial>
   </link>
   <joint name="prop_rr_joint" type="continuous">
-    <origin xyz="0.1912 -0.2162 0.0058" />
+    <origin xyz="-0.2162 -0.1912 0.0058" />
     <parent link="base_link" />
     <child link="prop_rr" />
     <axis xyz="0 0 1" />
@@ -134,7 +134,7 @@
     <inertial><mass value="0.001" /><inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7" /></inertial>
   </link>
   <joint name="arm_fl_joint" type="fixed">
-    <origin xyz="-0.1207 0.0737 0.008" />
+    <origin xyz="0.0737 0.1207 0.008" />
     <parent link="base_link" />
     <child link="arm_fl" />
   </joint>
@@ -143,7 +143,7 @@
     <inertial><mass value="0.001" /><inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7" /></inertial>
   </link>
   <joint name="arm_fr_joint" type="fixed">
-    <origin xyz="0.1207 0.0737 0.0081" />
+    <origin xyz="0.0737 -0.1207 0.0081" />
     <parent link="base_link" />
     <child link="arm_fr" />
   </joint>
@@ -152,7 +152,7 @@
     <inertial><mass value="0.001" /><inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7" /></inertial>
   </link>
   <joint name="arm_rl_joint" type="fixed">
-    <origin xyz="-0.0956 -0.1081 0.0029" />
+    <origin xyz="-0.1081 0.0956 0.0029" />
     <parent link="base_link" />
     <child link="arm_rl" />
   </joint>
@@ -161,7 +161,7 @@
     <inertial><mass value="0.001" /><inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7" /></inertial>
   </link>
   <joint name="arm_rr_joint" type="fixed">
-    <origin xyz="0.0956 -0.1081 0.0029" />
+    <origin xyz="-0.1081 -0.0956 0.0029" />
     <parent link="base_link" />
     <child link="arm_rr" />
   </joint>

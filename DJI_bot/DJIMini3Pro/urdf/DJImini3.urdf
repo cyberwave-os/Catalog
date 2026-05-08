@@ -1,32 +1,159 @@
 <?xml version="1.0"?>
 <robot name="dji_mini_3_pro">
 
+  <material name="drone_grey">
+    <color rgba="0.7 0.7 0.7 1.0"/>
+  </material>
+
+  <material name="prop_dark">
+    <color rgba="0.2 0.2 0.2 1.0"/>
+  </material>
+
   <link name="base_link">
-  
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/mini3pro.stl" scale="1.0 1.0 1.0" />
+        <mesh filename="../meshes/body.stl" scale="1.0 1.0 1.0"/>
       </geometry>
-      <material name="drone_grey">
-        <color rgba="0.7 0.7 0.7 1.0" />
-      </material>
+      <material name="drone_grey"/>
     </visual>
 
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/mini3pro.stl" scale="1.0 1.0 1.0" />
+        <mesh filename="../meshes/body.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
 
     <inertial>
-      <mass value="0.249" />
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+      <mass value="0.245"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
     </inertial>
-    
   </link>
 
-</robot>
+  <link name="prop_front_left">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/prop_front_left.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="prop_dark"/>
+    </visual>
 
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/prop_front_left.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.001"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0.0" ixz="0.0" iyy="1e-6" iyz="0.0" izz="1e-6"/>
+    </inertial>
+  </link>
+
+  <link name="prop_front_right">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/prop_front_right.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="prop_dark"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/prop_front_right.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.001"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0.0" ixz="0.0" iyy="1e-6" iyz="0.0" izz="1e-6"/>
+    </inertial>
+  </link>
+
+  <link name="prop_back_left">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/prop_back_left.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="prop_dark"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/prop_back_left.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.001"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0.0" ixz="0.0" iyy="1e-6" iyz="0.0" izz="1e-6"/>
+    </inertial>
+  </link>
+
+  <link name="prop_back_right">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/prop_back_right.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="prop_dark"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/prop_back_right.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.001"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0.0" ixz="0.0" iyy="1e-6" iyz="0.0" izz="1e-6"/>
+    </inertial>
+  </link>
+
+  <joint name="prop_front_left_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="prop_front_left"/>
+    <origin xyz="-0.114 -0.036 0.020" rpy="0 0 0"/>
+    <axis xyz="0.11694 -0.16841 0.97876"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+
+  <joint name="prop_front_right_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="prop_front_right"/>
+    <origin xyz="0.113 -0.036 0.020" rpy="0 0 0"/>
+    <axis xyz="-0.11730 -0.16817 0.97875"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+
+  <joint name="prop_back_left_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="prop_back_left"/>
+    <origin xyz="-0.082 0.115 0.046" rpy="0 0 0"/>
+    <axis xyz="-0.31966 -0.11255 0.94082"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+
+  <joint name="prop_back_right_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="prop_back_right"/>
+    <origin xyz="0.081 0.115 0.046" rpy="0 0 0"/>
+    <axis xyz="0.10676 -0.25905 0.95995"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+
+</robot>

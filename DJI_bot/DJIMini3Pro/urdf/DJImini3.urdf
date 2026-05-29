@@ -26,9 +26,32 @@
     </collision>
 
     <inertial>
-      <mass value="0.245"/>
+      <mass value="0.235"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
+  </link>
+
+  <link name="camera_gimbal">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/camera_gimbal.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="drone_grey"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/camera_gimbal.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.010"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-5" ixy="0.0" ixz="0.0" iyy="1e-5" iyz="0.0" izz="1e-5"/>
     </inertial>
   </link>
 
@@ -123,6 +146,14 @@
       <inertia ixx="1e-6" ixy="0.0" ixz="0.0" iyy="1e-6" iyz="0.0" izz="1e-6"/>
     </inertial>
   </link>
+
+  <joint name="camera_gimbal_pitch_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="camera_gimbal"/>
+    <origin xyz="-0.001653 -0.033692 0.013606" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
 
   <joint name="prop_front_left_joint" type="continuous">
     <parent link="base_link"/>

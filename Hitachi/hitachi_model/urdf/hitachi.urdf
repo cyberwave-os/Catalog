@@ -4,13 +4,13 @@
     <visual>
       <origin xyz="0 0 0" rpy="1.5708 0 0"/>
       <geometry>
-        <mesh filename="package://hitachi_model/meshes/Capture.dae" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://hitachi_model/meshes/Capture.dae" scale="0.1 0.1 0.1"/>
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="1.5708 0 0"/>
       <geometry>
-        <mesh filename="package://hitachi_model/meshes/Capture.dae" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://hitachi_model/meshes/Capture.dae" scale="0.1 0.1 0.1"/>
       </geometry>
     </collision>
     <inertial>

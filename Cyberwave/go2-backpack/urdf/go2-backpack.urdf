@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<robot name="go2_backpack">
+  <!--
+    Meshes appear authored in millimeter-like units with a global longest side
+    around 254.03 units. Using 0.00102348 scales the assembled model to ~0.26 m.
+  -->
+  <link name="backpack_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
+
+    <!-- Main body visuals -->
+    <visual name="layer1_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/layer1.stl" scale="0.00102348 0.00102348 0.00102348"/>
+      </geometry>
+      <material name="dark_gray">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    </visual>
+
+    <visual name="layer2_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/layer2.stl" scale="0.00102348 0.00102348 0.00102348"/>
+      </geometry>
+      <material name="dark_gray"/>
+    </visual>
+
+    <visual name="layer3_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/layer3.stl" scale="0.00102348 0.00102348 0.00102348"/>
+      </geometry>
+      <material name="dark_gray"/>
+    </visual>
+
+    <visual name="grid_front_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/grid-front.stl" scale="0.00102348 0.00102348 0.00102348"/>
+      </geometry>
+      <material name="dark_gray"/>
+    </visual>
+
+    <visual name="grid_back_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/grid-back.stl" scale="0.00102348 0.00102348 0.00102348"/>
+      </geometry>
+      <material name="dark_gray"/>
+    </visual>
+
+    <visual name="power_base_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/power-base.stl" scale="0.00102348 0.00102348 0.00102348"/>
+      </geometry>
+      <material name="dark_gray"/>
+    </visual>
+
+    <!-- Logo visuals -->
+    <visual name="logo_corpo3_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/case-logo/Corpo3.stl" scale="0.00102348 0.00102348 0.00102348"/>
+      </geometry>
+      <material name="logo_light">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
+    </visual>
+
+    <visual name="logo_corpo4_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/case-logo/Corpo4.stl" scale="0.00102348 0.00102348 0.00102348"/>
+      </geometry>
+      <material name="logo_light"/>
+    </visual>
+
+    <visual name="logo_corpo9_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/case-logo/Corpo9.stl" scale="0.00102348 0.00102348 0.00102348"/>
+      </geometry>
+      <material name="logo_light"/>
+    </visual>
+
+    <visual name="logo_corpo242_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/case-logo/Corpo242.stl" scale="0.00102348 0.00102348 0.00102348"/>
+      </geometry>
+      <material name="logo_light"/>
+    </visual>
+
+    <visual name="logo_corpo243_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/case-logo/Corpo243.stl" scale="0.00102348 0.00102348 0.00102348"/>
+      </geometry>
+      <material name="logo_light"/>
+    </visual>
+
+    <visual name="logo_corpo244_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/case-logo/Corpo244.stl" scale="0.00102348 0.00102348 0.00102348"/>
+      </geometry>
+      <material name="logo_light"/>
+    </visual>
+
+    <visual name="logo_corpo245_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/case-logo/Corpo245.stl" scale="0.00102348 0.00102348 0.00102348"/>
+      </geometry>
+      <material name="logo_light"/>
+    </visual>
+
+    <visual name="logo_corpo246_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/case-logo/Corpo246.stl" scale="0.00102348 0.00102348 0.00102348"/>
+      </geometry>
+      <material name="logo_light"/>
+    </visual>
+
+    <visual name="logo_corpo247_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/case-logo/Corpo247.stl" scale="0.00102348 0.00102348 0.00102348"/>
+      </geometry>
+      <material name="logo_light"/>
+    </visual>
+
+    <visual name="logo_corpo248_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/case-logo/Corpo248.stl" scale="0.00102348 0.00102348 0.00102348"/>
+      </geometry>
+      <material name="logo_light"/>
+    </visual>
+
+    <visual name="logo_corpo249_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/case-logo/Corpo249.stl" scale="0.00102348 0.00102348 0.00102348"/>
+      </geometry>
+      <material name="logo_light"/>
+    </visual>
+
+    <visual name="logo_corpo250_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/case-logo/Corpo250.stl" scale="0.00102348 0.00102348 0.00102348"/>
+      </geometry>
+      <material name="logo_light"/>
+    </visual>
+
+    <!-- Simplified collision set -->
+    <collision name="layer1_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/layer1.stl" scale="0.00102348 0.00102348 0.00102348"/>
+      </geometry>
+    </collision>
+
+    <collision name="layer2_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/layer2.stl" scale="0.00102348 0.00102348 0.00102348"/>
+      </geometry>
+    </collision>
+
+    <collision name="layer3_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/layer3.stl" scale="0.00102348 0.00102348 0.00102348"/>
+      </geometry>
+    </collision>
+
+    <collision name="power_base_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/power-base.stl" scale="0.00102348 0.00102348 0.00102348"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

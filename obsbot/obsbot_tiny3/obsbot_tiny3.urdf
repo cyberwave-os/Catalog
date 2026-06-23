@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<!--
+  OBSBOT Tiny 3 approximate visual/collision URDF.
+  Updated variant: lighter grays, no front LED bar, rounded-rectangle red trim.
+  Units: meters, kilograms, radians.
+  Source dimensions used for envelope: 37 x 49 x 37 mm, 63 g.
+  Coordinate convention: x = optical/front direction, y = left, z = up.
+  This is an engineering approximation generated from public dimensions and product imagery, not an OEM CAD file.
+-->
+<robot name="obsbot_tiny3">
+  <material name="obsbot_black"><color rgba="0.26 0.26 0.27 1"/></material>
+  <material name="graphite"><color rgba="0.48 0.48 0.50 1"/></material>
+  <material name="dark_rubber"><color rgba="0.34 0.34 0.35 1"/></material>
+  <material name="lens_glass"><color rgba="0.020 0.040 0.060 0.75"/></material>
+  <material name="obsbot_red"><color rgba="0.85 0.015 0.050 1"/></material>
+
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0.008500" rpy="0 0 0"/>
+      <mass value="0.028000"/>
+      <inertia ixx="3.868666667e-06" ixy="0" ixz="0" iyy="3.868666667e-06" iyz="0" izz="6.388666667e-06"/>
+    </inertial>
+    <visual name="base_body">
+      <origin xyz="0 0 0.008500" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/base_body.stl"/></geometry>
+      <material name="graphite"/>
+    </visual>
+    <visual name="rear_usb_c_port">
+      <origin xyz="-0.018000 0 0.008000" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/rear_usb_c_port.stl"/></geometry>
+      <material name="dark_rubber"/>
+    </visual>
+    <collision name="base_collision">
+      <origin xyz="0 0 0.008500" rpy="0 0 0"/>
+      <geometry><box size="0.037000 0.037000 0.017000"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="pan_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="pan_link"/>
+    <origin xyz="0 0 0.019500" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.617994" upper="2.617994" effort="0.20" velocity="2.094395"/>
+    <dynamics damping="0.02" friction="0.001"/>
+  </joint>
+
+  <link name="pan_link">
+    <inertial>
+      <origin xyz="0 -0.006000 0.009000" rpy="0 0 0"/>
+      <mass value="0.015000"/>
+      <inertia ixx="2.29e-06" ixy="0" ixz="0" iyy="2.29e-06" iyz="0" izz="2.89e-06"/>
+    </inertial>
+    <visual name="pan_turntable">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/pan_turntable.stl"/></geometry>
+      <material name="graphite"/>
+    </visual>
+    <visual name="pan_knurled_ring">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/pan_knurled_ring.stl"/></geometry>
+      <material name="dark_rubber"/>
+    </visual>
+    <visual name="gimbal_upright">
+      <origin xyz="0.000800 -0.014500 0.011500" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/gimbal_upright.stl"/></geometry>
+      <material name="graphite"/>
+    </visual>
+    <collision name="pan_rotor_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.015000" length="0.004000"/></geometry>
+    </collision>
+    <collision name="gimbal_upright_collision">
+      <origin xyz="0.000800 -0.014500 0.011500" rpy="0 0 0"/>
+      <geometry><box size="0.005200 0.005200 0.023000"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="tilt_joint" type="revolute">
+    <parent link="pan_link"/>
+    <child link="camera_link"/>
+    <origin xyz="0.000800 0 0.019000" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.570796" upper="1.570796" effort="0.20" velocity="2.094395"/>
+    <dynamics damping="0.02" friction="0.001"/>
+  </joint>
+
+  <link name="camera_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.020000"/>
+      <inertia ixx="2.55e-06" ixy="0" ixz="0" iyy="1.161666667e-06" iyz="0" izz="2.241666667e-06"/>
+    </inertial>
+    <visual name="camera_head">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/camera_head.stl"/></geometry>
+      <material name="graphite"/>
+    </visual>
+    <visual name="tilt_side_hub">
+      <origin xyz="0 -0.014000 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/tilt_side_hub.stl"/></geometry>
+      <material name="graphite"/>
+    </visual>
+    <visual name="front_red_trim">
+      <origin xyz="0.008450 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/front_red_trim.stl"/></geometry>
+      <material name="obsbot_red"/>
+    </visual>
+    <visual name="lens_outer_ring">
+      <origin xyz="0.009150 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/lens_outer_ring.stl"/></geometry>
+      <material name="dark_rubber"/>
+    </visual>
+    <visual name="lens_inner_bezel">
+      <origin xyz="0.010000 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/lens_inner_bezel.stl"/></geometry>
+      <material name="obsbot_black"/>
+    </visual>
+    <visual name="lens_glass">
+      <origin xyz="0.010700 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="meshes/lens_glass.stl"/></geometry>
+      <material name="lens_glass"/>
+    </visual>
+    <collision name="camera_head_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.016000 0.025000 0.021000"/></geometry>
+    </collision>
+    <collision name="tilt_hub_collision">
+      <origin xyz="0 -0.014000 0" rpy="1.570796 0 0"/>
+      <geometry><cylinder radius="0.007500" length="0.008000"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="camera_optical_joint" type="fixed">
+    <parent link="camera_link"/>
+    <child link="camera_optical_frame"/>
+    <origin xyz="0.010900 0 0" rpy="-1.57079632679 0 -1.57079632679"/>
+  </joint>
+
+  <link name="camera_optical_frame"/>
+</robot>

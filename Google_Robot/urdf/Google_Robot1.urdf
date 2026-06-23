@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<robot name="google_robot">
+
+  <link name="google_robot_link">
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="/../../meshes/Google_Robot1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gray">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="/../../meshes/Google_Robot1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="35.0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01" />
+    </inertial>
+
+  </link>
+
+</robot>

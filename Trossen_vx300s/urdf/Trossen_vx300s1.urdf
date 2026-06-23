@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<robot name="trossen_vx300s">
+
+  <link name="trossen_vx300s_link">
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="/../../meshes/Trossen_vx300s1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gray">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="/../../meshes/Trossen_vx300s1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="6.4" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01" />
+    </inertial>
+
+  </link>
+
+</robot>

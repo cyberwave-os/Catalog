@@ -43,7 +43,7 @@
     </inertial>
   </link>
   <joint name="prop_fl_joint" type="continuous">
-    <origin xyz="0.2758 0.2666 0.0684" />
+    <origin xyz="0.5999 0.4552 0.1702" />
     <parent link="base_link" />
     <child link="prop_fl" />
     <axis xyz="0 0 1" />
@@ -63,7 +63,7 @@
     </inertial>
   </link>
   <joint name="prop_fr_joint" type="continuous">
-    <origin xyz="0.3318 -0.3208 0.0524" />
+    <origin xyz="0.6012 -0.4609 0.1598" />
     <parent link="base_link" />
     <child link="prop_fr" />
     <axis xyz="0 0 1" />
@@ -83,7 +83,7 @@
     </inertial>
   </link>
   <joint name="prop_rl_joint" type="continuous">
-    <origin xyz="-0.3369 0.3215 0.0511" />
+    <origin xyz="-0.6051 0.4528 0.1237" />
     <parent link="base_link" />
     <child link="prop_rl" />
     <axis xyz="0 0 1" />
@@ -103,7 +103,7 @@
     </inertial>
   </link>
   <joint name="prop_rr_joint" type="continuous">
-    <origin xyz="-0.3367 -0.3221 0.0521" />
+    <origin xyz="-0.592 -0.4553 0.093" />
     <parent link="base_link" />
     <child link="prop_rr" />
     <axis xyz="0 0 1" />

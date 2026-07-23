@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<robot name="starling_max">
+
+  <material name="drone_grey">
+    <color rgba="0.35 0.35 0.38 1.0" />
+  </material>
+
+  <!-- ==================== Body ==================== -->
+
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/body.stl" scale="1.0 1.0 1.0" />
+      </geometry>
+      <material name="drone_grey" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="1.29 1.0 0.58" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="3.5" />
+      <inertia ixx="0.39" ixy="0" ixz="0" iyy="0.58" iyz="0" izz="0.78" />
+    </inertial>
+  </link>
+
+  <!-- ==================== Propellers ==================== -->
+
+  <link name="prop_fl">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/prop_fl.stl" scale="1.0 1.0 1.0" />
+      </geometry>
+      <material name="drone_grey" />
+    </visual>
+    <inertial>
+      <mass value="0.06" />
+      <inertia ixx="0.002" ixy="0" ixz="0" iyy="0.002" iyz="0" izz="0.006" />
+    </inertial>
+  </link>
+  <joint name="prop_fl_joint" type="continuous">
+    <origin xyz="0.2758 0.2666 0.0684" />
+    <parent link="base_link" />
+    <child link="prop_fl" />
+    <axis xyz="0 0 1" />
+  </joint>
+
+  <link name="prop_fr">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/prop_fr.stl" scale="1.0 1.0 1.0" />
+      </geometry>
+      <material name="drone_grey" />
+    </visual>
+    <inertial>
+      <mass value="0.06" />
+      <inertia ixx="0.002" ixy="0" ixz="0" iyy="0.002" iyz="0" izz="0.006" />
+    </inertial>
+  </link>
+  <joint name="prop_fr_joint" type="continuous">
+    <origin xyz="0.3318 -0.3208 0.0524" />
+    <parent link="base_link" />
+    <child link="prop_fr" />
+    <axis xyz="0 0 1" />
+  </joint>
+
+  <link name="prop_rl">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/prop_rl.stl" scale="1.0 1.0 1.0" />
+      </geometry>
+      <material name="drone_grey" />
+    </visual>
+    <inertial>
+      <mass value="0.06" />
+      <inertia ixx="0.002" ixy="0" ixz="0" iyy="0.002" iyz="0" izz="0.006" />
+    </inertial>
+  </link>
+  <joint name="prop_rl_joint" type="continuous">
+    <origin xyz="-0.3369 0.3215 0.0511" />
+    <parent link="base_link" />
+    <child link="prop_rl" />
+    <axis xyz="0 0 1" />
+  </joint>
+
+  <link name="prop_rr">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/prop_rr.stl" scale="1.0 1.0 1.0" />
+      </geometry>
+      <material name="drone_grey" />
+    </visual>
+    <inertial>
+      <mass value="0.06" />
+      <inertia ixx="0.002" ixy="0" ixz="0" iyy="0.002" iyz="0" izz="0.006" />
+    </inertial>
+  </link>
+  <joint name="prop_rr_joint" type="continuous">
+    <origin xyz="-0.3367 -0.3221 0.0521" />
+    <parent link="base_link" />
+    <child link="prop_rr" />
+    <axis xyz="0 0 1" />
+  </joint>
+
+</robot>

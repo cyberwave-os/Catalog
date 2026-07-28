@@ -1,0 +1,2327 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="ugv_beast">
+  <link name="base_footprint" />
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.00354888755897578 5.76435566946675E-16 0.0484823949816299" rpy="0 0 0" />
+      <mass value="2.03227373732274" />
+      <inertia ixx="0.00454892624270289" ixy="1.88130381907213E-16" ixz="-1.49884111957882E-05" iyy="0.00640381872536097" iyz="2.79234562022245E-17" izz="0.00806050395736081" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/base_link.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/base_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint" />
+    <child link="base_link" />
+    <origin xyz="0.000460087791654118 6.50856019576702E-10 0.08" rpy="0 0 0" />
+  </joint>
+  <link name="base_imu_link">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </link>
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="base_imu_link" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+  <link name="left_up_wheel_link">
+    <inertial>
+      <origin xyz="1.85684800868557E-14 0.015500000552408 7.25114412958305E-16" rpy="0 0 0" />
+      <mass value="0.0602574557338752" />
+      <inertia ixx="1.41463499717618E-05" ixy="5.40675906873518E-18" ixz="2.24533090468138E-31" iyy="1.86414633348696E-05" iyz="1.86664834767948E-19" izz="1.41463499717618E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/left_up_wheel_link.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/left_up_wheel_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_up_wheel_link_joint" type="continuous">
+    <origin xyz="0.0832175533230826 0.0619109945296507 0.0261492872743138" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="left_up_wheel_link" />
+    <axis xyz="0 -1 0" />
+  </joint>
+  <link name="left_down_wheel_link">
+    <inertial>
+      <origin xyz="7.2025718722557E-15 0.00599999763555432 3.33066907387547E-16" rpy="0 0 0" />
+      <mass value="0.00565722297095184" />
+      <inertia ixx="2.80120931171082E-07" ixy="1.73012571052522E-19" ixz="7.08181663938282E-33" iyy="4.2446851103923E-07" iyz="5.90904673131262E-21" izz="2.80120931171082E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/left_down_wheel_link.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/left_down_wheel_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_down_wheel_link_joint" type="continuous">
+    <origin xyz="-0.0722382907996229 0.0707110003635451 0.0356492872743132" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="left_down_wheel_link" />
+    <axis xyz="0 -1 0" />
+  </joint>
+  <link name="right_up_wheel_link">
+    <inertial>
+      <origin xyz="1.83603132697385E-14 -0.015500000552408 7.25114412958305E-16" rpy="0 0 0" />
+      <mass value="0.0602574557338752" />
+      <inertia ixx="1.41463499717618E-05" ixy="-5.34398065104604E-18" ixz="2.21929095291762E-31" iyy="1.86414633348696E-05" iyz="-1.86664834767948E-19" izz="1.41463499717618E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/right_up_wheel_link.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/right_up_wheel_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_up_wheel_link_joint" type="continuous">
+    <origin xyz="0.0832175533230817 -0.0619109945296519 0.0261492872743138" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="right_up_wheel_link" />
+    <axis xyz="0 -1 0" />
+  </joint>
+  <link name="right_down_wheel_link">
+    <inertial>
+      <origin xyz="7.13318293321663E-15 -0.00599999763555434 3.33066907387547E-16" rpy="0 0 0" />
+      <mass value="0.00565722297095184" />
+      <inertia ixx="2.80120931171082E-07" ixy="-1.70986035603665E-19" ixz="6.99903667727259E-33" iyy="4.2446851103923E-07" iyz="-5.90904673131262E-21" izz="2.80120931171082E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/right_down_wheel_link.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/right_down_wheel_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_down_wheel_link_joint" type="continuous">
+    <origin xyz="-0.0722382907996239 -0.0707110003635441 0.0356492872743132" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="right_down_wheel_link" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="3d_camera_link">
+    <inertial>
+      <origin xyz="0.00849999999999999 -6.20230426557913E-17 0" rpy="0 0 0" />
+      <mass value="0.043316" />
+      <inertia ixx="3.27216283333333E-05" ixy="-2.01335432272409E-19" ixz="-1.19114008207638E-22" iyy="3.87317233333333E-06" iyz="-2.37303626261453E-22" izz="3.09348433333333E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/3d_camera_link.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/3d_camera_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="3d_camera_link_joint" type="fixed">
+    <origin xyz="0.069874862129561 0 0.0792560807319928" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="3d_camera_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="base_lidar_link">
+    <inertial>
+      <origin xyz="-6.93889390390723E-18 -1.96708838451151E-18 0.0165546434494574" rpy="0 0 0" />
+      <mass value="0.0418000091653573" />
+      <inertia ixx="8.26853377699878E-06" ixy="-1.03397576569261E-22" ixz="-2.71740984786046E-22" iyy="8.26853377699876E-06" iyz="5.86109969113615E-23" izz="8.32524607487378E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/base_lidar_link.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/base_lidar_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_lidar_link_joint" type="fixed">
+    <origin xyz="0.0443794126815426 0 0.0973030807319928" rpy="0 0 1.5708" />
+    <parent link="base_link" />
+    <child link="base_lidar_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="pt_base_link">
+    <inertial>
+      <origin xyz="0.00127554206615719 2.79398301127343E-15 0.0215158687368638" rpy="0 0 0" />
+      <mass value="0.109518186442022" />
+      <inertia ixx="3.30168147078049E-05" ixy="-2.59519377344745E-18" ixz="-2.93137934608679E-06" iyy="5.1580984319637E-05" iyz="-6.30528721442011E-18" izz="4.86101329827053E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/pt_base_link.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/pt_base_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="pt_base_link_joint" type="fixed">
+    <origin xyz="-0.0143274614150036 0 0.0973030807319928" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="pt_base_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="pt_link1">
+    <inertial>
+      <origin xyz="-0.00338129216527271 1.03496094682257E-15 0.0176096758355075" rpy="0 0 0" />
+      <mass value="0.00710917409663916" />
+      <inertia ixx="3.89716322571471E-06" ixy="-3.30348820061167E-19" ixz="2.3291936613051E-07" iyy="2.4980668051168E-06" iyz="-2.89344689202842E-19" izz="2.60402792588347E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/pt_link1.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/pt_link1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="pt_base_link_to_pt_link1" type="revolute">
+    <origin xyz="0.010151 0 0.048" rpy="0 0 0" />
+    <parent link="pt_base_link" />
+    <child link="pt_link1" />
+    <axis xyz="0 0 -1" />
+    <limit lower="-3.14" upper="3.14" effort="0" velocity="0" />
+  </joint>
+  <link name="pt_link2">
+    <inertial>
+      <origin xyz="0.0218201278828439 0.01195900026438 0.020000000000001" rpy="0 0 0" />
+      <mass value="0.0970496053012515" />
+      <inertia ixx="3.07158301509253E-05" ixy="-9.60865010663642E-07" ixz="-1.05774445029445E-19" iyy="3.74067734460567E-05" iyz="-1.71534698932683E-18" izz="4.94991610517831E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/pt_link2.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/pt_link2.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="pt_link1_to_pt_link2" type="revolute">
+    <origin xyz="0 0.02 0.043003" rpy="1.5708 0 0" />
+    <parent link="pt_link1" />
+    <child link="pt_link2" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.5233333" upper="1.5707963" effort="0" velocity="0" />
+  </joint>
+  <link name="pt_camera_link">
+    <inertial>
+      <origin xyz="0.00630730338217479 -5.20013413546207E-17 0.000950308188413934" rpy="0 -1.5708 1.5708" />
+      <mass value="0.00623651844028495" />
+      <inertia ixx="5.11295942352593E-07" ixy="-4.50040932181143E-22" ixz="-4.00917493406375E-08" iyy="3.99078324787848E-07" iyz="4.11363605148623E-22" izz="4.02518684222241E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -1.5708 1.5708" />
+      <geometry>
+        <mesh filename="../meshes/pt_camera_link.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -1.5708 1.5708" />
+      <geometry>
+        <mesh filename="../meshes/pt_camera_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="pt_link2_to_pt_camera_link" type="fixed">
+    <origin xyz="0.0476858338436577 -0.000568997109077291 0.0199999999999997" rpy="3.14 -1.5708 0" />
+    <parent link="pt_link2" />
+    <child link="pt_camera_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="gear_left_13">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="2.13569e-08" ixy="0" ixz="0" iyy="2.13569e-08" iyz="0" izz="2.13569e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_13.stl" />
+      </geometry>
+      <material name="gear_left_13_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_13.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_13_gear_joint" type="continuous">
+    <origin xyz="-0.07180608749 0.05071071434 0.03434620667" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_13" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 5.3880x (radius 4.6mm) -->
+  </joint>
+  <link name="gear_left_16">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.51937e-07" ixy="0" ixz="0" iyy="1.51937e-07" iyz="0" izz="1.51937e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_16.stl" />
+      </geometry>
+      <material name="gear_left_16_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_16.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_16_gear_joint" type="continuous">
+    <origin xyz="-0.1035545464 0.07621025085 0.002535933495" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_16" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 2.0201x (radius 12.3mm) -->
+  </joint>
+  <link name="gear_left_17">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.37169e-08" ixy="0" ixz="0" iyy="1.37169e-08" iyz="0" izz="1.37169e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_17.stl" />
+      </geometry>
+      <material name="gear_left_17_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_17.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_17_gear_joint" type="continuous">
+    <origin xyz="-0.02680201912 0.05205642319 0.002124066591" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_17" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 6.7231x (radius 3.7mm) -->
+  </joint>
+  <link name="gear_left_19">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.34633e-08" ixy="0" ixz="0" iyy="1.34633e-08" iyz="0" izz="1.34633e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_19.stl" />
+      </geometry>
+      <material name="gear_left_19_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_19.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_19_gear_joint" type="continuous">
+    <origin xyz="-0.06283159828 0.05205462456 0.002089906573" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_19" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 6.7861x (radius 3.7mm) -->
+  </joint>
+  <link name="gear_left_2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0098198882" />
+      <inertia ixx="4.01793e-06" ixy="0" ixz="0" iyy="4.01793e-06" iyz="0" izz="4.01793e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_2.stl" />
+      </geometry>
+      <material name="gear_left_2_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_2.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_2_gear_joint" type="continuous">
+    <origin xyz="0.08475894356 0.07193208694 0.02504418564" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_2" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 0.8704x (radius 28.6mm) -->
+  </joint>
+  <link name="gear_left_21">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.38682e-08" ixy="0" ixz="0" iyy="1.38682e-08" iyz="0" izz="1.38682e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_21.stl" />
+      </geometry>
+      <material name="gear_left_21_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_21.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_21_gear_joint" type="continuous">
+    <origin xyz="0.009057397604 0.05205579758 0.002017026722" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_21" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 6.6864x (radius 3.7mm) -->
+  </joint>
+  <link name="gear_left_23">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.37714e-08" ixy="0" ixz="0" iyy="1.37714e-08" iyz="0" izz="1.37714e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_23.stl" />
+      </geometry>
+      <material name="gear_left_23_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_23.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_23_gear_joint" type="continuous">
+    <origin xyz="0.04520263863 0.05205451202 0.002048452497" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_23" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 6.7098x (radius 3.7mm) -->
+  </joint>
+  <link name="gear_left_26">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.55617e-07" ixy="0" ixz="0" iyy="1.55617e-07" iyz="0" izz="1.55617e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_26.stl" />
+      </geometry>
+      <material name="gear_left_26_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_26.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_26_gear_joint" type="continuous">
+    <origin xyz="0.05806558037 0.07621027374 -0.0060026896" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_26" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 1.9960x (radius 12.5mm) -->
+  </joint>
+  <link name="gear_left_27">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.51678e-07" ixy="0" ixz="0" iyy="1.51678e-07" iyz="0" izz="1.51678e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_27.stl" />
+      </geometry>
+      <material name="gear_left_27_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_27.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_27_gear_joint" type="continuous">
+    <origin xyz="-0.01415748674 0.07621022797 -0.005905018806" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_27" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 2.0218x (radius 12.3mm) -->
+  </joint>
+  <link name="gear_left_29">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.51679e-07" ixy="0" ixz="0" iyy="1.51679e-07" iyz="0" izz="1.51679e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_29.stl" />
+      </geometry>
+      <material name="gear_left_29_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_29.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_29_gear_joint" type="continuous">
+    <origin xyz="-0.05016152763 0.07621023178 -0.005934257507" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_29" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 2.0218x (radius 12.3mm) -->
+  </joint>
+  <link name="gear_left_32">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.53449e-07" ixy="0" ixz="0" iyy="1.53449e-07" iyz="0" izz="1.53449e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_32.stl" />
+      </geometry>
+      <material name="gear_left_32_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_32.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_32_gear_joint" type="continuous">
+    <origin xyz="0.02193329668 0.07621031952 -0.005987469912" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_32" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 2.0101x (radius 12.4mm) -->
+  </joint>
+  <link name="gear_left_33">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.5278e-07" ixy="0" ixz="0" iyy="1.5278e-07" iyz="0" izz="1.5278e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_33.stl" />
+      </geometry>
+      <material name="gear_left_33_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_33.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_33_gear_joint" type="continuous">
+    <origin xyz="-0.07184752274 0.07620982361 0.03439527988" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_33" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 2.0145x (radius 12.4mm) -->
+  </joint>
+  <link name="gear_left_35">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.62968e-08" ixy="0" ixz="0" iyy="1.62968e-08" iyz="0" izz="1.62968e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_35.stl" />
+      </geometry>
+      <material name="gear_left_35_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_35.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_35_gear_joint" type="continuous">
+    <origin xyz="0.08368216705 0.09468599319 0.02484949589" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_35" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 6.1681x (radius 4.0mm) -->
+  </joint>
+  <link name="gear_left_37">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="9.33324e-09" ixy="0" ixz="0" iyy="9.33324e-09" iyz="0" izz="9.33324e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_37.stl" />
+      </geometry>
+      <material name="gear_left_37_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_37.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_37_gear_joint" type="continuous">
+    <origin xyz="0.07326469803 0.09375097656 0.03089677715" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_37" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 8.1505x (radius 3.1mm) -->
+  </joint>
+  <link name="gear_left_38">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="9.07064e-09" ixy="0" ixz="0" iyy="9.07064e-09" iyz="0" izz="9.07064e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_38.stl" />
+      </geometry>
+      <material name="gear_left_38_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_38.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_38_gear_joint" type="continuous">
+    <origin xyz="0.09405545807 0.09375097656 0.03084729195" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_38" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 8.2676x (radius 3.0mm) -->
+  </joint>
+  <link name="gear_left_43">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="9.09336e-09" ixy="0" ixz="0" iyy="9.09336e-09" iyz="0" izz="9.09336e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_43.stl" />
+      </geometry>
+      <material name="gear_left_43_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_43.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_43_gear_joint" type="continuous">
+    <origin xyz="0.08365428543 0.09375097656 0.01285575008" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_43" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 8.2573x (radius 3.0mm) -->
+  </joint>
+  <link name="gear_left_47">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="7.78966e-09" ixy="0" ixz="0" iyy="7.78966e-09" iyz="0" izz="7.78966e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_47.stl" />
+      </geometry>
+      <material name="gear_left_47_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_47.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_47_gear_joint" type="continuous">
+    <origin xyz="-0.07896188354 0.05661091232 0.005589183807" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_47" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 8.9215x (radius 2.8mm) -->
+  </joint>
+  <link name="gear_left_48">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="6.40041e-08" ixy="0" ixz="0" iyy="6.40041e-08" iyz="0" izz="6.40041e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_48.stl" />
+      </geometry>
+      <material name="gear_left_48_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_48.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_48_gear_joint" type="continuous">
+    <origin xyz="-0.1036444702 0.07271096802 0.002569349289" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_48" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 3.1124x (radius 8.0mm) -->
+  </joint>
+  <link name="gear_left_52">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="6.46454e-08" ixy="0" ixz="0" iyy="6.46454e-08" iyz="0" izz="6.46454e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_52.stl" />
+      </geometry>
+      <material name="gear_left_52_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_52.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_52_gear_joint" type="continuous">
+    <origin xyz="-0.050203722 0.07271103668 -0.005967756391" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_52" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 3.0969x (radius 8.0mm) -->
+  </joint>
+  <link name="gear_left_54">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="6.46075e-08" ixy="0" ixz="0" iyy="6.46075e-08" iyz="0" izz="6.46075e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_54.stl" />
+      </geometry>
+      <material name="gear_left_54_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_54.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_54_gear_joint" type="continuous">
+    <origin xyz="0.05793466568 0.07271095657 -0.005910196543" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_54" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 3.0978x (radius 8.0mm) -->
+  </joint>
+  <link name="gear_left_56">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="6.54172e-08" ixy="0" ixz="0" iyy="6.54172e-08" iyz="0" izz="6.54172e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_56.stl" />
+      </geometry>
+      <material name="gear_left_56_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_56.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_56_gear_joint" type="continuous">
+    <origin xyz="-0.07193460846 0.07871100235 0.03431191254" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_56" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 3.0786x (radius 8.1mm) -->
+  </joint>
+  <link name="gear_left_58">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="6.73991e-08" ixy="0" ixz="0" iyy="6.73991e-08" iyz="0" izz="6.73991e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_58.stl" />
+      </geometry>
+      <material name="gear_left_58_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_58.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_58_gear_joint" type="continuous">
+    <origin xyz="0.02160799503 0.07271105576 -0.006014087856" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_58" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 3.0330x (radius 8.2mm) -->
+  </joint>
+  <link name="gear_left_59">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="6.6308e-08" ixy="0" ixz="0" iyy="6.6308e-08" iyz="0" izz="6.6308e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_59.stl" />
+      </geometry>
+      <material name="gear_left_59_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_59.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_59_gear_joint" type="continuous">
+    <origin xyz="-0.1036956177 0.07871099854 0.002702914715" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_59" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 3.0579x (radius 8.1mm) -->
+  </joint>
+  <link name="gear_left_6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="9.17722e-09" ixy="0" ixz="0" iyy="9.17722e-09" iyz="0" izz="9.17722e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_6.stl" />
+      </geometry>
+      <material name="gear_left_6_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_6.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_6_gear_joint" type="continuous">
+    <origin xyz="0.07324161911 0.06107586479 0.03086880207" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_6" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 8.2195x (radius 3.0mm) -->
+  </joint>
+  <link name="gear_left_63">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="6.62609e-08" ixy="0" ixz="0" iyy="6.62609e-08" iyz="0" izz="6.62609e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_63.stl" />
+      </geometry>
+      <material name="gear_left_63_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_63.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_63_gear_joint" type="continuous">
+    <origin xyz="-0.0716140995 0.07271087265 0.0343198719" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_63" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 3.0589x (radius 8.1mm) -->
+  </joint>
+  <link name="gear_left_7">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="9.375e-09" ixy="0" ixz="0" iyy="9.375e-09" iyz="0" izz="9.375e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_7.stl" />
+      </geometry>
+      <material name="gear_left_7_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_7.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_7_gear_joint" type="continuous">
+    <origin xyz="0.08359263229 0.06107587433 0.01285284567" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_7" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 8.1323x (radius 3.1mm) -->
+  </joint>
+  <link name="gear_left_8">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="9.10889e-09" ixy="0" ixz="0" iyy="9.10889e-09" iyz="0" izz="9.10889e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_8.stl" />
+      </geometry>
+      <material name="gear_left_8_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_left_8.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_left_8_gear_joint" type="continuous">
+    <origin xyz="0.09405708694 0.06107599831 0.03084340858" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_left_8" />
+    <axis xyz="0 -1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 8.2502x (radius 3.0mm) -->
+  </joint>
+  <link name="gear_right_1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0098198882" />
+      <inertia ixx="4.01793e-06" ixy="0" ixz="0" iyy="4.01793e-06" iyz="0" izz="4.01793e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_1.stl" />
+      </geometry>
+      <material name="gear_right_1_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_1_gear_joint" type="continuous">
+    <origin xyz="0.08475894356 -0.07095505905 0.02504418564" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_1" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 0.8704x (radius 28.6mm) -->
+  </joint>
+  <link name="gear_right_10">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="3.64337e-08" ixy="0" ixz="0" iyy="3.64337e-08" iyz="0" izz="3.64337e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_10.stl" />
+      </geometry>
+      <material name="gear_right_10_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_10.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_10_gear_joint" type="continuous">
+    <origin xyz="-0.06288768768 -0.05746050453 0.002069351792" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_10" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 4.1252x (radius 6.0mm) -->
+  </joint>
+  <link name="gear_right_11">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="3.70577e-08" ixy="0" ixz="0" iyy="3.70577e-08" iyz="0" izz="3.70577e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_11.stl" />
+      </geometry>
+      <material name="gear_right_11_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_11.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_11_gear_joint" type="continuous">
+    <origin xyz="-0.02688669777 -0.05746125412 0.002039316058" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_11" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 4.0903x (radius 6.1mm) -->
+  </joint>
+  <link name="gear_right_12">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.83312e-08" ixy="0" ixz="0" iyy="1.83312e-08" iyz="0" izz="1.83312e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_12.stl" />
+      </geometry>
+      <material name="gear_right_12_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_12.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_12_gear_joint" type="continuous">
+    <origin xyz="-0.1036323662 -0.07621099472 0.002528204143" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_12" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 5.8157x (radius 4.3mm) -->
+  </joint>
+  <link name="gear_right_14">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="2.1362e-08" ixy="0" ixz="0" iyy="2.1362e-08" iyz="0" izz="2.1362e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_14.stl" />
+      </geometry>
+      <material name="gear_right_14_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_14.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_14_gear_joint" type="continuous">
+    <origin xyz="-0.05014987373 -0.05720890617 -0.005938064575" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_14" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 5.3874x (radius 4.6mm) -->
+  </joint>
+  <link name="gear_right_15">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.51476e-07" ixy="0" ixz="0" iyy="1.51476e-07" iyz="0" izz="1.51476e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_15.stl" />
+      </geometry>
+      <material name="gear_right_15_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_15.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_15_gear_joint" type="continuous">
+    <origin xyz="-0.1035788841 -0.07620983505 0.002511189461" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_15" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 2.0231x (radius 12.3mm) -->
+  </joint>
+  <link name="gear_right_18">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.30934e-08" ixy="0" ixz="0" iyy="1.30934e-08" iyz="0" izz="1.30934e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_18.stl" />
+      </geometry>
+      <material name="gear_right_18_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_18.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_18_gear_joint" type="continuous">
+    <origin xyz="-0.02687198257 -0.05205799103 0.001882603645" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_18" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 6.8813x (radius 3.6mm) -->
+  </joint>
+  <link name="gear_right_20">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.33345e-08" ixy="0" ixz="0" iyy="1.33345e-08" iyz="0" izz="1.33345e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_20.stl" />
+      </geometry>
+      <material name="gear_right_20_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_20.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_20_gear_joint" type="continuous">
+    <origin xyz="-0.0628742218 -0.05205522346 0.001882603645" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_20" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 6.8188x (radius 3.7mm) -->
+  </joint>
+  <link name="gear_right_22">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.30934e-08" ixy="0" ixz="0" iyy="1.30934e-08" iyz="0" izz="1.30934e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_22.stl" />
+      </geometry>
+      <material name="gear_right_22_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_22.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_22_gear_joint" type="continuous">
+    <origin xyz="0.009128016472 -0.05205587387 0.001882603645" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_22" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 6.8813x (radius 3.6mm) -->
+  </joint>
+  <link name="gear_right_24">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.30934e-08" ixy="0" ixz="0" iyy="1.30934e-08" iyz="0" izz="1.30934e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_24.stl" />
+      </geometry>
+      <material name="gear_right_24_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_24.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_24_gear_joint" type="continuous">
+    <origin xyz="0.04512801552 -0.0520507679 0.001882603645" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_24" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 6.8813x (radius 3.6mm) -->
+  </joint>
+  <link name="gear_right_25">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.51691e-07" ixy="0" ixz="0" iyy="1.51691e-07" iyz="0" izz="1.51691e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_25.stl" />
+      </geometry>
+      <material name="gear_right_25_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_25.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_25_gear_joint" type="continuous">
+    <origin xyz="0.05785370445 -0.07621038437 -0.005964702129" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_25" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 2.0217x (radius 12.3mm) -->
+  </joint>
+  <link name="gear_right_28">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.5321e-07" ixy="0" ixz="0" iyy="1.5321e-07" iyz="0" izz="1.5321e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_28.stl" />
+      </geometry>
+      <material name="gear_right_28_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_28.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_28_gear_joint" type="continuous">
+    <origin xyz="-0.01422225082 -0.07721015167 -0.005896243095" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_28" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 2.0117x (radius 12.4mm) -->
+  </joint>
+  <link name="gear_right_3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="9.24974e-09" ixy="0" ixz="0" iyy="9.24974e-09" iyz="0" izz="9.24974e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_3.stl" />
+      </geometry>
+      <material name="gear_right_3_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_3.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_3_gear_joint" type="continuous">
+    <origin xyz="0.09406869125 -0.09304609299 0.01881656885" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_3" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 8.1872x (radius 3.0mm) -->
+  </joint>
+  <link name="gear_right_30">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.53182e-07" ixy="0" ixz="0" iyy="1.53182e-07" iyz="0" izz="1.53182e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_30.stl" />
+      </geometry>
+      <material name="gear_right_30_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_30.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_30_gear_joint" type="continuous">
+    <origin xyz="-0.05022498703 -0.07671041107 -0.00588294363" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_30" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 2.0119x (radius 12.4mm) -->
+  </joint>
+  <link name="gear_right_31">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.57115e-07" ixy="0" ixz="0" iyy="1.57115e-07" iyz="0" izz="1.57115e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_31.stl" />
+      </geometry>
+      <material name="gear_right_31_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_31.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_31_gear_joint" type="continuous">
+    <origin xyz="0.02163664055 -0.07670989609 -0.006038908958" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_31" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 1.9865x (radius 12.5mm) -->
+  </joint>
+  <link name="gear_right_34">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.51954e-07" ixy="0" ixz="0" iyy="1.51954e-07" iyz="0" izz="1.51954e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_34.stl" />
+      </geometry>
+      <material name="gear_right_34_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_34.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_34_gear_joint" type="continuous">
+    <origin xyz="-0.07180315971 -0.07621030045 0.03430282593" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_34" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 2.0200x (radius 12.3mm) -->
+  </joint>
+  <link name="gear_right_36">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.62926e-08" ixy="0" ixz="0" iyy="1.62926e-08" iyz="0" izz="1.62926e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_36.stl" />
+      </geometry>
+      <material name="gear_right_36_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_36.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_36_gear_joint" type="continuous">
+    <origin xyz="0.08363883591 -0.09398599625 0.02486530495" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_36" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 6.1688x (radius 4.0mm) -->
+  </joint>
+  <link name="gear_right_39">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="9.08018e-09" ixy="0" ixz="0" iyy="9.08018e-09" iyz="0" izz="9.08018e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_39.stl" />
+      </geometry>
+      <material name="gear_right_39_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_39.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_39_gear_joint" type="continuous">
+    <origin xyz="0.09404867935 -0.06037099648 0.01884863663" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_39" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 8.2633x (radius 3.0mm) -->
+  </joint>
+  <link name="gear_right_4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="9.33596e-09" ixy="0" ixz="0" iyy="9.33596e-09" iyz="0" izz="9.33596e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_4.stl" />
+      </geometry>
+      <material name="gear_right_4_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_4.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_4_gear_joint" type="continuous">
+    <origin xyz="0.08367513657 -0.09304603958 0.03679724884" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_4" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 8.1493x (radius 3.1mm) -->
+  </joint>
+  <link name="gear_right_40">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="9.21145e-09" ixy="0" ixz="0" iyy="9.21145e-09" iyz="0" izz="9.21145e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_40.stl" />
+      </geometry>
+      <material name="gear_right_40_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_40.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_40_gear_joint" type="continuous">
+    <origin xyz="0.0836350708 -0.06037101746 0.03687180519" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_40" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 8.2042x (radius 3.0mm) -->
+  </joint>
+  <link name="gear_right_41">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="9.11753e-09" ixy="0" ixz="0" iyy="9.11753e-09" iyz="0" izz="9.11753e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_41.stl" />
+      </geometry>
+      <material name="gear_right_41_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_41.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_41_gear_joint" type="continuous">
+    <origin xyz="0.07326964569 -0.06037101746 0.01885584307" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_41" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 8.2463x (radius 3.0mm) -->
+  </joint>
+  <link name="gear_right_42">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="9.29846e-09" ixy="0" ixz="0" iyy="9.29846e-09" iyz="0" izz="9.29846e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_42.stl" />
+      </geometry>
+      <material name="gear_right_42_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_42.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_42_gear_joint" type="continuous">
+    <origin xyz="0.0451517849 -0.0617053299 0.002110146314" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_42" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 8.1657x (radius 3.0mm) -->
+  </joint>
+  <link name="gear_right_44">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="9.28288e-09" ixy="0" ixz="0" iyy="9.28288e-09" iyz="0" izz="9.28288e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_44.stl" />
+      </geometry>
+      <material name="gear_right_44_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_44.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_44_gear_joint" type="continuous">
+    <origin xyz="0.009126826048 -0.06220230675 0.00212173149" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_44" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 8.1726x (radius 3.0mm) -->
+  </joint>
+  <link name="gear_right_45">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="9.15992e-09" ixy="0" ixz="0" iyy="9.15992e-09" iyz="0" izz="9.15992e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_45.stl" />
+      </geometry>
+      <material name="gear_right_45_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_45.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_45_gear_joint" type="continuous">
+    <origin xyz="-0.02687334824 -0.06220543861 0.002105365008" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_45" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 8.2272x (radius 3.0mm) -->
+  </joint>
+  <link name="gear_right_46">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="9.13768e-09" ixy="0" ixz="0" iyy="9.13768e-09" iyz="0" izz="9.13768e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_46.stl" />
+      </geometry>
+      <material name="gear_right_46_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_46.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_46_gear_joint" type="continuous">
+    <origin xyz="-0.0628768158 -0.06220479965 0.002076818496" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_46" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 8.2372x (radius 3.0mm) -->
+  </joint>
+  <link name="gear_right_49">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="6.77972e-08" ixy="0" ixz="0" iyy="6.77972e-08" iyz="0" izz="6.77972e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_49.stl" />
+      </geometry>
+      <material name="gear_right_49_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_49.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_49_gear_joint" type="continuous">
+    <origin xyz="-0.103899025 -0.07271098709 0.002595824242" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_49" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 3.0241x (radius 8.2mm) -->
+  </joint>
+  <link name="gear_right_5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="9.0541e-09" ixy="0" ixz="0" iyy="9.0541e-09" iyz="0" izz="9.0541e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_5.stl" />
+      </geometry>
+      <material name="gear_right_5_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_5.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_5_gear_joint" type="continuous">
+    <origin xyz="0.0732573967 -0.09302982712 0.01885280323" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_5" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 8.2752x (radius 3.0mm) -->
+  </joint>
+  <link name="gear_right_50">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.41881e-08" ixy="0" ixz="0" iyy="1.41881e-08" iyz="0" izz="1.41881e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_50.stl" />
+      </geometry>
+      <material name="gear_right_50_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_50.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_50_gear_joint" type="continuous">
+    <origin xyz="0.04495230865 -0.06006103706 0.002080094099" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_50" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 6.6105x (radius 3.8mm) -->
+  </joint>
+  <link name="gear_right_51">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="6.55571e-08" ixy="0" ixz="0" iyy="6.55571e-08" iyz="0" izz="6.55571e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_51.stl" />
+      </geometry>
+      <material name="gear_right_51_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_51.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_51_gear_joint" type="continuous">
+    <origin xyz="-0.0501417942 -0.08021099091 -0.00578981626" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_51" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 3.0753x (radius 8.1mm) -->
+  </joint>
+  <link name="gear_right_53">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="6.45393e-08" ixy="0" ixz="0" iyy="6.45393e-08" iyz="0" izz="6.45393e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_53.stl" />
+      </geometry>
+      <material name="gear_right_53_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_53.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_53_gear_joint" type="continuous">
+    <origin xyz="-0.01422966814 -0.08071105576 -0.005938064337" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_53" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 3.0995x (radius 8.0mm) -->
+  </joint>
+  <link name="gear_right_55">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="6.67154e-08" ixy="0" ixz="0" iyy="6.67154e-08" iyz="0" izz="6.67154e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_55.stl" />
+      </geometry>
+      <material name="gear_right_55_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_55.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_55_gear_joint" type="continuous">
+    <origin xyz="0.05765304375 -0.07971097565 -0.006014895737" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_55" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 3.0485x (radius 8.2mm) -->
+  </joint>
+  <link name="gear_right_57">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="6.45869e-08" ixy="0" ixz="0" iyy="6.45869e-08" iyz="0" izz="6.45869e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_57.stl" />
+      </geometry>
+      <material name="gear_right_57_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_57.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_57_gear_joint" type="continuous">
+    <origin xyz="-0.07174554825 -0.07971112061 0.03437382603" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_57" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 3.0983x (radius 8.0mm) -->
+  </joint>
+  <link name="gear_right_60">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="6.40834e-08" ixy="0" ixz="0" iyy="6.40834e-08" iyz="0" izz="6.40834e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_60.stl" />
+      </geometry>
+      <material name="gear_right_60_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_60.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_60_gear_joint" type="continuous">
+    <origin xyz="-0.1035831108 -0.07871094131 0.002556232691" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_60" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 3.1105x (radius 8.0mm) -->
+  </joint>
+  <link name="gear_right_61">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="6.49658e-08" ixy="0" ixz="0" iyy="6.49658e-08" iyz="0" izz="6.49658e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_61.stl" />
+      </geometry>
+      <material name="gear_right_61_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_61.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_61_gear_joint" type="continuous">
+    <origin xyz="-0.01406225634 -0.07471097183 -0.005969614804" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_61" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 3.0893x (radius 8.1mm) -->
+  </joint>
+  <link name="gear_right_62">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="3.59809e-08" ixy="0" ixz="0" iyy="3.59809e-08" iyz="0" izz="3.59809e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_62.stl" />
+      </geometry>
+      <material name="gear_right_62_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_62.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_62_gear_joint" type="continuous">
+    <origin xyz="0.05783849144 -0.07971099091 -0.005954175964" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_62" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 4.1511x (radius 6.0mm) -->
+  </joint>
+  <link name="gear_right_64">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="1.32377e-08" ixy="0" ixz="0" iyy="1.32377e-08" iyz="0" izz="1.32377e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_64.stl" />
+      </geometry>
+      <material name="gear_right_64_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_64.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_64_gear_joint" type="continuous">
+    <origin xyz="0.009142793655 -0.06056104469 0.002088026583" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_64" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 6.8437x (radius 3.6mm) -->
+  </joint>
+  <link name="gear_right_65">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="6.62711e-08" ixy="0" ixz="0" iyy="6.62711e-08" iyz="0" izz="6.62711e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_65.stl" />
+      </geometry>
+      <material name="gear_right_65_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_65.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_65_gear_joint" type="continuous">
+    <origin xyz="0.05805436325 -0.07371101761 -0.005950042784" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_65" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 3.0587x (radius 8.1mm) -->
+  </joint>
+  <link name="gear_right_9">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002" />
+      <inertia ixx="3.6288e-08" ixy="0" ixz="0" iyy="3.6288e-08" iyz="0" izz="3.6288e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_9.stl" />
+      </geometry>
+      <material name="gear_right_9_mat">
+        <color rgba="0.55 0.57 0.60 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/gear_right_9.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gear_right_9_gear_joint" type="continuous">
+    <origin xyz="0.04513136101 -0.05696099472 0.002073191285" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="gear_right_9" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0" friction="0" />
+    <!-- equal-track-surface-speed ratio: 4.1335x (radius 6.0mm) -->
+  </joint>
+  <link name="track_belt_left">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.15" />
+      <inertia ixx="0.0002" ixy="0" ixz="0" iyy="0.0002" iyz="0" izz="0.0002" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/track_belt_left.stl" />
+      </geometry>
+      <material name="track_belt_left_mat">
+        <color rgba="0.30 0.32 0.35 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/track_belt_left.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="track_belt_left_belt_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="track_belt_left" />
+    <!-- UV-scrolling belt: perimeter 0.5624m, 56 tread tiles; scroll offset.x by v*dt/perimeter -->
+  </joint>
+  <link name="track_belt_right">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.15" />
+      <inertia ixx="0.0002" ixy="0" ixz="0" iyy="0.0002" iyz="0" izz="0.0002" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/track_belt_right.stl" />
+      </geometry>
+      <material name="track_belt_right_mat">
+        <color rgba="0.30 0.32 0.35 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/track_belt_right.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="track_belt_right_belt_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="track_belt_right" />
+    <!-- UV-scrolling belt: perimeter 0.5624m, 56 tread tiles; scroll offset.x by v*dt/perimeter -->
+  </joint>
+</robot>

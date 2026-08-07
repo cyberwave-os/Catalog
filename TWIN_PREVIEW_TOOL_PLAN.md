@@ -599,6 +599,35 @@ from ROS's `urdfdom` only validates XML/schema structure, not mesh existence
 or inertia plausibility) — confirmed as a genuine gap that `mesh-doctor`'s
 `urdf_doctor.py` fills rather than duplicates.
 
+**Research-grade prior art — Articraft** (arXiv:2605.15187, "An Agentic
+System for Scalable Articulated 3D Asset Generation," Cambridge/Oxford, May
+2026) — checked directly against the paper and both its repos
+(`mattzh72/articraft`, now superseded by `articraftresearch/Articraft`).
+Real, not a fabricated reference. It reframes articulated-asset authoring as
+*code generation*: an LLM agent writes Python against a small SDK
+(`add_part()`, `add_joint()`, `add_test()`, `compile_model()`); calling
+`compile_model` runs automated checks and returns structured feedback for
+the agent to repair against, iteratively, inside what the paper itself calls
+a restricted workspace. This is independent, academic confirmation of
+exactly the shape §8's loop already takes (fix → compile/render → structured
+feedback → repair → repeat) — reassuring that the tool bag's architecture
+isn't a one-off invention, but it's not adoptable code: Articraft *generates*
+new assets from scratch via its own DSL and (in the current fork) exports to
+posable USDZ, not URDF — a different problem from *fixing* existing
+manufacturer-sourced URDFs like D1-T's. Nothing here changes Tools 1–4; it's
+corroborating evidence for §8, not a component to integrate.
+
+**Why no LangGraph/Trigger.dev-style orchestration layer** — both are real,
+general-purpose agent/workflow orchestrators capable of pausing a run for a
+human decision and resuming with their input. Deliberately not adopted here:
+§8's "analyze" step already *is* a human-or-me decision point, and the
+mechanism for that pause/resume already exists natively in how this tool
+bag gets used — a Claude Code conversation turn, an `AskUserQuestion` call,
+or a published preview artifact, all demonstrated repeatedly while building
+Tools 1–4 (e.g. the live D1-T walkthrough in PR #8). Introducing a separate
+orchestration framework would duplicate a HITL mechanism that's already
+free and already in use, for no capability this tool bag is missing.
+
 ---
 
 ## 8. The full feedback loop — fix → render → test → feedback → analyze → repeat

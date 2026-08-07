@@ -1,0 +1,99 @@
+{
+  "catalog_key": "controller:keyboard_autogen_d1_t_with_gripper:v1",
+  "name": "Keyboard (D1 T with gripper)",
+  "description": "Pre-configured keyboard controller for D1 T with gripper with bindings for all controllable joints.",
+  "controller_type": "ControllerType.TELEOP",
+  "visibility": "Visibility.PUBLIC",
+  "asset": "unitree/d1-t-with-gripper",
+  "asset_registry_ids": [
+    "unitree/d1-t-with-gripper"
+  ],
+  "metadata": {
+    "control_mode": "velocity",
+    "input_device": "keyboard",
+    "multiple_joints_update": true,
+    "show_keyboard_visualizer": true,
+    "keyboard_bindings": [
+      {
+        "key": "1",
+        "direction": "increase",
+        "jointName": "Joint1"
+      },
+      {
+        "key": "2",
+        "direction": "decrease",
+        "jointName": "Joint1"
+      },
+      {
+        "key": "3",
+        "direction": "increase",
+        "jointName": "Joint2"
+      },
+      {
+        "key": "4",
+        "direction": "decrease",
+        "jointName": "Joint2"
+      },
+      {
+        "key": "5",
+        "direction": "increase",
+        "jointName": "Joint3"
+      },
+      {
+        "key": "6",
+        "direction": "decrease",
+        "jointName": "Joint3"
+      },
+      {
+        "key": "7",
+        "direction": "increase",
+        "jointName": "Joint4"
+      },
+      {
+        "key": "8",
+        "direction": "decrease",
+        "jointName": "Joint4"
+      },
+      {
+        "key": "9",
+        "direction": "increase",
+        "jointName": "Joint5"
+      },
+      {
+        "key": "0",
+        "direction": "decrease",
+        "jointName": "Joint5"
+      },
+      {
+        "key": "Q",
+        "direction": "increase",
+        "jointName": "Joint6"
+      },
+      {
+        "key": "W",
+        "direction": "decrease",
+        "jointName": "Joint6"
+      },
+      {
+        "key": "E",
+        "direction": "increase",
+        "jointName": "Joint7_1"
+      },
+      {
+        "key": "R",
+        "direction": "decrease",
+        "jointName": "Joint7_1"
+      },
+      {
+        "key": "T",
+        "direction": "increase",
+        "jointName": "Joint7_2"
+      },
+      {
+        "key": "Y",
+        "direction": "decrease",
+        "jointName": "Joint7_2"
+      }
+    ]
+  }
+}

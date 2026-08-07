@@ -1,0 +1,54 @@
+{
+  "repo": "https://github.com/cyberwave-os/cyberwave",
+  "ref": "e79faf1f4fc4da10c45a0f4cb0320b62a37cfac9",
+  "refBranch": "dev",
+  "pinnedAt": "2026-08-07",
+  "note": "Files are copied byte-for-byte from cyberwave-frontend at the pinned ref. Their internal '@/...' import specifiers are NOT rewritten — see vite.config.ts resolve.alias and tsconfig.json paths, which map those specifiers to the sibling files below instead. Never hand-edit these files; re-run scripts/sync_vendor.sh against a new ref and diff before overwriting (TWIN_PREVIEW_TOOL_PLAN.md §3.6).",
+  "files": [
+    {
+      "vendored": "keyboard-joint-bindings.ts",
+      "source": "cyberwave-frontend/lib/utils/keyboard-joint-bindings.ts",
+      "why": "Core teleop math: applyKeyboardJointBindingDelta, getJointStepSize, clampJointValue — the exact logic that decides how a key press moves a joint in the real frontend."
+    },
+    {
+      "vendored": "motion.ts",
+      "source": "cyberwave-frontend/lib/utils/motion.ts",
+      "why": "physicalPositionRange/wrapToPi — how joint limits clamp a commanded value."
+    },
+    {
+      "vendored": "joint-name-mapping.ts",
+      "source": "cyberwave-frontend/lib/utils/joint-name-mapping.ts",
+      "why": "CONTROLLABLE_JOINT_TYPES and schema<->URDF joint name resolution."
+    },
+    {
+      "vendored": "schema-mimic-joints.ts",
+      "source": "cyberwave-frontend/lib/utils/schema-mimic-joints.ts",
+      "why": "isControllableUrdfJoint — excludes native/schema mimic slaves from independent control, same rule the real controllable-joint list uses."
+    },
+    {
+      "vendored": "urdf.ts",
+      "source": "cyberwave-frontend/lib/types/urdf.ts",
+      "why": "URDFAssetData shape, for reference/type-parity only — twin-preview does not need every field."
+    },
+    {
+      "vendored": "teleop-joint-leash.ts",
+      "source": "cyberwave-frontend/lib/utils/teleop-joint-leash.ts",
+      "why": "Transitive dependency of keyboard-joint-bindings.ts. twin-preview runs in 'simulate' mode (see §3 of the plan), where the leash is a no-op passthrough, but the file is vendored whole rather than stubbed to keep the import surface real."
+    },
+    {
+      "vendored": "rotation.ts",
+      "source": "cyberwave-frontend/lib/utils/rotation.ts",
+      "why": "Transitive dependency of motion.ts (normalizeQuaternion)."
+    },
+    {
+      "vendored": "motion-types.ts",
+      "source": "cyberwave-frontend/lib/types/motion.ts",
+      "why": "Transitive type-only dependency of motion.ts. Renamed from motion.ts to motion-types.ts only because this flat vendor/ directory can't hold two files named motion.ts (utils/motion.ts and types/motion.ts upstream); content is untouched, see the alias mapping in vite.config.ts / tsconfig.json."
+    },
+    {
+      "vendored": "cyberwave-constants.ts",
+      "source": "cyberwave-frontend/lib/constants/cyberwave-constants.ts",
+      "why": "Transitive dependency of teleop-joint-leash.ts (SOURCE_TYPE_EDGE, SOURCE_TYPE_EDGE_FOLLOWER)."
+    }
+  ]
+}

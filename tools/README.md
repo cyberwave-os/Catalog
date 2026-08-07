@@ -40,16 +40,25 @@ Cyberwave-shaped — only the URDF + relative-path meshes that come out the
 other end does, because that's the only format `cyberwave-frontend`'s
 `urdf-loader` actually reads.
 
+## Try it yourself right now
+
+`pnpm --dir tools/twin-preview dev`, open **http://localhost:5173/** — the
+D1-T gripper twin is already loaded, full-screen, keyboard-driven with the
+real `keyboard_autogen_d1_t_with_gripper` bindings. Full key layout and the
+"how it works end-to-end" data-flow diagram: [`twin-preview/README.md`'s
+walkthrough](twin-preview#try-it-now--d1-t-gripper-walkthrough).
+
 ## Verified so far
 
 Built and tested against the real `Unitree/D1_T/D1_T_Gripper` asset while
 building this tool bag:
 
 - `twin-preview`: loads the real URDF, checklist reports `8/8 joints ok`,
-  keyboard-driving `Joint1` and the gripper fingers (`Joint7_1`/`Joint7_2`)
-  moves them correctly, including clamping `Joint7_1` at its real `0.03`
-  upper limit — using the actual vendored `cyberwave-frontend` logic, not a
-  reimplementation.
+  keyboard-driving all 6 arm joints plus both gripper fingers
+  (`Joint7_1`/`Joint7_2`) moves them correctly, including clamping
+  `Joint7_1` at its real `0.03` upper limit and correctly leaving
+  `Joint7_2` at 0 (its own upper limit) — using the actual vendored
+  `cyberwave-frontend` logic, not a reimplementation.
 - `mesh-doctor`: `urdf_doctor` reports the URDF structurally clean; `mesh_fixes`
   confirms `base_link.STL`'s real-world extents (`0.118 × 0.108 × 0.058 m`,
   watertight) and correctly does *not* flag it as still-in-millimetres.

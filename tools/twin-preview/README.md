@@ -10,7 +10,68 @@ control code (`vendor/cyberwave-frontend/`) that `cyberwave-frontend` runs —
 so "moves correctly here" means "moves correctly there." No backend, no
 Docker, no asset registration.
 
-## Run it
+## Try it now — D1-T gripper walkthrough
+
+```bash
+pnpm --dir tools/twin-preview dev
+```
+
+Open **http://localhost:5173/** and click into the page so it has keyboard
+focus — the D1-T gripper twin is already loaded, full-screen, no picker, no
+panels. Hold any key below and the matching link rotates/slides live; these
+are the *exact* bindings from `cyberwave-backend`'s
+`controller:keyboard_autogen_d1_t_with_gripper:v1` (same `catalog_key`, same
+keys — pulled via `export_controller_policy.py`, never retyped):
+
+| Joint | Increase | Decrease |
+|---|---|---|
+| Joint1 | `1` | `2` |
+| Joint2 | `3` | `4` |
+| Joint3 | `5` | `6` |
+| Joint4 | `7` | `8` |
+| Joint5 | `9` | `0` |
+| Joint6 | `Q` | `W` |
+| Joint7_1 (gripper finger) | `E` | `R` |
+| Joint7_2 (gripper finger) | `T` | `Y` |
+
+The corner status line reads `D1_T_Gripper · ✓ 8/8 joints ok` throughout —
+that's `runChecklist.ts` (§below) confirming every bound joint exists, has a
+controllable type, and has sane limits, live, not just at load time.
+
+**What this proves, and what it doesn't**: this *is* `cyberwave-frontend`'s
+own joint-control code (vendored, not reimplemented — see below), so a joint
+that moves correctly here will move correctly in the real frontend too.
+What it does *not* do is put the twin inside the actual `cyberwave-frontend`
+app — that still needs the deferred backend registration step
+(`TWIN_PREVIEW_TOOL_PLAN.md` §10: a `CATALOG_ASSETS` entry,
+`seed_asset_cyberwave_catalog`, and the real Docker stack), which this tool
+bag deliberately holds off on until it's actually wanted.
+
+## How it works end-to-end
+
+```
+seed_controllers.py (source of truth for bindings)
+        │  export_controller_policy.py (ast, no Django)
+        ▼
+src/fixtures/*.controller.json  ──────────────┐
+                                               │
+Catalog/Unitree/D1_T/.../*.urdf + meshes/      │  loaded via public/catalog symlink
+        │  urdf-loader (same version pinned    │
+        │  in cyberwave-frontend's package.json)│
+        ▼                                      ▼
+   Viewer3D.tsx  ◀── keydown/keyup ──  vendor/cyberwave-frontend/keyboard-joint-bindings.ts
+        │              (byte-for-byte copy, see MANIFEST.json)
+        ▼
+  robot.setJointValue(name, value)  →  visible motion + checklist result
+```
+
+Nothing in that chain is a reimplementation of frontend behavior — the only
+code twin-preview itself owns is the three.js scene wiring
+(`Viewer3D.tsx`/`main.tsx`) and the checklist (`checklist/runChecklist.ts`).
+Everything that decides *how a keypress turns into a joint value* is the
+same file that ships in `cyberwave-frontend`.
+
+## Run it (general)
 
 ```bash
 pnpm install

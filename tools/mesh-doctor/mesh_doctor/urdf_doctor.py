@@ -90,6 +90,21 @@ def check_inertia_plausibility(urdf: yourdfpy.URDF) -> tuple[list[str], list[str
         tensor = _inertia_matrix(inertial)
         if tensor is None:
             continue
+
+        # eigvalsh assumes a symmetric matrix and only reads one triangular
+        # half (UPLO='L' by default) — checking symmetry first means a
+        # malformed tensor fails loudly here rather than getting a
+        # positive-definite verdict computed from half the data. Not
+        # reachable via yourdfpy's own URDF parser today (it mirrors
+        # ixy/ixz/iyz into both symmetric slots by construction), but this
+        # function accepts any 3x3 array, not only ones yourdfpy produced.
+        if not np.allclose(tensor, tensor.T, atol=1e-9):
+            errors.append(
+                f"link '{link_name}': inertia tensor is not symmetric "
+                f"(off-diagonal pairs disagree) — cannot assess plausibility"
+            )
+            continue
+
         ixx, iyy, izz = tensor[0, 0], tensor[1, 1], tensor[2, 2]
         eigenvalues = np.linalg.eigvalsh(tensor)
         if np.any(eigenvalues <= 0):

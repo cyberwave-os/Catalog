@@ -61,11 +61,22 @@ def safe_eval(node: ast.AST):
     if isinstance(node, ast.Constant):
         return node.value
     if isinstance(node, ast.Dict):
-        return {
-            safe_eval(k): safe_eval(v)
-            for k, v in zip(node.keys, node.values)
-            if k is not None
-        }
+        result = {}
+        for k, v in zip(node.keys, node.values):
+            if k is None:
+                # {**expr, ...} dict-unpacking: ast.Dict represents this with a
+                # None key and `v` as the unpacked expression itself. Silently
+                # skipping it would produce valid-looking but incomplete JSON —
+                # exactly the "policy quietly diverges from source" failure
+                # this script exists to prevent (seed_controllers.py does use
+                # **-merges in other dict literals, e.g. **_drone_runtime_metadata()).
+                raise UnsupportedNode(
+                    "dict contains **-unpacking, which can't be evaluated "
+                    "without executing the unpacked expression — extraction "
+                    "would silently lose those fields"
+                )
+            result[safe_eval(k)] = safe_eval(v)
+        return result
     if isinstance(node, ast.List):
         return [safe_eval(e) for e in node.elts]
     if isinstance(node, ast.Tuple):
@@ -107,16 +118,15 @@ def main() -> int:
         print("Set --seed-file or CYBERWAVE_MONOREPO if your checkout lives elsewhere.", file=sys.stderr)
         return 1
 
-    source = args.seed_file.read_text()
-    tree = ast.parse(source, filename=str(args.seed_file))
-
     try:
+        source = args.seed_file.read_text()
+        tree = ast.parse(source, filename=str(args.seed_file))
         dict_node = find_controller_dict(tree, args.catalog_key)
-    except KeyError as e:
+        policy = safe_eval(dict_node)
+    except (KeyError, UnsupportedNode, SyntaxError) as e:
         print(f"error: {e}", file=sys.stderr)
         return 1
 
-    policy = safe_eval(dict_node)
     output = json.dumps(policy, indent=2, sort_keys=False)
 
     if args.out:

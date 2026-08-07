@@ -49,6 +49,8 @@ def recenter(mesh: trimesh.Trimesh, method: str = "bbox") -> trimesh.Trimesh:
 
 def rescale(mesh: trimesh.Trimesh, factor: float) -> trimesh.Trimesh:
     """Uniform scale, e.g. 0.001 to convert millimetres to metres."""
+    if factor <= 0:
+        raise ValueError(f"scale factor must be positive, got {factor} (0 collapses the mesh to a point, negative mirrors it)")
     mesh.apply_scale(factor)
     return mesh
 

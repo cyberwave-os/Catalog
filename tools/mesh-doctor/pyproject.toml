@@ -1,0 +1,17 @@
+[project]
+name = "mesh-doctor"
+version = "0.1.0"
+description = "Tool 3 of the Catalog tool bag — automated mesh + URDF repair. See ../../TWIN_PREVIEW_TOOL_PLAN.md §5."
+requires-python = ">=3.10"
+dependencies = [
+    "trimesh[easy]>=5.0.0",
+    "pymeshlab>=2025.7",
+    "yourdfpy>=0.0.56",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"

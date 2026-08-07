@@ -1,0 +1,21 @@
+{
+  "name": "studio_three_point",
+  "description": "Neutral 3-point studio lighting + a 3/4 camera angle, so every asset's preview render is visually comparable rather than depending on whatever the last session's viewport happened to be pointed at.",
+  "background_color": [0.03, 0.035, 0.045],
+  "camera": {
+    "azimuth_deg": 35,
+    "elevation_deg": 25,
+    "distance_multiplier": 1.8,
+    "lens_mm": 50
+  },
+  "lights": [
+    { "name": "key", "type": "AREA", "azimuth_deg": 45, "elevation_deg": 45, "distance_multiplier": 2.5, "energy": 400, "size": 1.0 },
+    { "name": "fill", "type": "AREA", "azimuth_deg": -60, "elevation_deg": 20, "distance_multiplier": 3.0, "energy": 150, "size": 1.5 },
+    { "name": "rim", "type": "AREA", "azimuth_deg": 180, "elevation_deg": 30, "distance_multiplier": 2.5, "energy": 200, "size": 1.0 }
+  ],
+  "render": {
+    "engine": "BLENDER_EEVEE",
+    "resolution": [1280, 960],
+    "samples": 64
+  }
+}

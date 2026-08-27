@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<robot name="flir_ax8">
+
+  <!--
+    FLIR AX8 body frame (REP-103): X forward, Y left, Z up.
+    Mesh units are metres; no scale correction is required.
+  -->
+  <link name="ax8_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://flir_ax8/meshes/AX8_visual.obj"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://flir_ax8/meshes/AX8_collision.stl"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 -0.002" rpy="0 0 0"/>
+      <mass value="0.125"/>
+      <inertia
+        ixx="9.82e-05" ixy="0.0" ixz="0.0"
+        iyy="7.35e-05" iyz="0.0"
+        izz="3.83e-05"/>
+    </inertial>
+  </link>
+
+  <!-- Thermal imager center; parent-frame X axis points out through the lens. -->
+  <link name="ax8_thermal_frame"/>
+  <joint name="ax8_thermal_joint" type="fixed">
+    <origin xyz="0.0198 0 0.0031" rpy="0 0 0"/>
+    <parent link="ax8_link"/>
+    <child link="ax8_thermal_frame"/>
+  </joint>
+
+  <link name="ax8_thermal_optical_frame"/>
+  <joint name="ax8_thermal_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.57079632679 0 -1.57079632679"/>
+    <parent link="ax8_thermal_frame"/>
+    <child link="ax8_thermal_optical_frame"/>
+  </joint>
+
+  <!-- Built-in visible camera center. -->
+  <link name="ax8_visible_frame"/>
+  <joint name="ax8_visible_joint" type="fixed">
+    <origin xyz="0.0186 0 0.0156" rpy="0 0 0"/>
+    <parent link="ax8_link"/>
+    <child link="ax8_visible_frame"/>
+  </joint>
+
+  <link name="ax8_visible_optical_frame"/>
+  <joint name="ax8_visible_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.57079632679 0 -1.57079632679"/>
+    <parent link="ax8_visible_frame"/>
+    <child link="ax8_visible_optical_frame"/>
+  </joint>
+
+</robot>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot name="minidsp_uma16_v2">
+  <!--
+    URDF-oriented reconstruction of the miniDSP UMA-16 v2 USB microphone array.
+    Published overall dimensions: 132 x 202 x 18 mm.
+    The mesh is authored directly in meters; no mesh scale conversion is required.
+  -->
+
+  <material name="uma16_pcb_black">
+    <color rgba="0.025 0.030 0.035 1.0"/>
+  </material>
+
+  <link name="uma16_v2_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/uma16_v2_visual.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="uma16_pcb_black"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/uma16_v2_collision.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+
+    <!-- Mass is an engineering estimate; replace it with a measured value if dynamics matter. -->
+    <inertial>
+      <origin xyz="0 0 0.004" rpy="0 0 0"/>
+      <mass value="0.18"/>
+      <inertia
+        ixx="0.00061692" ixy="0.0" ixz="0.0"
+        iyy="0.00026622" iyz="0.0"
+        izz="0.00087342"/>
+    </inertial>
+  </link>
+</robot>

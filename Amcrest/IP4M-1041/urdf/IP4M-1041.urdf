@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<robot name="amcrest_ip4m_1041">
+
+  <!-- REP-103 body convention: X forward through the lens, Y left, Z up. -->
+  <link name="amcrest_base_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://amcrest_ip4m_1041/meshes/IP4M_1041_base_visual.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://amcrest_ip4m_1041/meshes/IP4M_1041_base_collision.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0.014" rpy="0 0 0"/>
+      <mass value="0.140"/>
+      <inertia ixx="1.260e-4" ixy="0" ixz="0"
+               iyy="1.320e-4" iyz="0" izz="2.398e-4"/>
+    </inertial>
+  </link>
+
+  <link name="amcrest_pan_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://amcrest_ip4m_1041/meshes/IP4M_1041_pan_visual.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://amcrest_ip4m_1041/meshes/IP4M_1041_pan_collision.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.008 0 0.049" rpy="0 0 0"/>
+      <mass value="0.080"/>
+      <inertia ixx="9.88e-5" ixy="0" ixz="0"
+               iyy="8.40e-5" iyz="0" izz="7.48e-5"/>
+    </inertial>
+  </link>
+
+  <joint name="amcrest_pan_joint" type="continuous">
+    <origin xyz="0 0 0.026" rpy="0 0 0"/>
+    <parent link="amcrest_base_link"/>
+    <child link="amcrest_pan_link"/>
+    <axis xyz="0 0 1"/>
+    <dynamics damping="0.15" friction="0.05"/>
+  </joint>
+
+  <link name="amcrest_camera_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://amcrest_ip4m_1041/meshes/IP4M_1041_tilt_visual.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://amcrest_ip4m_1041/meshes/IP4M_1041_tilt_collision.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.001 0 0.002" rpy="0 0 0"/>
+      <mass value="0.070"/>
+      <inertia ixx="3.79e-5" ixy="0" ixz="0"
+               iyy="4.17e-5" iyz="0" izz="3.25e-5"/>
+    </inertial>
+  </link>
+
+  <joint name="amcrest_tilt_joint" type="revolute">
+    <origin xyz="0 0 0.051" rpy="0 0 0"/>
+    <parent link="amcrest_pan_link"/>
+    <child link="amcrest_camera_link"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.22173" upper="0.436332" effort="0.5" velocity="1.0"/>
+    <dynamics damping="0.12" friction="0.04"/>
+  </joint>
+
+  <link name="amcrest_camera_optical_frame"/>
+  <joint name="amcrest_camera_optical_joint" type="fixed">
+    <!-- Lens center is 40.9 mm forward and 6 mm above the tilt axis. -->
+    <origin xyz="0.0409 0 0.006" rpy="-1.57079632679 0 -1.57079632679"/>
+    <parent link="amcrest_camera_link"/>
+    <child link="amcrest_camera_optical_frame"/>
+  </joint>
+
+</robot>

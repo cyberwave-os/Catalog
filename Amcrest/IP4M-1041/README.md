@@ -17,7 +17,7 @@ URDF-ready mesh for the Amcrest 4MP ProHD indoor pan/tilt RGB camera.
 ## Articulation
 
 - `amcrest_pan_joint`: continuous rotation around `+Z`
-- `amcrest_tilt_joint`: gimbal rotation around `+Y`
+- `amcrest_tilt_joint`: gimbal pitch around `+X` (the modeled lens faces `-Y`)
 - Horizontal pivot: `0 0 0.036` m in the base frame
 - Vertical pivot: `-0.000281259 0.001454012 0.044` m in the pan frame
 - Blender source objects:

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <robot name="amcrest_ip4m_1041b">
-  <!-- REP-103: +X lens-forward, +Y left, +Z up. Mesh units are metres. -->
-  <material name="black_plastic">
-    <color rgba="0.012 0.014 0.018 1.0"/>
+  <!-- REP-103 link frames: +X forward, +Y left, +Z up. Mesh units are metres. -->
+  <material name="gray_plastic">
+    <color rgba="0.18 0.20 0.22 1.0"/>
   </material>
 
   <link name="amcrest_base_link">
@@ -10,7 +10,7 @@
       <geometry>
         <mesh filename="../meshes/IP4M_1041_base_visual.obj"/>
       </geometry>
-      <material name="black_plastic"/>
+      <material name="gray_plastic"/>
     </visual>
     <collision>
       <geometry>
@@ -30,7 +30,7 @@
       <geometry>
         <mesh filename="../meshes/IP4M_1041_pan_visual.obj"/>
       </geometry>
-      <material name="black_plastic"/>
+      <material name="gray_plastic"/>
     </visual>
     <collision>
       <geometry>
@@ -60,7 +60,7 @@
       <geometry>
         <mesh filename="../meshes/IP4M_1041_tilt_visual.obj"/>
       </geometry>
-      <material name="black_plastic"/>
+      <material name="gray_plastic"/>
     </visual>
     <collision>
       <geometry>
@@ -80,7 +80,7 @@
     <origin xyz="-0.000281259 0.001454012 0.044" rpy="0 0 0"/>
     <parent link="amcrest_pan_link"/>
     <child link="amcrest_tilt_link"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="1 0 0"/>
     <limit lower="-1.57079632679" upper="0.78539816339"
            effort="1.0" velocity="2.0"/>
     <dynamics damping="0.08" friction="0.02"/>
@@ -88,7 +88,8 @@
 
   <link name="amcrest_camera_frame"/>
   <joint name="amcrest_camera_frame_joint" type="fixed">
-    <origin xyz="0.035 0 0" rpy="0 0 0"/>
+    <!-- The modeled lens faces -Y; rotate the camera frame so its +X points lens-forward. -->
+    <origin xyz="0 -0.035 0" rpy="0 0 -1.57079632679"/>
     <parent link="amcrest_tilt_link"/>
     <child link="amcrest_camera_frame"/>
   </joint>

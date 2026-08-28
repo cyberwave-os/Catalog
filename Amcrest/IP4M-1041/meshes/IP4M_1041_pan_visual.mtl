@@ -1,12 +1,17 @@
 # Blender 5.0.0 Beta MTL File: 'IP4M-1041.blend'
 # www.blender.org
 
-newmtl Generated_Black_Plastic
-Ns 518.400024
-Ka 1.000000 1.000000 1.000000
-Kd 0.012000 0.014000 0.018000
-Ks 0.500000 0.500000 0.500000
+newmtl Generated_Gray_Plastic
+Kd 0.180000 0.200000 0.220000
+Ks 0.250000 0.250000 0.250000
 Ke 0.000000 0.000000 0.000000
-Ni 1.500000
+Ni 1.460000
 d 1.000000
-illum 2
+illum 3
+Pr 0.380000
+Pm 0.050000
+Ps 0.000000
+Pc 0.000000
+Pcr 0.030000
+aniso 0.000000
+anisor 0.000000

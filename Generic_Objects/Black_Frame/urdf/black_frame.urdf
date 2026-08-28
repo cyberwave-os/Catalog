@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<robot name="black_frame">
+  <!--
+    Static perforated portal frame modeled in Blender in SI units.
+    The visual mesh preserves the modeled perforations, brackets, and gussets.
+    Collision geometry is intentionally simplified to the principal structural
+    members for robust and inexpensive simulation.
+  -->
+
+  <material name="matte_black">
+    <color rgba="0.015 0.018 0.022 1.0"/>
+  </material>
+
+  <link name="base_link">
+    <visual name="frame_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/black_frame.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="matte_black"/>
+    </visual>
+
+    <!-- Left upright and mounting hardware. -->
+    <collision name="left_upright_collision">
+      <origin xyz="0.011649 -0.491817 0.282847" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.048864 0.048864 0.565693"/>
+      </geometry>
+    </collision>
+    <collision name="left_lower_sleeve_collision">
+      <origin xyz="0.011649 -0.491817 0.067" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.061 0.064 0.124"/>
+      </geometry>
+    </collision>
+    <collision name="left_base_plate_collision">
+      <origin xyz="0.011649 -0.491817 0.005" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.135 0.145 0.010"/>
+      </geometry>
+    </collision>
+
+    <!-- Right upright and mounting hardware. -->
+    <collision name="right_upright_collision">
+      <origin xyz="0.011649 0.468885 0.282847" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.048864 0.048864 0.565693"/>
+      </geometry>
+    </collision>
+    <collision name="right_lower_sleeve_collision">
+      <origin xyz="0.011649 0.468885 0.067" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.061 0.064 0.124"/>
+      </geometry>
+    </collision>
+    <collision name="right_base_plate_collision">
+      <origin xyz="0.011649 0.468885 0.005" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.135 0.145 0.010"/>
+      </geometry>
+    </collision>
+
+    <!-- Horizontal crossmember. -->
+    <collision name="top_crossmember_collision">
+      <origin xyz="0.011649 -0.011466 0.566693" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.048864 1.085 0.048864"/>
+      </geometry>
+    </collision>
+
+    <!-- Approximate physical properties for the complete steel assembly. -->
+    <inertial>
+      <origin xyz="0.011649 -0.011466 0.310" rpy="0 0 0"/>
+      <mass value="9.5"/>
+      <inertia
+        ixx="1.209" ixy="0.0" ixz="0.0"
+        iyy="0.290" iyz="0.0"
+        izz="0.947"/>
+    </inertial>
+  </link>
+</robot>

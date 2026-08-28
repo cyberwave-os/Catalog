@@ -1,0 +1,182 @@
+{
+  "units": "metres",
+  "scene_unit_system": "METRIC",
+  "scene_scale_length": 1.0,
+  "source_blend": "/Users/lapsus/cw/Catalog/Generic_Objects/Rail_Bogie/source/rail_bogie.blend",
+  "frame_origin_world": [
+    -0.2530839443206787,
+    3.4674649238586426,
+    -0.492166131734848
+  ],
+  "joint_origins": {
+    "front_wheelset_joint": [
+      -3.403616428375244,
+      0.0,
+      0.0
+    ],
+    "rear_wheelset_joint": [
+      3.403616428375244,
+      0.0,
+      0.0
+    ]
+  },
+  "groups": {
+    "frame": {
+      "objects": 63,
+      "triangles": 40905,
+      "collision_triangles": 40905,
+      "bounds": {
+        "min": [
+          -4.331567287445068,
+          -4.127496242523193,
+          -1.2508065700531006
+        ],
+        "max": [
+          4.353705883026123,
+          4.12767219543457,
+          1.9497146606445312
+        ],
+        "size": [
+          8.685273170471191,
+          8.255168914794922,
+          3.200521230697632
+        ],
+        "center": [
+          0.011069297790527344,
+          8.797645568847656e-05,
+          0.34945404529571533
+        ]
+      },
+      "object_names": [
+        "Circle",
+        "Circle.001",
+        "Circle.002",
+        "Circle.003",
+        "Cube.001",
+        "Cube.002",
+        "Cube.003",
+        "Cube.004",
+        "Cube.005",
+        "Cube.006",
+        "Cube.007",
+        "Cube.008",
+        "Cube.009",
+        "Cube.010",
+        "Cube.011",
+        "Cube.130",
+        "Cube.136",
+        "Cube.137",
+        "Cube.138",
+        "Cube.148",
+        "Cube.150",
+        "Cylinder.002",
+        "Cylinder.004",
+        "Cylinder.005",
+        "Cylinder.006",
+        "Cylinder.007",
+        "Cylinder.008",
+        "Cylinder.009",
+        "Cylinder.010",
+        "Cylinder.011",
+        "Cylinder.012",
+        "Cylinder.013",
+        "Cylinder.014",
+        "Cylinder.015",
+        "Cylinder.016",
+        "Cylinder.017",
+        "Cylinder.018",
+        "Cylinder.019",
+        "Cylinder.020",
+        "Cylinder.021",
+        "Cylinder.022",
+        "Cylinder.023",
+        "Cylinder.027",
+        "Cylinder.028",
+        "Cylinder.029",
+        "Cylinder.030",
+        "Cylinder.031",
+        "Cylinder.032",
+        "Cylinder.033",
+        "Cylinder.034",
+        "Cylinder.035",
+        "Cylinder.036",
+        "Cylinder.057",
+        "Cylinder.099",
+        "Cylinder.102",
+        "Cylinder.105",
+        "NurbsPath",
+        "Text",
+        "Text.001",
+        "Text.002",
+        "Text.003",
+        "Text.004",
+        "Text.010"
+      ]
+    },
+    "front_wheelset": {
+      "objects": 4,
+      "triangles": 9396,
+      "collision_triangles": 9396,
+      "bounds": {
+        "min": [
+          -2.1599366664886475,
+          -4.083090305328369,
+          -2.1599373817443848
+        ],
+        "max": [
+          2.1599366664886475,
+          4.08308219909668,
+          2.15993595123291
+        ],
+        "size": [
+          4.319873332977295,
+          8.16617202758789,
+          4.319873332977295
+        ],
+        "center": [
+          0.0,
+          -4.0531158447265625e-06,
+          -7.152557373046875e-07
+        ]
+      },
+      "object_names": [
+        "Cylinder.001",
+        "Cylinder.003",
+        "Cylinder.037",
+        "Text.005"
+      ]
+    },
+    "rear_wheelset": {
+      "objects": 3,
+      "triangles": 9040,
+      "collision_triangles": 9040,
+      "bounds": {
+        "min": [
+          -2.1599366664886475,
+          -4.083090305328369,
+          -2.1599373817443848
+        ],
+        "max": [
+          2.1599366664886475,
+          4.08308219909668,
+          2.15993595123291
+        ],
+        "size": [
+          4.319873332977295,
+          8.16617202758789,
+          4.319873332977295
+        ],
+        "center": [
+          0.0,
+          -4.0531158447265625e-06,
+          -7.152557373046875e-07
+        ]
+      },
+      "object_names": [
+        "Cylinder.000",
+        "Cylinder.025",
+        "Cylinder.038"
+      ]
+    }
+  }
+}

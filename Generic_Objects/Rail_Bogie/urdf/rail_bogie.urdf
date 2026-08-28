@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<robot name="rail_bogie">
+  <!--
+    REP-103 convention: X is the direction of travel, Y follows the axle
+    toward the left side, and Z points up. Meshes are link-local and authored
+    in the Blender scene's metric units.
+
+    Mass and inertia values are engineering placeholders. Replace them with
+    measured values before using this model for dynamics-sensitive simulation.
+  -->
+
+  <link name="bogie_frame_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/rail_bogie_frame_visual.obj" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/rail_bogie_frame_collision.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.011069 0.000088 0.349454" rpy="0 0 0"/>
+      <mass value="1000"/>
+      <inertia ixx="6532" ixy="0" ixz="0"
+               iyy="7139" iyz="0" izz="11965"/>
+    </inertial>
+  </link>
+
+  <link name="front_wheelset_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/rail_bogie_front_wheelset_visual.obj" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/rail_bogie_front_wheelset_collision.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="250"/>
+      <inertia ixx="1681" ixy="0" ixz="0"
+               iyy="583" iyz="0" izz="1681"/>
+    </inertial>
+  </link>
+
+  <joint name="front_wheelset_joint" type="continuous">
+    <origin xyz="-3.403616428 0 0" rpy="0 0 0"/>
+    <parent link="bogie_frame_link"/>
+    <child link="front_wheelset_link"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.25" friction="0.05"/>
+  </joint>
+
+  <link name="rear_wheelset_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/rail_bogie_rear_wheelset_visual.obj" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/rail_bogie_rear_wheelset_collision.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="250"/>
+      <inertia ixx="1681" ixy="0" ixz="0"
+               iyy="583" iyz="0" izz="1681"/>
+    </inertial>
+  </link>
+
+  <joint name="rear_wheelset_joint" type="continuous">
+    <origin xyz="3.403616428 0 0" rpy="0 0 0"/>
+    <parent link="bogie_frame_link"/>
+    <child link="rear_wheelset_link"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.25" friction="0.05"/>
+  </joint>
+</robot>

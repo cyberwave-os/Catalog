@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+  Standalone Catalog adaptation of RealSense's Apache-2.0 L515 description.
+  The visual mesh and dimensions come from realsense-ros 4.54.1.
+-->
+<robot name="realsense_l515">
+  <link name="realsense_l515_link">
+    <visual>
+      <!-- The source mesh origin is centered on the front plate. -->
+      <origin xyz="0.0045 0 0.009" rpy="1.57079632679 0 1.57079632679"/>
+      <geometry>
+        <mesh filename="../meshes/l515.dae"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <!-- Conservative 61 mm diameter by 26 mm high cylindrical envelope. -->
+      <origin xyz="-0.0085 0 0.009" rpy="1.57079632679 0 1.57079632679"/>
+      <geometry>
+        <cylinder radius="0.0305" length="0.026"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.095"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia
+        ixx="0.000044"
+        ixy="0"
+        ixz="0"
+        iyy="0.000027"
+        iyz="0"
+        izz="0.000027"
+      />
+    </inertial>
+  </link>
+</robot>

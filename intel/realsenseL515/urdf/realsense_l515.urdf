@@ -9,7 +9,7 @@
       <!-- The source mesh origin is centered on the front plate. -->
       <origin xyz="0.0045 0 0.009" rpy="1.57079632679 0 1.57079632679"/>
       <geometry>
-        <mesh filename="../../meshes/l515.dae"/>
+        <mesh filename="package://realsense/meshes/l515.dae"/>
       </geometry>
     </visual>
 

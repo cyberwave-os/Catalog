@@ -1,0 +1,59 @@
+{
+  "units": "metres",
+  "source_objects": [
+    "0",
+    "0.001",
+    "0.002"
+  ],
+  "scene_scale_length": 1.0,
+  "source_origin_metres": [
+    -0.130109965801239,
+    0.103351891040802,
+    0.016603704541921616
+  ],
+  "bounds": {
+    "min": [
+      -1.9441988468170166,
+      -0.6557317972183228,
+      0.0
+    ],
+    "max": [
+      1.9441988468170166,
+      0.6557317972183228,
+      0.310474157333374
+    ],
+    "size": [
+      3.888397693634033,
+      1.3114635944366455,
+      0.310474157333374
+    ]
+  },
+  "triangles": 188312,
+  "textures": {
+    "base_color": {
+      "file": "textures/rail_track_base_color.jpg",
+      "size": [
+        4096,
+        4096
+      ],
+      "colorspace": "sRGB"
+    },
+    "normal": {
+      "file": "textures/rail_track_normal.jpg",
+      "size": [
+        4096,
+        4096
+      ],
+      "colorspace": "Non-Color"
+    },
+    "occlusion": {
+      "file": "textures/rail_track_occlusion.jpg",
+      "size": [
+        4096,
+        4096
+      ],
+      "colorspace": "Non-Color"
+    }
+  },
+  "fixed_base": true
+}

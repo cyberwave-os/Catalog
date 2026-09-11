@@ -1,0 +1,13 @@
+# norm is a tangent-space normal-map extension; support varies by viewer.
+# Occlusion is preserved separately; classic MTL has no standard AO slot.
+newmtl rail_track
+Ka 1 1 1
+Kd 1 1 1
+Ks 0 0 0
+d 1
+illum 2
+Ns 0
+Pr 1
+Pm 0
+map_Kd ../textures/rail_track_base_color.jpg
+norm ../textures/rail_track_normal.jpg

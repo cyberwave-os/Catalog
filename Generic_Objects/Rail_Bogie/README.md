@@ -58,6 +58,22 @@ in their original source scale.
 
 ## Re-exporting
 
+### Material colors
+
+The main body (`Material.001`) uses light gray: sRGB `0.75 0.75 0.75`
+(`#bfbfbf`). The exporter keeps this catalog appearance as an explicit override.
+Other constant colors come from the connected Principled BSDF when available,
+with the viewport color as a fallback. Linear Blender colors are converted to
+sRGB before writing MTL `Kd` values, matching Cyberwave's Three.js loader.
+Linked Base Color textures are rejected rather than silently exported as an
+unrelated viewport swatch.
+
+The checked-in MTLs contain the corrected body color and converted wheel/trim
+swatches. Upload all three `.mtl` files alongside the `.obj` meshes when creating
+the new asset. No URDF geometry, scale, joints, or collision data changed.
+
+### Blender source
+
 Open `source/rail_bogie.blend` in Blender and run:
 
 ```python

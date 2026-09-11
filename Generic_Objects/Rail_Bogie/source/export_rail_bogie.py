@@ -29,6 +29,34 @@ FRAME_ROOT = "Cube.004"
 WHEELSET_ROOTS = ("Cylinder.037", "Cylinder.038")
 
 
+# Catalog appearance, expressed in the sRGB values expected by Three.js MTLLoader.
+# The original viewport swatch for the body was near-black after MTL loading.
+BODY_COLOUR_SRGB = (0.75, 0.75, 0.75)
+
+
+def linear_to_srgb(value: float) -> float:
+    value = max(0.0, min(1.0, value))
+    return 12.92 * value if value <= 0.0031308 else 1.055 * value ** (1.0 / 2.4) - 0.055
+
+
+def material_colour_srgb(material: bpy.types.Material) -> tuple[float, ...]:
+    """Export constant shader colors, with a stable light-gray body override."""
+    colour = tuple(material.diffuse_color)
+    if material.use_nodes and material.node_tree:
+        output = next((node for node in material.node_tree.nodes
+                       if node.type == "OUTPUT_MATERIAL" and node.is_active_output), None)
+        if output and output.inputs["Surface"].is_linked:
+            shader = output.inputs["Surface"].links[0].from_node
+            if shader.type == "BSDF_PRINCIPLED":
+                base = shader.inputs["Base Color"]
+                if base.is_linked:
+                    raise ValueError(f"{material.name}: textured colors require a texture-aware exporter")
+                colour = (*base.default_value[:3], shader.inputs["Alpha"].default_value)
+    if material.name == "Material.001":
+        return (*BODY_COLOUR_SRGB, colour[3])
+    return (*(linear_to_srgb(channel) for channel in colour[:3]), colour[3])
+
+
 def descendants(root: bpy.types.Object) -> set[bpy.types.Object]:
     result = {root}
     pending = [root]
@@ -95,10 +123,11 @@ def write_obj(path: Path, objects: list[bpy.types.Object], origin: Vector) -> di
             vertex_index += 3
 
     with path.with_suffix(".mtl").open("w", encoding="utf-8") as handle:
-        handle.write("# Blender material colours for the rail bogie\n")
-        handle.write("newmtl default_material\nKd 0.18 0.18 0.18\nKs 0.04 0.04 0.04\nNs 32\n\n")
+        handle.write("# Rail bogie material colours; Kd values are sRGB\n")
+        fallback = linear_to_srgb(0.18)
+        handle.write(f"newmtl default_material\nKd {fallback:.6g} {fallback:.6g} {fallback:.6g}\nKs 0.04 0.04 0.04\nNs 32\n\n")
         for material_name, material in sorted(materials.items()):
-            colour = material.diffuse_color
+            colour = material_colour_srgb(material)
             metallic = float(getattr(material, "metallic", 0.0))
             roughness = float(getattr(material, "roughness", 0.5))
             handle.write(f"newmtl {material_name}\n")

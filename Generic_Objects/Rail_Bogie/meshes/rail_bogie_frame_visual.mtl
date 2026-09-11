@@ -1,11 +1,11 @@
-# Blender material colours for the rail bogie
+# Rail bogie material colours; Kd values are sRGB
 newmtl default_material
-Kd 0.18 0.18 0.18
+Kd 0.461356 0.461356 0.461356
 Ks 0.04 0.04 0.04
 Ns 32
 
 newmtl Material.001
-Kd 0.152325 0.152325 0.152325
+Kd 0.75 0.75 0.75
 d 1
 Ks 0 0 0
 Ns 150
@@ -17,7 +17,7 @@ Ks 0 0 0
 Ns 150
 
 newmtl Material.018
-Kd 0.0780695 0.0780695 0.0780695
+Kd 0.309575 0.309575 0.309575
 d 1
 Ks 0 0 0
 Ns 150

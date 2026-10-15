@@ -1,0 +1,42 @@
+# 42U server rack material colours; Kd values are sRGB, d is alpha
+newmtl default_material
+Kd 0.461356 0.461356 0.461356
+Ks 0.04 0.04 0.04
+Ns 32
+
+newmtl rack_black_steel
+Kd 0.112075 0.117741 0.128354
+d 1
+Ks 0.3 0.3 0.3
+Ns 112.5
+
+newmtl rack_chrome
+Kd 0.906332 0.906332 0.916274
+d 1
+Ks 1 1 1
+Ns 187.5
+
+newmtl rack_door_glass
+Kd 0.247801 0.293372 0.33183
+d 0.35
+Ks 0 0 0
+Ns 237.5
+
+newmtl rack_galvanized_rail
+Kd 0.701411 0.715241 0.735357
+d 1
+Ks 0.9 0.9 0.9
+Ns 162.5
+
+newmtl rack_orange_trim
+Kd 0.954687 0.461356 0.151704
+d 1
+Ks 0 0 0
+Ns 150
+
+newmtl rack_perforated_black
+Kd 0.151704 0.155949 0.168018
+d 1
+Ks 0.3 0.3 0.3
+Ns 75
+

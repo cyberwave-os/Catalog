@@ -1,0 +1,160 @@
+{
+  "units": "metres",
+  "scene_unit_system": "METRIC",
+  "scene_scale_length": 1.0,
+  "mesh_scale": [
+    1,
+    1,
+    1
+  ],
+  "axes": "X front (glass door), Y width, Z up; origin at footprint centre on the floor",
+  "source_blend": "/Users/lapsus/cw/Catalog/Generic_Objects/Server_Rack_42U/source/server_rack_42u.blend",
+  "source_origin_metres": [
+    0.0,
+    0.0,
+    -9.437237658005415e-10
+  ],
+  "bounds": {
+    "min": [
+      -0.4000000059604645,
+      -0.30000001192092896,
+      9.189213834304155e-10
+    ],
+    "max": [
+      0.41499999165534973,
+      0.30000001192092896,
+      2.138000011444092
+    ],
+    "size": [
+      0.8149999976158142,
+      0.6000000238418579,
+      2.138000011444092
+    ],
+    "center": [
+      0.007499992847442627,
+      0.0,
+      1.069000005722046
+    ]
+  },
+  "rack_units": 42,
+  "rack_unit_metres": 0.04445,
+  "mounting_rail_height_metres": 1.8669000000000002,
+  "visual": {
+    "objects": 31,
+    "triangles": 1012
+  },
+  "stl_triangles": 1012,
+  "collision_boxes": {
+    "body": {
+      "min": [
+        -0.4000000059604645,
+        -0.30000001192092896,
+        0.05000000074505806
+      ],
+      "max": [
+        0.4020000100135803,
+        0.30000001192092896,
+        2.138000011444092
+      ],
+      "size": [
+        0.8020000457763672,
+        0.6000000238418579,
+        2.0880000591278076
+      ],
+      "center": [
+        0.0010000020265579224,
+        0.0,
+        1.093999981880188
+      ],
+      "comment": "Cabinet envelope: frame, panels, doors, rails and interior, feet top to roof.",
+      "object_names": [
+        "base_frame | steel",
+        "corner_post_fl | steel",
+        "corner_post_fr | steel",
+        "corner_post_rl | steel",
+        "corner_post_rr | steel",
+        "front_door_glass | glass",
+        "front_door_rail_bottom | steel",
+        "front_door_rail_top | steel",
+        "front_door_stile_l | steel",
+        "front_door_stile_r | steel",
+        "mount_rail_front_l | rail",
+        "mount_rail_front_r | rail",
+        "mount_rail_rear_l | rail",
+        "mount_rail_rear_r | rail",
+        "orange_trim_l | trim",
+        "orange_trim_r | trim",
+        "rear_door | perforated",
+        "shelf | steel",
+        "side_panel_l | perforated",
+        "side_panel_r | perforated",
+        "top_panel | steel",
+        "top_vent | perforated"
+      ]
+    },
+    "feet": {
+      "min": [
+        -0.37699997425079346,
+        -0.2770000100135803,
+        9.189213834304155e-10
+      ],
+      "max": [
+        0.37699997425079346,
+        0.2770000100135803,
+        0.06000000238418579
+      ],
+      "size": [
+        0.7539999485015869,
+        0.5540000200271606,
+        0.06000000238418579
+      ],
+      "center": [
+        0.0,
+        0.0,
+        0.030000001192092896
+      ],
+      "comment": "Levelling feet and casters under the base frame.",
+      "object_names": [
+        "caster_fl | chrome",
+        "caster_fr | chrome",
+        "caster_rl | chrome",
+        "caster_rr | chrome",
+        "foot_fl | chrome",
+        "foot_fr | chrome",
+        "foot_rl | chrome",
+        "foot_rr | chrome"
+      ]
+    },
+    "handle": {
+      "min": [
+        0.39500001072883606,
+        -0.22750000655651093,
+        0.9899999499320984
+      ],
+      "max": [
+        0.41499999165534973,
+        -0.20250000059604645,
+        1.1099998950958252
+      ],
+      "size": [
+        0.019999980926513672,
+        0.025000005960464478,
+        0.1199999451637268
+      ],
+      "center": [
+        0.4050000011920929,
+        -0.2150000035762787,
+        1.0499999523162842
+      ],
+      "comment": "Front door handle protruding from the door face.",
+      "object_names": [
+        "door_handle | chrome"
+      ]
+    }
+  },
+  "mass_kg": 55.3,
+  "fixed_base": true,
+  "dynamics_note": "Mass from a Sysracks 42U 24x32x84in listing (122 lb, empty); inertia is the body box AABB formula. Unmeasured placeholders.",
+  "geometry_note": "Procedural Blender model (Hunyuan3D generation through Blender MCP failed); dimensions nominal 600 x 800 x 2134 mm.",
+  "excluded_objects": []
+}

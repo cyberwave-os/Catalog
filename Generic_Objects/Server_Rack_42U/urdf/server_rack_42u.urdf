@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="server_rack_42u">
+  <!-- Static 42U server rack cabinet: load with fixed_base=true. Collision is a set of axis-aligned boxes fitted to the visual mesh; mass and inertia are listing-based placeholders, not measured. -->
+  <link name="server_rack_42u_link">
+    <visual name="cabinet_visual">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/server_rack_42u_visual.obj" scale="1 1 1" />
+      </geometry>
+    </visual>
+    <!-- Cabinet envelope: frame, panels, doors, rails and interior, feet top to roof. -->
+    <collision name="body_collision">
+      <origin xyz="0.001000002027 0 1.093999982" rpy="0 0 0" />
+      <geometry>
+        <box size="0.8020000458 0.6000000238 2.088000059" />
+      </geometry>
+    </collision>
+    <!-- Levelling feet and casters under the base frame. -->
+    <collision name="feet_collision">
+      <origin xyz="0 0 0.03000000119" rpy="0 0 0" />
+      <geometry>
+        <box size="0.7539999485 0.55400002 0.06000000238" />
+      </geometry>
+    </collision>
+    <!-- Front door handle protruding from the door face. -->
+    <collision name="handle_collision">
+      <origin xyz="0.4050000012 -0.2150000036 1.049999952" rpy="0 0 0" />
+      <geometry>
+        <box size="0.01999998093 0.02500000596 0.1199999452" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.001000002027 0 1.093999982" rpy="0 0 0" />
+      <mass value="55.3" />
+      <inertia ixx="21.75015487" iyy="23.05525351" izz="4.623098904" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+</robot>

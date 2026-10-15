@@ -28,15 +28,15 @@ d 1
 Ks 0.9 0.9 0.9
 Ns 162.5
 
-newmtl rack_orange_trim
-Kd 0.954687 0.461356 0.151704
-d 1
-Ks 0 0 0
-Ns 150
-
 newmtl rack_perforated_black
 Kd 0.151704 0.155949 0.168018
 d 1
 Ks 0.3 0.3 0.3
 Ns 75
+
+newmtl rack_red_trim
+Kd 0.880825 0.189748 0.151704
+d 1
+Ks 0 0 0
+Ns 150
 

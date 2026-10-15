@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <robot name="server_rack_42u">
   <!-- Static 42U server rack cabinet: load with fixed_base=true. Collision is a set of axis-aligned boxes fitted to the visual mesh; mass and inertia are listing-based placeholders, not measured. -->
+  <!-- Spec: 19in EIA-310, 42U, external depth 0.8 m, usable (rail-to-rail) depth 0.711 m, rail opening 0.45085 m, load capacity 726 kg (equipment, not modelled). -->
   <link name="server_rack_42u_link">
     <visual name="cabinet_visual">
       <origin xyz="0 0 0" rpy="0 0 0" />

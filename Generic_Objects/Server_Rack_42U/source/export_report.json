@@ -39,6 +39,18 @@
   "rack_units": 42,
   "rack_unit_metres": 0.04445,
   "mounting_rail_height_metres": 1.8669000000000002,
+  "spec": {
+    "standard": "19in EIA-310",
+    "external_depth_m": 0.8,
+    "usable_depth_m": 0.711,
+    "rail_opening_m": 0.45085,
+    "rail_hole_spacing_m": 0.4651,
+    "load_capacity_kg": 726.0
+  },
+  "rails": {
+    "front_rear_centre_spacing_m": 0.7110000252723694,
+    "clear_opening_m": 0.4508500099182129
+  },
   "visual": {
     "objects": 31,
     "triangles": 1012
@@ -82,9 +94,9 @@
         "mount_rail_front_r | rail",
         "mount_rail_rear_l | rail",
         "mount_rail_rear_r | rail",
-        "orange_trim_l | trim",
-        "orange_trim_r | trim",
         "rear_door | perforated",
+        "red_trim_l | trim",
+        "red_trim_r | trim",
         "shelf | steel",
         "side_panel_l | perforated",
         "side_panel_r | perforated",
@@ -115,10 +127,10 @@
       ],
       "comment": "Levelling feet and casters under the base frame.",
       "object_names": [
-        "caster_fl | chrome",
-        "caster_fr | chrome",
-        "caster_rl | chrome",
-        "caster_rr | chrome",
+        "caster_fl | steel",
+        "caster_fr | steel",
+        "caster_rl | steel",
+        "caster_rr | steel",
         "foot_fl | chrome",
         "foot_fr | chrome",
         "foot_rl | chrome",
@@ -155,6 +167,6 @@
   "mass_kg": 55.3,
   "fixed_base": true,
   "dynamics_note": "Mass from a Sysracks 42U 24x32x84in listing (122 lb, empty); inertia is the body box AABB formula. Unmeasured placeholders.",
-  "geometry_note": "Procedural Blender model (Hunyuan3D generation through Blender MCP failed); dimensions nominal 600 x 800 x 2134 mm.",
+  "geometry_note": "Procedural Blender model from source/build_server_rack_42u.py (Hunyuan3D generation through Blender MCP failed); nominal 600 x 800 x 2134 mm, rails per spec sheet and EIA-310.",
   "excluded_objects": []
 }

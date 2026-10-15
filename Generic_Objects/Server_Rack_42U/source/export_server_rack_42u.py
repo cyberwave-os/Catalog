@@ -33,6 +33,15 @@ COLLECTION = "RACK | 42U server cabinet"
 MASS_KG = 55.3
 RACK_UNITS = 42
 U_METRES = 0.04445
+# Sysracks floor-standing spec sheet, 32" (800 mm) depth variant, and EIA-310.
+SPEC = {
+    "standard": "19in EIA-310",
+    "external_depth_m": 0.800,
+    "usable_depth_m": 0.711,
+    "rail_opening_m": 0.45085,
+    "rail_hole_spacing_m": 0.4651,
+    "load_capacity_kg": 726.0,
+}
 
 # Collision groups are axis-aligned boxes fitted to these object-name prefixes.
 # Anything not matched falls into the main cabinet body box.
@@ -177,6 +186,10 @@ def write_urdf(report: dict) -> None:
         " Static 42U server rack cabinet: load with fixed_base=true. "
         "Collision is a set of axis-aligned boxes fitted to the visual mesh; "
         "mass and inertia are listing-based placeholders, not measured. "))
+    robot.append(ET.Comment(
+        f" Spec: {SPEC['standard']}, 42U, external depth {SPEC['external_depth_m']} m, "
+        f"usable (rail-to-rail) depth {SPEC['usable_depth_m']} m, rail opening {SPEC['rail_opening_m']} m, "
+        f"load capacity {SPEC['load_capacity_kg']:g} kg (equipment, not modelled). "))
     link = ET.SubElement(robot, "link", name=f"{ASSET_NAME}_link")
     visual = ET.SubElement(link, "visual", name="cabinet_visual")
     ET.SubElement(visual, "origin", xyz="0 0 0", rpy="0 0 0")
@@ -205,6 +218,7 @@ def write_urdf(report: dict) -> None:
 def main() -> None:
     if abs(bpy.context.scene.unit_settings.scale_length - 1.0) > 1e-9:
         raise ValueError("Expected metre scene units; refusing an ambiguous rescale")
+    bpy.context.view_layer.update()  # objects built in this run need evaluated transforms
     objects = mesh_objects(bpy.data.collections[COLLECTION].all_objects)
     assert objects, f"No mesh objects in collection {COLLECTION!r}"
 
@@ -222,6 +236,18 @@ def main() -> None:
         else:
             groups["body"].append(obj)
     assert sum(map(len, groups.values())) == len(objects)
+
+    # Rail positions from evaluated geometry (object transforms may already be baked into the mesh).
+    rails = {o.name: bounds([o], origin) for o in objects if o.name.startswith("mount_rail_")}
+    rail_check = {"front_rear_centre_spacing_m": None, "clear_opening_m": None}
+    if rails:
+        centres_x = sorted(b["center"][0] for b in rails.values())
+        inner_left = min(b["min"][1] for b in rails.values() if b["center"][1] > 0)
+        inner_right = max(b["max"][1] for b in rails.values() if b["center"][1] < 0)
+        rail_check = {"front_rear_centre_spacing_m": centres_x[-1] - centres_x[0],
+                      "clear_opening_m": inner_left - inner_right}
+        assert abs(rail_check["front_rear_centre_spacing_m"] - SPEC["usable_depth_m"]) < 1e-6, rail_check
+        assert abs(rail_check["clear_opening_m"] - SPEC["rail_opening_m"]) < 1e-6, rail_check
 
     comments = {
         "body": "Cabinet envelope: frame, panels, doors, rails and interior, feet top to roof.",
@@ -251,13 +277,15 @@ def main() -> None:
         "rack_units": RACK_UNITS,
         "rack_unit_metres": U_METRES,
         "mounting_rail_height_metres": RACK_UNITS * U_METRES,
+        "spec": SPEC,
+        "rails": rail_check,
         "visual": visual,
         "stl_triangles": stl["triangles"],
         "collision_boxes": collision_boxes,
         "mass_kg": MASS_KG,
         "fixed_base": True,
         "dynamics_note": "Mass from a Sysracks 42U 24x32x84in listing (122 lb, empty); inertia is the body box AABB formula. Unmeasured placeholders.",
-        "geometry_note": "Procedural Blender model (Hunyuan3D generation through Blender MCP failed); dimensions nominal 600 x 800 x 2134 mm.",
+        "geometry_note": "Procedural Blender model from source/build_server_rack_42u.py (Hunyuan3D generation through Blender MCP failed); nominal 600 x 800 x 2134 mm, rails per spec sheet and EIA-310.",
         "excluded_objects": [o.name for o in bpy.context.scene.objects if o not in objects],
     }
     write_urdf(report)

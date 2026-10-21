@@ -12,6 +12,11 @@ Usage:
         --meshes-dir ../../Unitree/D1_T/D1_T_Gripper/meshes \\
         --preset presets/studio_three_point.json \\
         --out /tmp/d1_t_gripper_render.png
+
+Supports .stl and .glb/.gltf directly. Catalog assets authored as .dae
+(COLLADA) need a one-time conversion first — Blender 5.x dropped the
+built-in Collada importer (bpy.ops.wm.collada_import no longer exists), so
+convert with trimesh instead: `trimesh.load(path).export(out.glb)`.
 """
 
 import argparse
@@ -32,7 +37,7 @@ def parse_args():
         argv = []
 
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--meshes-dir", help="directory of .stl meshes to import (non-recursive)")
+    parser.add_argument("--meshes-dir", help="directory of .stl/.glb/.gltf meshes to import (non-recursive)")
     parser.add_argument("--meshes", nargs="+", help="explicit list of mesh files, alternative to --meshes-dir")
     parser.add_argument("--preset", required=True, help="path to a camera/lighting preset JSON")
     parser.add_argument("--out", required=True, help="output PNG path")
@@ -51,7 +56,10 @@ def import_meshes(paths: list[Path]) -> list[bpy.types.Object]:
     imported = []
     for path in paths:
         before = set(bpy.context.scene.objects)
-        bpy.ops.wm.stl_import(filepath=str(path))
+        if path.suffix.lower() in (".glb", ".gltf"):
+            bpy.ops.import_scene.gltf(filepath=str(path))
+        else:
+            bpy.ops.wm.stl_import(filepath=str(path))
         after = set(bpy.context.scene.objects)
         imported.extend(after - before)
     return imported
@@ -146,12 +154,18 @@ def main():
     if args.meshes:
         mesh_paths = [Path(p) for p in args.meshes]
     elif args.meshes_dir:
-        mesh_paths = sorted(Path(args.meshes_dir).glob("*.STL")) + sorted(Path(args.meshes_dir).glob("*.stl"))
+        mesh_dir = Path(args.meshes_dir)
+        mesh_paths = (
+            sorted(mesh_dir.glob("*.STL"))
+            + sorted(mesh_dir.glob("*.stl"))
+            + sorted(mesh_dir.glob("*.glb"))
+            + sorted(mesh_dir.glob("*.gltf"))
+        )
     else:
         raise SystemExit("pass --meshes or --meshes-dir")
 
     if not mesh_paths:
-        raise SystemExit(f"no .stl meshes found")
+        raise SystemExit("no .stl/.glb/.gltf meshes found")
 
     clear_scene()
     objects = import_meshes(mesh_paths)

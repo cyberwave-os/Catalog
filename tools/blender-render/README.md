@@ -49,6 +49,30 @@ regardless of scale) + three area lights (key/fill/rim) + render settings
 (engine/resolution/samples). Add a new preset file and pass `--preset` to
 use a different look; nothing in `render_asset.py` is hardcoded to this one.
 
+### Known gaps (found rendering the Livox Mid-360 / RealSense D435i, both `.dae`)
+
+- **No native Collada import.** `bpy.ops.wm.collada_import` doesn't exist in
+  Blender 5.x (removed from core) — `import_meshes` only handles `.stl` and
+  `.glb`/`.gltf`. Convert a `.dae` first with trimesh, which the repo already
+  depends on via `mesh-doctor`: `trimesh.load(path).export("out.glb")`
+  (loads as a `Scene`, so multi-geometry Collada files keep every sub-part).
+- **Light `energy` doesn't auto-scale with asset size.** The preset's Watts
+  values were tuned against D1_T's meshes (tens of cm). `distance_multiplier`
+  scales light *position* with the asset's own bounding box, but Blender's
+  physically-based area lights don't get dimmer on their own just because
+  they're now much closer — a small asset (the D435i is ~9cm) at the same
+  relative distance is many times overexposed at those energies. Scale
+  `energy` down for a small asset (or up for a much larger one) rather than
+  assuming `studio_three_point.json` is exposure-correct at every scale.
+- **A camera angle chosen for an assembled robot may not suit a bare sensor
+  mesh.** `studio_three_point.json`'s azimuth/elevation assume the
+  interesting side of the asset is roughly in front at a modest elevation —
+  true for an arm/base sitting on a table, not necessarily for a standalone
+  sensor `.dae` in its own authored orientation (e.g. the D435i's lens face
+  sits at a high elevation angle in its native frame, not azimuthally). Worth
+  sweeping a few azimuth/elevation values for a new asset shape rather than
+  assuming the stock preset finds the interesting face.
+
 ## Relationship to Tool 1 (`twin-preview`)
 
 Independent — neither depends on the other running. Use `twin-preview` to

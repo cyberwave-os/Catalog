@@ -98,24 +98,38 @@ export function Viewer3D() {
     scene.background = new THREE.Color(0x050709);
 
     const camera = new THREE.PerspectiveCamera(50, mount.clientWidth / mount.clientHeight, 0.01, 100);
-    camera.position.set(0.6, 0.5, 0.9);
+    // cyberwave-frontend's urdf-viewer.tsx sets camera.up = (0, 0, 1) and
+    // explicitly does NOT rotate the loaded robot, keeping it in its native
+    // URDF Z-up frame — matched here so an asset's "up" looks the same in
+    // both places instead of being an arbitrary function of its own link
+    // layout (e.g. a wide, flat asset like the D435i rendering on its side).
+    camera.up.set(0, 0, 1);
+    camera.position.set(0.6, 0.9, 0.5);
 
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(mount.clientWidth, mount.clientHeight);
+    // react-three-fiber's <Canvas> (what cyberwave-frontend's urdf-viewer.tsx
+    // actually renders through) applies these by default; plain THREE.WebGLRenderer
+    // does not, so without them a lit, correctly-colored material can clip to
+    // flat white here even though the real frontend renders it with a lit rolloff.
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
     mount.appendChild(renderer.domElement);
 
     const grid = new THREE.GridHelper(4, 40, 0x0d1117, 0x0d1117);
+    grid.rotation.x = Math.PI / 2; // GridHelper is XZ-plane (Y=0) by default; lay it flat on Z=0 instead
     scene.add(grid);
 
     const hemi = new THREE.HemisphereLight(0xffffff, 0x222233, 1.2);
+    hemi.position.set(0, 0, 1); // sky/ground blend follows the light's own position as "up", not a hardcoded axis
     scene.add(hemi);
     const dir = new THREE.DirectionalLight(0xffffff, 1.5);
-    dir.position.set(2, 3, 2);
+    dir.position.set(2, 2, 3);
     scene.add(dir);
 
     const controls = new OrbitControls(camera, renderer.domElement);
-    controls.target.set(0, 0.1, 0);
+    controls.target.set(0, 0, 0.1);
     controls.update();
 
     sceneRef.current = {
@@ -180,17 +194,29 @@ export function Viewer3D() {
     }
     animate();
 
-    function fitCameraToRobot(robot: THREE.Object3D) {
+    function fitCameraToRobot(robot: THREE.Object3D): boolean {
       const box = new THREE.Box3().setFromObject(robot);
-      if (box.isEmpty()) return;
+      if (box.isEmpty()) return false;
       const center = box.getCenter(new THREE.Vector3());
       const size = box.getSize(new THREE.Vector3());
       const maxDim = Math.max(size.x, size.y, size.z) || 1;
       robot.position.sub(center);
       const dist = maxDim * 1.8;
-      camera.position.set(dist * 0.6, dist * 0.5, dist * 0.9);
+      camera.position.set(dist * 0.6, dist * 0.9, dist * 0.5);
       controls.target.set(0, 0, 0);
       controls.update();
+      return true;
+    }
+
+    // A mesh large/slow enough to still be in flight when the URDF's own
+    // onComplete fires (e.g. a multi-MB Collada file) leaves robot's bounding
+    // box empty at that first fitCameraToRobot call, so retry on subsequent
+    // frames until the geometry has actually attached. Bounded so a genuinely
+    // failed/empty load doesn't retry forever.
+    function fitCameraWhenReady(robot: THREE.Object3D, attemptsLeft = 300) {
+      if (disposed) return;
+      if (fitCameraToRobot(robot) || attemptsLeft <= 0) return;
+      requestAnimationFrame(() => fitCameraWhenReady(robot, attemptsLeft - 1));
     }
 
     async function loadAsset(urdfPath: string) {
@@ -215,7 +241,7 @@ export function Viewer3D() {
           fullUrl,
           (robot: URDFRobotLike) => {
             scene.add(robot);
-            fitCameraToRobot(robot);
+            fitCameraWhenReady(robot);
 
             const joints: TeleopJointInfo[] = [];
             const parsedJoints: Record<string, ParsedJoint> = {};

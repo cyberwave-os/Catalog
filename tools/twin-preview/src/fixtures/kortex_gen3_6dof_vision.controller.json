@@ -1,0 +1,79 @@
+{
+  "catalog_key": "controller:keyboard_autogen_kortex_gen3_6dof_vision:v1",
+  "name": "Keyboard (Kortex Gen3 6dof vision)",
+  "description": "Pre-configured keyboard controller for Kortex Gen3 6dof vision with bindings for all controllable joints.",
+  "controller_type": "ControllerType.TELEOP",
+  "visibility": "Visibility.PUBLIC",
+  "asset": "kinova-robotics/kortex-gen3-6dof-vision",
+  "asset_registry_ids": [
+    "kinova-robotics/kortex-gen3-6dof-vision"
+  ],
+  "metadata": {
+    "control_mode": "velocity",
+    "input_device": "keyboard",
+    "multiple_joints_update": true,
+    "show_keyboard_visualizer": true,
+    "keyboard_bindings": [
+      {
+        "key": "1",
+        "direction": "increase",
+        "jointName": "joint_1"
+      },
+      {
+        "key": "2",
+        "direction": "decrease",
+        "jointName": "joint_1"
+      },
+      {
+        "key": "3",
+        "direction": "increase",
+        "jointName": "joint_2"
+      },
+      {
+        "key": "4",
+        "direction": "decrease",
+        "jointName": "joint_2"
+      },
+      {
+        "key": "5",
+        "direction": "increase",
+        "jointName": "joint_3"
+      },
+      {
+        "key": "6",
+        "direction": "decrease",
+        "jointName": "joint_3"
+      },
+      {
+        "key": "7",
+        "direction": "increase",
+        "jointName": "joint_4"
+      },
+      {
+        "key": "8",
+        "direction": "decrease",
+        "jointName": "joint_4"
+      },
+      {
+        "key": "9",
+        "direction": "increase",
+        "jointName": "joint_5"
+      },
+      {
+        "key": "0",
+        "direction": "decrease",
+        "jointName": "joint_5"
+      },
+      {
+        "key": "Q",
+        "direction": "increase",
+        "jointName": "joint_6"
+      },
+      {
+        "key": "W",
+        "direction": "decrease",
+        "jointName": "joint_6"
+      }
+    ]
+  }
+}

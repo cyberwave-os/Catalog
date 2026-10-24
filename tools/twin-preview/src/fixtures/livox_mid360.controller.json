@@ -1,0 +1,18 @@
+{
+  "catalog_key": "controller:keyboard_autogen_livox_mid360:v1",
+  "name": "Keyboard (Livox Mid-360)",
+  "description": "Fixed-mount LiDAR sensor with no controllable joints — empty keyboard_bindings is correct, not a stand-in for a real policy.",
+  "controller_type": "ControllerType.TELEOP",
+  "visibility": "Visibility.PUBLIC",
+  "asset": "livox/mid360",
+  "asset_registry_ids": [
+    "livox/mid360"
+  ],
+  "metadata": {
+    "control_mode": "velocity",
+    "input_device": "keyboard",
+    "multiple_joints_update": true,
+    "show_keyboard_visualizer": false,
+    "keyboard_bindings": []
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "catalog_key": "controller:keyboard_autogen_ugv_beast:v1",
+  "name": "Keyboard (UGV Beast, official)",
+  "description": "Hand-authored preview fixture — this asset has no seeded cyberwave-backend controller yet (brand new to Catalog), so unlike the other fixtures here this one isn't extracted from seed_controllers.py. Re-generate via export_controller_policy.py once/if a real controller is seeded, rather than hand-editing this further.",
+  "controller_type": "ControllerType.TELEOP",
+  "visibility": "Visibility.PUBLIC",
+  "asset": "waveshare/ugv-beast",
+  "asset_registry_ids": [
+    "waveshare/ugv-beast"
+  ],
+  "metadata": {
+    "control_mode": "velocity",
+    "input_device": "keyboard",
+    "multiple_joints_update": true,
+    "show_keyboard_visualizer": true,
+    "keyboard_bindings": [
+      { "key": "1", "direction": "increase", "jointName": "left_up_wheel_link_joint" },
+      { "key": "2", "direction": "decrease", "jointName": "left_up_wheel_link_joint" },
+      { "key": "3", "direction": "increase", "jointName": "left_down_wheel_link_joint" },
+      { "key": "4", "direction": "decrease", "jointName": "left_down_wheel_link_joint" },
+      { "key": "5", "direction": "increase", "jointName": "right_up_wheel_link_joint" },
+      { "key": "6", "direction": "decrease", "jointName": "right_up_wheel_link_joint" },
+      { "key": "7", "direction": "increase", "jointName": "right_down_wheel_link_joint" },
+      { "key": "8", "direction": "decrease", "jointName": "right_down_wheel_link_joint" },
+      { "key": "Q", "direction": "increase", "jointName": "pt_base_link_to_pt_link1" },
+      { "key": "W", "direction": "decrease", "jointName": "pt_base_link_to_pt_link1" },
+      { "key": "E", "direction": "increase", "jointName": "pt_link1_to_pt_link2" },
+      { "key": "R", "direction": "decrease", "jointName": "pt_link1_to_pt_link2" }
+    ]
+  }
+}

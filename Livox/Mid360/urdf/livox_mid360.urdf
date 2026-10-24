@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Livox Mid-360 — hybrid solid-state 3D LiDAR, 360deg x 59deg FOV.
+  Mesh adapted from the MIT-licensed LCAS/livox_laser_simulation_ros2 fork
+  (github.com/LCAS/livox_laser_simulation_ros2, meshes/mid-360-scaled.dae) —
+  the upstream Livox-SDK/livox_laser_simulation repo's own livox_mid360.xacro
+  reuses the Mid-40 mesh/geometry under the Mid-360's name, so it was not a
+  usable source. Dimensions/mass below are from the official datasheet
+  (livoxtech.com/mid-360/specs): 65 x 65 x 60 mm, 265 g.
+-->
+<robot name="livox_mid360">
+
+  <link name="livox_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="../meshes/livox_mid360.dae"/>
+      </geometry>
+      <material name="dark_grey">
+        <color rgba="0.15 0.15 0.15 1.0"/>
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0.004 0 0.004" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.073 0.065 0.060"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0.004 0 0.004" rpy="0 0 0"/>
+      <mass value="0.265"/>
+      <inertia
+        ixx="1.73e-04" ixy="0.0" ixz="0.0"
+        iyy="1.97e-04" iyz="0.0"
+        izz="2.11e-04"/>
+    </inertial>
+  </link>
+
+  <!-- Scan/point-cloud origin, matching livox_ros_driver2's default frame_id
+       ("livox_frame"). Livox coordinate convention: X forward, Y left, Z up. -->
+  <link name="livox_frame"/>
+
+  <joint name="livox_frame_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="livox_link"/>
+    <child link="livox_frame"/>
+  </joint>
+
+</robot>

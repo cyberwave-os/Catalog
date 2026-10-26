@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+  Jetson Orin Nano case (main body + base plate on one print plate), v3. Mass is the sliced PLA estimate (99 g).
+  Mesh is authored in millimetres (the print file itself); scale 0.001 converts to metres.
+  Print files for the printer twin's "Print +" picker are listed in the asset metadata
+  (print_files) and live under ../print/.
+-->
+<robot name="orin_nano_case_v3">
+  <link name="orin_nano_case_link">
+    <visual>
+      <origin xyz="-0.1238 -0.0575 0" rpy="0 0 0"/>
+      <geometry><mesh filename="../meshes/orin-case-main-v3.stl" scale="0.001 0.001 0.001"/></geometry>
+      <material name="pla_grey"><color rgba="0.35 0.35 0.38 1.0"/></material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1238 -0.0575 0" rpy="0 0 0"/>
+      <geometry><mesh filename="../meshes/orin-case-main-v3.stl" scale="0.001 0.001 0.001"/></geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0.01739" rpy="0 0 0"/>
+      <mass value="0.099"/>
+      <inertia ixx="9.750e-05" ixy="0" ixz="0" iyy="4.679e-04" iyz="0" izz="5.455e-04"/>
+    </inertial>
+  </link>
+</robot>

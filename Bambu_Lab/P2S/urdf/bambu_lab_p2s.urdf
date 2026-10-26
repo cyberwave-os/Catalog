@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!--
+  Bambu Lab P2S digital twin.
+  Geometry is a PROXY envelope (0.392 x 0.406 x 0.478 m); the real reference STEP
+  (MakerWorld 2590690) needs a login and a non-redistributable licence. See ../README.md.
+  Meshes are authored in metres. Frame: z up, x right, y toward the rear, origin at floor centre.
+-->
+<robot name="bambu_lab_p2s">
+  <link name="p2s_base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="../meshes/p2s_body_proxy.stl"/></geometry>
+      <material name="p2s_dark"><color rgba="0.15 0.15 0.17 1.0"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.392 0.406 0.478"/></geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0.2" rpy="0 0 0"/>
+      <mass value="14.9"/>
+      <inertia ixx="0.45" ixy="0" ixz="0" iyy="0.42" iyz="0" izz="0.30"/>
+    </inertial>
+  </link>
+
+  <!-- 256 x 256 mm build plate; top surface sits at z = 0.092 m (proxy) -->
+  <link name="p2s_build_plate_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="../meshes/p2s_build_plate.stl"/></geometry>
+      <material name="p2s_plate"><color rgba="0.8 0.7 0.3 1.0"/></material>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.5"/>
+      <inertia ixx="0.003" ixy="0" ixz="0" iyy="0.003" iyz="0" izz="0.006"/>
+    </inertial>
+  </link>
+  <joint name="p2s_build_plate_joint" type="fixed">
+    <parent link="p2s_base_link"/>
+    <child link="p2s_build_plate_link"/>
+    <origin xyz="0 0 0.09" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Chamber camera frame, looking at the plate -->
+  <link name="p2s_camera_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.01"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+  </link>
+  <joint name="p2s_camera_joint" type="fixed">
+    <parent link="p2s_base_link"/>
+    <child link="p2s_camera_link"/>
+    <origin xyz="0 0.15 0.44" rpy="0 0.7 1.5708"/>
+  </joint>
+</robot>
